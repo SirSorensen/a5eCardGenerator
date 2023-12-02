@@ -1,6 +1,5 @@
 import requests
 import re
-from bs4 import BeautifulSoup
 
 spell = str.lower("ACCELERANDO")
 url = f'https://a5e.tools/spell/{spell}'
