@@ -5,7 +5,8 @@ from Web_n_Data.Web_Scrapers.a5eScraper import a5e_scrape_source_text
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
 class CardData:
     def __init__(self, web_location : str, web_url : str = "", scrape_source_text : bool = False):
-        
+        self.title = web_location
+
         if web_url == "":
             self.web_url = web_location
         else:
@@ -18,10 +19,10 @@ class CardData:
 
         
     # This function scrapes the source code of a card's data's internet page
-    def scrape (self, name : str):        
+    def scrape(self):        
         output_filepath = type(self).__name__ + r"s\\"
 
-        return a5e_scrape_source_text(name, "", output_filepath)
+        return a5e_scrape_source_text(self.title, "", output_filepath, web_url=self.web_url)
 
 
     # This function reads the source text of a card's data from a file containing the source text of a card's data's internet page

@@ -1,6 +1,5 @@
 
 import os
-import time
 from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
 from Web_n_Data.Data_Structures.CardData import CardData
 from Web_n_Data.Data_Structures.Spell import Spell
@@ -11,7 +10,7 @@ class TableToDataStructure:
         self.page = 0
         self.type = type.capitalize()
 
-    def make_data_structure(self, table_extractor : TableExtractor) -> list[CardData]:
+    def make_data_structures(self, table_extractor : TableExtractor) -> list[CardData]:
         match self.type:
             case "Spell":
                 return self.make_spell_data_structure(table_extractor)

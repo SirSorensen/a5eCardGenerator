@@ -1,5 +1,4 @@
 from Web_n_Data.Data_Structures.CardData import CardData
-from Web_n_Data.Data_Interpreters import DataStructureExtractor
 
 
 class MaterialComponent:
@@ -76,8 +75,8 @@ class Spell(CardData):
         # Source = "*"
         self.source = field_dict.get('source')
 
-    def scrape (self, name : str):
-        return super(Spell, self).scrape(name)
+    def scrape (self):
+        return super(Spell, self).scrape()
     
     def get_filepath(self, name : str) -> str:
         return super(Spell, self).get_filepath(name)

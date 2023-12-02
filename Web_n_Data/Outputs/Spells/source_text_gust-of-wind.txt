@@ -3,7 +3,7 @@
 <!-- THEME DEBUG -->
 <!-- THEME HOOK: 'html' -->
 <!-- FILE NAME SUGGESTIONS:
-   * html--node--3230.html.twig
+   * html--node--353.html.twig
    * html--node--%.html.twig
    * html--spell.html.twig
    * html--node.html.twig
@@ -23,14 +23,14 @@
 <meta name="HandheldFriendly" content="true" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="/sites/default/files/Level%20Up%20logo%20just%20hexagonal%20dragon%20element%20500px.png" type="image/png" />
-<link rel="canonical" href="https://a5e.tools/spell/gate-beyond" />
-<link rel="shortlink" href="https://a5e.tools/node/3230" />
-<link rel="revision" href="https://a5e.tools/spell/gate-beyond" />
+<link rel="canonical" href="https://a5e.tools/spell/gust-wind" />
+<link rel="shortlink" href="https://a5e.tools/node/353" />
+<link rel="revision" href="https://a5e.tools/spell/gust-wind" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name ="robots" content="noarchive">
-        <title>Gate from Beyond | Level Up</title>
+        <title>Gust of Wind | Level Up</title>
         <link rel="shortcut icon" href="" type="image/vnd.microsoft.icon" />
         <link rel="stylesheet" media="all" href="/sites/default/files/css/css_ixfLNt1XW4WVQ4Klp2rXnCgB0you5q1cmXvcfB1RftU.css" />
 <link rel="stylesheet" media="all" href="/sites/default/files/css/css_tsSJNg6-nZj89UZ9goV2bDuCKTCXxNzzT2k95zDZZSg.css" />
@@ -57,7 +57,7 @@
 
 	</head>
 		
-	<body  class="node-3230 node-type-spell" style="background:#ddd url() fixed">
+	<body  class="node-353 node-type-spell" style="background:#ddd url() fixed">
     	<a href="#main-content" class="visually-hidden focusable">
             Skip to main content
         </a>
@@ -75,7 +75,7 @@
 <!-- THEME DEBUG -->
 <!-- THEME HOOK: 'page' -->
 <!-- FILE NAME SUGGESTIONS:
-   * page--node--3230.html.twig
+   * page--node--353.html.twig
    * page--node--%.html.twig
    * page--node-spell.html.twig
    * page--node.html.twig
@@ -661,9 +661,9 @@
     <ul class="bread-crumb clearfix">
                     <li><a href="/">Home</a></li>
                             <li><a href="/rules/introduction-to-level-up">Rules</a></li>
-                            <li><a href="/rules/gate-pass-gazette">Gate Pass Gazette</a></li>
-                            <li><a href="/node/3238">Gate Pass Gazette Issue #15</a></li>
-                            <li>Gate from Beyond</li>
+                            <li><a href="/rules/adventurers-guide">Adventurer&#039;s Guide</a></li>
+                            <li><a href="/rules/spellcasting">Spellcasting</a></li>
+                            <li>Gust of Wind</li>
             	</ul>
 
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/navigation/breadcrumb.html.twig' -->
@@ -730,8 +730,8 @@
 <!-- THEME DEBUG -->
 <!-- THEME HOOK: 'node' -->
 <!-- FILE NAME SUGGESTIONS:
-   * node--3230--full.html.twig
-   * node--3230.html.twig
+   * node--353--full.html.twig
+   * node--353.html.twig
    * node--spell--full.html.twig
    x node--spell.html.twig
    * node--full.html.twig
@@ -741,7 +741,7 @@
 
  
     
-<article data-history-node-id="3230" role="article" about="/spell/gate-beyond">
+<article data-history-node-id="353" role="article" about="/spell/gust-wind">
 
   
      
@@ -749,7 +749,7 @@
   
  <div>
 
-<h1 class="page-header">Gate from Beyond</h1>
+<h1 class="page-header">Gust of Wind</h1>
 
     <div id="spell-top-line">
     
@@ -766,7 +766,7 @@
 -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
 
-            <div class="field field--name-field-spell-level field--type-entity-reference field--label-hidden field--item"><a href="/spell-levels/third" hreflang="en">3rd</a></div>
+            <div class="field field--name-field-spell-level field--type-entity-reference field--label-hidden field--item"><a href="/spell-levels/second" hreflang="en">2nd</a></div>
       
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
 
@@ -787,7 +787,7 @@
 -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
 
-            <div class="field field--name-field-classical-spell-school field--type-entity-reference field--label-hidden field--item"><a href="/spells/conjuration" hreflang="en">Conjuration</a></div>
+            <div class="field field--name-field-classical-spell-school field--type-entity-reference field--label-hidden field--item"><a href="/spells/evocation" hreflang="en">Evocation</a></div>
       
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
 
@@ -807,8 +807,8 @@
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
 
       <div class="field field--name-field-spell-schools field--type-entity-reference field--label-hidden field--items">
-              <div class="field--item"><a href="/spells/arcane" hreflang="en">Arcane</a></div>
-              <div class="field--item"><a href="/spells/teleportation" hreflang="en">Teleportation</a></div>
+              <div class="field--item"><a href="/spells/air" hreflang="en">Air</a></div>
+              <div class="field--item"><a href="/spells/nature" hreflang="en">Nature</a></div>
           </div>
   
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
@@ -833,8 +833,9 @@
   <div class="field field--name-field-spell-classes field--type-entity-reference field--label-inline">
     <div class="field--label">Class(es)</div>
           <div class="field--items">
-              <div class="field--item"><a href="/classes/sorcerer" hreflang="en">Sorcerer</a></div>
-          <div class="field--item"><a href="/classes/Warlock" hreflang="en">Warlock</a></div>
+              <div class="field--item"><a href="/classes/artificer" hreflang="en">Artificer</a></div>
+          <div class="field--item"><a href="/classes/druid" hreflang="en">Druid</a></div>
+          <div class="field--item"><a href="/classes/sorcerer" hreflang="en">Sorcerer</a></div>
           <div class="field--item"><a href="/classes/wizard" hreflang="en">Wizard</a></div>
               </div>
       </div>
@@ -880,14 +881,56 @@
 
   <div class="field field--name-field-spell-range field--type-entity-reference field--label-inline">
     <div class="field--label">Range</div>
-              <div class="field--item"><a href="/spell-ranges/special" hreflang="en">Special</a></div>
+              <div class="field--item"><a href="/spell-ranges/self" hreflang="en">Self</a></div>
           </div>
 
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
 
 
           
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-area--spell.html.twig
+   * field--node--field-spell-area.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-area.html.twig
+   * field--integer.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-area field--type-integer field--label-inline">
+    <div class="field--label">Area</div>
+              <div class="field--item">60</div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
       
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-area-shape--spell.html.twig
+   * field--node--field-area-shape.html.twig
+   * field--node--spell.html.twig
+   * field--field-area-shape.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-area-shape field--type-entity-reference field--label-inline">
+    <div class="field--label">Area Shape</div>
+              <div class="field--item"><a href="/spell-areas/line" hreflang="en">Line</a></div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
         
     
 
@@ -913,7 +956,25 @@
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-components.html.twig' -->
 
 
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spellcomponent-description--spell.html.twig
+   * field--node--field-spellcomponent-description.html.twig
+   * field--node--spell.html.twig
+   * field--field-spellcomponent-description.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-spellcomponent-description field--type-string field--label-hidden field--item">seed</div>
       
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  
 
     <div id="duration">
       <div class="field--label spell-duration-label">Duration: </div>
@@ -930,7 +991,7 @@
    * field.html.twig
 -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-duration.html.twig' -->
-    <span class ='duration-value'><a href="/spell-durations/special" hreflang="en">Special</a></span>
+    <span class ='duration-value'><a href="/spell-durations/1-minute" hreflang="en">1 minute</a></span>
 
 
 
@@ -939,7 +1000,28 @@
 )   
             </div>
 
-             
+          
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-saving-throw-desc--spell.html.twig
+   * field--node--field-spell-saving-throw-desc.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-saving-throw-desc.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-saving-throw-desc field--type-string field--label-inline">
+    <div class="field--label">Saving Throw</div>
+              <div class="field--item">Strength (special)</div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+   
         
     <div id="spell-body">
 
@@ -955,25 +1037,25 @@
 -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
 
-            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>You rend the veil to create a short-range portal from your location to any place you can see, visualize, or describe by stating distance and direction such as 200 feet straight downward or 400 feet upward at a 30-degree angle to the southeast. The other end of the portal appears within 5 feet of you and you suffer a level of 
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p><strong>Area:</strong> Line 60 feet long and 10 feet wide</p>
+
+<p>A torrent of wind erupts from your hand in a direction you choose. Each creature that starts its turn in the area or moves into the area must succeed on a Strength 
 
 <!-- THEME DEBUG -->
 <!-- THEME HOOK: 'freelink' -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
-<span class="freelinking-link" ><a href="/rules/conditions" title="Click to view a local node." hreflang="en">strife</a></span>
+<span class="freelinking-link" ><a href="/rules/saving-throw" title="Click to view a local node." hreflang="en">saving throw</a></span>
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
 
-.</p>
+ or be pushed 15 feet from you in the direction of the line. </p>
 
-<p>A creature within 5 feet of either end of the portal can use 5 feet of movement to step through, appearing in an unoccupied space within 5 feet of the other end. If there is no such space, it is moved to the nearest unoccupied space, taking 1d10 force damage for every 5 feet moved. The portal remains open for as long as you maintain 
+<p>Any creature in the area must spend 2 feet of movement for every foot moved when trying to approach you.</p>
 
-<!-- THEME DEBUG -->
-<!-- THEME HOOK: 'freelink' -->
-<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
-<span class="freelinking-link" ><a href="/rules/spellcasting" title="Click to view a local node." hreflang="en">concentration</a></span>
-<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<p>The blast of wind extinguishes small fires and disperses gas or vapor. </p>
 
- and remain within 5 feet of one end of it, but for the duration of your concentration you suffer an additional level of strife at the end of each of your turns after the first.</p>
+<p>You can use a bonus action to change the direction of the gust.</p>
+
+<p> </p>
 </div>
       
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
@@ -981,6 +1063,44 @@
 </div>   
     
     
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-rare-versions--spell.html.twig
+   * field--node--field-spell-rare-versions.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-rare-versions.html.twig
+   * field--text-long.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-rare-versions field--type-text-long field--label-above">
+    <div class="field--label">Rare Versions</div>
+              <div class="field--item"><p><strong><em>Sidoneth’s Traveling Gust of Wind. </em></strong>The spell targets one vehicle of Huge size or smaller that has sails and its duration increases to 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/rules/spellcasting" title="Click to view a local node." hreflang="en">concentration</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+ (1 hour). Until the spell ends, the vehicle’s sails are magically filled and it can travel as if it had a strong wind. Additionally, any checks made to pilot the vehicle have 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/node/130" title="Click to view a local node." hreflang="en">advantage</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+.</p>
+</div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
 
     
     <div class="spell-source rules-source">
@@ -1000,7 +1120,7 @@
 
   <div class="field field--name-field-spell-source field--type-entity-reference field--label-inline">
     <div class="field--label">Source</div>
-              <div class="field--item"><a href="/sources/gate-pass-gazette" hreflang="en">Gate Pass Gazette</a></div>
+              <div class="field--item"><a href="/sources/adventurers-guide" hreflang="en">﻿Adventurer&#039;s Guide</a></div>
           </div>
 
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
