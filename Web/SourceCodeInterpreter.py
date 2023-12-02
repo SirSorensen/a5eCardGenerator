@@ -3,14 +3,14 @@ import os
 import re
 from bs4 import BeautifulSoup, Comment
 
+from FileHandler.FileHandler import read_file, write_to_file
+
 
 class CodeInterpreter:
-    def __init__(self, file_path : str):
-        self.file_path = file_path
-        
-        with open(file_path, "r", encoding='utf-8') as file:
-            html_code = file.read()
-            file.close()
+    def __init__(self, filepath : str):
+        self.filepath = filepath
+
+        html_code = read_file(filepath)
 
         self.soup = BeautifulSoup(html_code, 'html.parser')
 
@@ -49,27 +49,16 @@ class CodeInterpreter:
         return ""
 
     def prettify_soup(self):
-        print(f"Prettifying {self.file_path}...")
+        print(f"Prettifying {self.filepath}...")
 
         comments = self.soup.find_all(string=lambda text: isinstance(text, Comment))
         for comment in comments:
             comment.extract()
 
-        filename_match = re.search(r'\w+\.\w+', self.file_path)
-
-        if filename_match:
-            filename = filename_match.group()
-            file_path = self.file_path.replace(filename, 'Pretty\\' + filename.replace(".txt", ".html"))
+        filename = re.search(r'[^\\]+\.\w+', self.filepath).group()
+        filepath = self.filepath.replace(filename, 'Pretty\\' + filename.replace(".txt", ".html"))
             
-            if not os.path.exists(file_path):
-                os.makedirs(os.path.dirname(file_path), exist_ok=True)
-                with open(file_path, "w") as f: pass
-
-
-            with open(file_path, "w+", encoding='utf-8') as file:
-                file.write(self.soup.prettify())
-        else:
-            print("No filename found in the file path.")
+        write_to_file(filepath, self.soup.prettify())
 
 
 def return_field_result(field_result):

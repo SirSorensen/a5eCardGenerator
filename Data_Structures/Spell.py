@@ -15,8 +15,10 @@ class MaterialComponent:
         return f"Consumed? {self.consumed}\n{self.text}"
 
 class Spell(CardData):
-    def __init__(self, web_location : str, scrape_source_text : bool = False):
+    def __init__(self, name : str, scrape_source_text : bool = False):
         
+        web_location = name.replace(" ", "-").lower()
+
         if scrape_source_text: 
                 super(Spell, self).scrape(web_location)
 
@@ -40,7 +42,7 @@ class Spell(CardData):
         # Casting Time = 1 Action, 1 Bonus Action, 1 Hour, 1 Minute, 1 Reaction, 10 Minutes, 12 Hours, 24 Hours, 8 Hours, 1 Week
         self.casting_time = field_dict.get('casting_time')
         # Ritual? = True, False
-        self.ritual = field_dict.get('ritual') is not None
+        self.ritual = field_dict.get('ritual') == "r"
         # Range = Self, Touch, Short (30 feet), Medium (60 feet), Long (120 feet),Unlimited, Special
         self.range = field_dict.get('range')
         # Target = "*"
@@ -92,13 +94,16 @@ class Spell(CardData):
             "field--name-field-spell-classes",
             "field--name-field-spell-casting-time",
             "field--name-field-spell-range",
+            "field--name-field-area-shape",
             "field--name-field-spell-target",
+            "field--name-field-spell-area",
             "field--name-field-spellcomponent-description",
             "field--name-field-spell-saving-throw-desc",
             "field--name-field-spellcast-at-higher-levels",
             "field--name-field-spell-source",
             "field--name-body",
-            "field--name-field-spell-rare-versions"]
+            "field--name-field-spell-rare-versions",
+            "ritual-indicator"]
 
         field_ids = [
             "spell-components-display",

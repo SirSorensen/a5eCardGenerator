@@ -6,7 +6,7 @@ from Web.a5eScraper import a5e_scrape_source_text
 class CardData:  
     # This function scrapes the source code of a card's data's internet page
     def scrape (self, name : str):
-        name = name.replace(" ", "-").lower()
+        
         print(f"Scraping {type(self).__name__}: {name}...")
         
         output_filepath = r"Outputs\\" + type(self).__name__ + r"s\\"
@@ -15,10 +15,8 @@ class CardData:
 
 
     # This function reads the source text of a card's data from a file containing the source text of a card's data's internet page
-    def get_filepath(self, name : str) -> str:
-        file_name = name.replace(" ", "-").lower()
-
-        return r"Outputs\\" + type(self).__name__ + r"s\\source_text_" + file_name + r".txt"
+    def get_filepath(self, filename : str) -> str:
+        return r"Outputs\\" + type(self).__name__ + r"s\\source_text_" + filename + r".txt"
     
     # This function extracts a card's data from a source text
     def extract_fields(self, field_classes : list[str], field_ids : list[str]):
@@ -32,11 +30,11 @@ class CardData:
         for id in field_ids:
             _code_interpreter : CodeInterpreter= self._code_interpreter
             field_dict[CardData.key_namer(id)] = _code_interpreter.extract_field_information(field_id=id)
-    
+
         return field_dict
 
     def key_namer(key : str):
-        return key.replace("field--", "").replace("name-", "").replace("field-", "").replace("spell-", "").replace("-", "_")
+        return key.replace("field--", "").replace("name-", "").replace("field-", "").replace("spell-", "").replace("-indicator", "").replace("-", "_")
     
     def prettify_soup(self):
         self._code_interpreter.prettify_soup()
