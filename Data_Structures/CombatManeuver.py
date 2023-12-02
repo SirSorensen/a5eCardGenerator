@@ -1,4 +1,4 @@
-from WebScraping.a5eScraper import a5e_scrape_source_text
+from Web.a5eScraper import a5e_scrape_source_text
 
 
 class CombatManeuver:

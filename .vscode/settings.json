@@ -4,7 +4,7 @@
         "Scrying"
     ],
     "python.analysis.extraPaths": [
-        "./WebScraping",
+        "./Web",
         "./Data Structures",
         "./Old Modules"
     ]

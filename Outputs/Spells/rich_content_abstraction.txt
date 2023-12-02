@@ -3,8 +3,10 @@
 <!-- THEME DEBUG -->
 <!-- THEME HOOK: 'html' -->
 <!-- FILE NAME SUGGESTIONS:
-   * html--spells--abstraction.html.twig
-   * html--spells.html.twig
+   * html--node--3008.html.twig
+   * html--node--%.html.twig
+   * html--spell.html.twig
+   * html--node.html.twig
    x html.html.twig
 -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/layout/html.html.twig' -->
@@ -21,11 +23,14 @@
 <meta name="HandheldFriendly" content="true" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="/sites/default/files/Level%20Up%20logo%20just%20hexagonal%20dragon%20element%20500px.png" type="image/png" />
+<link rel="canonical" href="https://a5e.tools/spell/abstraction" />
+<link rel="shortlink" href="https://a5e.tools/node/3008" />
+<link rel="revision" href="https://a5e.tools/spell/abstraction" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name ="robots" content="noarchive">
-        <title>Page not found | Level Up</title>
+        <title>Abstraction | Level Up</title>
         <link rel="shortcut icon" href="" type="image/vnd.microsoft.icon" />
         <link rel="stylesheet" media="all" href="/sites/default/files/css/css_ixfLNt1XW4WVQ4Klp2rXnCgB0you5q1cmXvcfB1RftU.css" />
 <link rel="stylesheet" media="all" href="/sites/default/files/css/css_tsSJNg6-nZj89UZ9goV2bDuCKTCXxNzzT2k95zDZZSg.css" />
@@ -52,7 +57,7 @@
 
 	</head>
 		
-	<body  style="background:#ddd url() fixed">
+	<body  class="node-3008 node-type-spell" style="background:#ddd url() fixed">
     	<a href="#main-content" class="visually-hidden focusable">
             Skip to main content
         </a>
@@ -70,10 +75,10 @@
 <!-- THEME DEBUG -->
 <!-- THEME HOOK: 'page' -->
 <!-- FILE NAME SUGGESTIONS:
-   * page--404.html.twig
-   * page--4xx.html.twig
-   * page--spells--abstraction.html.twig
-   * page--spells.html.twig
+   * page--node--3008.html.twig
+   * page--node--%.html.twig
+   * page--node-spell.html.twig
+   * page--node.html.twig
    x page.html.twig
 -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/layout/page.html.twig' -->
@@ -655,7 +660,10 @@
     <h2 class="visually-hidden">Breadcrumb</h2>
     <ul class="bread-crumb clearfix">
                     <li><a href="/">Home</a></li>
-                            <li>Page Not Found</li>
+                            <li><a href="/rules/introduction-to-level-up">Rules</a></li>
+                            <li><a href="/rules/gate-pass-gazette">Gate Pass Gazette</a></li>
+                            <li><a href="/node/3027">Gate Pass Gazette Issue #14</a></li>
+                            <li>Abstraction</li>
             	</ul>
 
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/navigation/breadcrumb.html.twig' -->
@@ -717,7 +725,373 @@
 
 	<div id="block-ipress-content" class="mbf clearfix blockcontent">
 						 
-    	The requested page could not be found.
+    	
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--3008--full.html.twig
+   * node--3008.html.twig
+   * node--spell--full.html.twig
+   x node--spell.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/node/node--spell.html.twig' -->
+
+ 
+    
+<article data-history-node-id="3008" role="article" about="/spell/abstraction">
+
+  
+     
+
+  
+ <div>
+
+<h1 class="page-header">Abstraction</h1>
+
+    <div id="spell-top-line">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-level--spell.html.twig
+   * field--node--field-spell-level.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-level.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-spell-level field--type-entity-reference field--label-hidden field--item"><a href="/spell-levels/second" hreflang="en">2nd</a></div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+        
+      <div id="spell-level-text">-level (</div>
+          
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-classical-spell-school--spell.html.twig
+   * field--node--field-classical-spell-school.html.twig
+   * field--node--spell.html.twig
+   * field--field-classical-spell-school.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-classical-spell-school field--type-entity-reference field--label-hidden field--item"><a href="/spells/transmutation" hreflang="en">Transmutation</a></div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-schools--spell.html.twig
+   * field--node--field-spell-schools.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-schools.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+      <div class="field field--name-field-spell-schools field--type-entity-reference field--label-hidden field--items">
+              <div class="field--item"><a href="/spells/affliction" hreflang="en">Affliction</a></div>
+              <div class="field--item"><a href="/spells/prismatic" hreflang="en">Prismatic</a></div>
+              <div class="field--item"><a href="/spells/transformation" hreflang="en">Transformation</a></div>
+          </div>
+  
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    <div id="spell-closing-parenthesis">)</div>
+    </div>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-classes--spell.html.twig
+   * field--node--field-spell-classes.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-classes.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-classes field--type-entity-reference field--label-inline">
+    <div class="field--label">Class(es)</div>
+          <div class="field--items">
+              <div class="field--item"><a href="/classes/bard" hreflang="en">Bard</a></div>
+          <div class="field--item"><a href="/classes/sorcerer" hreflang="en">Sorcerer</a></div>
+          <div class="field--item"><a href="/classes/Warlock" hreflang="en">Warlock</a></div>
+              </div>
+      </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-casting-time--spell.html.twig
+   * field--node--field-spell-casting-time.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-casting-time.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-casting-time field--type-entity-reference field--label-inline">
+    <div class="field--label">Casting Time</div>
+              <div class="field--item"><a href="/spell-casting-times/1-action" hreflang="en">1 Action</a></div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+ 
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-range--spell.html.twig
+   * field--node--field-spell-range.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-range.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-range field--type-entity-reference field--label-inline">
+    <div class="field--label">Range</div>
+              <div class="field--item"><a href="/spell-ranges/medium" hreflang="en">Medium (60 feet)</a></div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+          
+      
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-target--spell.html.twig
+   * field--node--field-spell-target.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-target.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-target field--type-string field--label-inline">
+    <div class="field--label">Target</div>
+              <div class="field--item">One creature</div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-components--spell.html.twig
+   * field--node--field-spell-components.html.twig
+   * field--node--spell.html.twig
+   x field--field-spell-components.html.twig
+   * field--entity-reference.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-components.html.twig' -->
+<div class="field--label spell-components-label">Components: </div>
+<div id="spell-components-display">
+      <span class ='component-value'><a href="/spell-components/vocalized" hreflang="en">Vocalized</a></span>
+      <span class ='component-value'><a href="/spell-components/seen" hreflang="en">Seen</a></span>
+      <span class ='component-value'><a href="/spell-components/material" hreflang="en">Material</a></span>
+  </div>
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-components.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spellcomponent-description--spell.html.twig
+   * field--node--field-spellcomponent-description.html.twig
+   * field--node--spell.html.twig
+   * field--field-spellcomponent-description.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-spellcomponent-description field--type-string field--label-hidden field--item">a mechanical device that  has been completely disassembled</div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  
+
+    <div id="duration">
+      <div class="field--label spell-duration-label">Duration: </div>
+                  Concentration (
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-duration--spell.html.twig
+   * field--node--field-spell-duration.html.twig
+   * field--node--spell.html.twig
+   x field--field-spell-duration.html.twig
+   * field--entity-reference.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-duration.html.twig' -->
+    <span class ='duration-value'><a href="/spell-durations/1-minute" hreflang="en">1 minute</a></span>
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-duration.html.twig' -->
+
+)   
+            </div>
+
+          
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-saving-throw-desc--spell.html.twig
+   * field--node--field-spell-saving-throw-desc.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-saving-throw-desc.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-saving-throw-desc field--type-string field--label-inline">
+    <div class="field--label">Saving Throw</div>
+              <div class="field--item">Charisma Negates</div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+   
+        
+    <div id="spell-body">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--spell.html.twig
+   * field--node--body.html.twig
+   * field--node--spell.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>You imagine a creature you can see within range in a deconstructed and simplified form. The target must make a Charisma 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/rules/saving-throw" title="Click to view a local node." hreflang="en">saving throw</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+. On a failed save, the target becomes a barely recognizable, abstracted version of itself until the spell ends.</p>
+
+<p>An abstracted creature’s speed is halved, it takes a −2 penalty to AC and Dexterity saving throws, and it can’t use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature’s abilities or magic items, it can’t make more than one melee or ranged attack during its turn.</p>
+
+<p>At the end of each of its turns, an abstracted target repeats the saving throw to end the spell’s effect on it.</p>
+</div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+</div>   
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spellcast-at-higher-levels--spell.html.twig
+   * field--node--field-spellcast-at-higher-levels.html.twig
+   * field--node--spell.html.twig
+   * field--field-spellcast-at-higher-levels.html.twig
+   * field--text-long.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spellcast-at-higher-levels field--type-text-long field--label-above">
+    <div class="field--label">Cast at Higher Levels</div>
+              <div class="field--item"><p>You can choose one additional target for each slot level above 2nd.</p>
+</div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    
+
+    
+    <div class="spell-source rules-source">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-source--spell.html.twig
+   * field--node--field-spell-source.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-source.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-source field--type-entity-reference field--label-inline">
+    <div class="field--label">Source</div>
+              <div class="field--item"><a href="/sources/gate-pass-gazette" hreflang="en">Gate Pass Gazette</a></div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/node/node--spell.html.twig' -->
+
+
 	</div>
 
 <!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
@@ -1248,7 +1622,7 @@
 		</div>
 		
 		
-		<script src="/sites/default/files/js/js_igfADtBCGyeg1Ow6GdmvduTG4EGHZKRTO6ZKh9Yv40g.js"></script>
+		<script src="/sites/default/files/js/js_c-aepnT-EweO1I5OZImRjEyePB9a9DN-ezh0EwpRwbg.js"></script>
 
 	</body>
 </html>

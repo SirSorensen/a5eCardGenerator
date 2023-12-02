@@ -1,4 +1,4 @@
-from WebScraping.a5eScraper import a5e_scrape_source_text
+from Web.a5eScraper import a5e_scrape_source_text
 
 class MaterialComponent:
     def __init__(self, text: str):
@@ -69,5 +69,6 @@ class Spell:
     
 def scrape_spell(spell_name:str) -> str:
     spell_name = spell_name.replace(" ", "-").lower()
-    return a5e_scrape_source_text(spell_name, "spells/", r"Outputs\\Spells\\")
+    print("Scraping spell: " + spell_name + "...")
+    return a5e_scrape_source_text(spell_name, "spell/", r"Outputs\\Spells\\")
 
