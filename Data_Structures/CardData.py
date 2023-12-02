@@ -1,4 +1,4 @@
-from Web.SourceCodeInterpreter import CodeInterpreter
+from Web import DataStructureExtractor
 from Web.a5eScraper import a5e_scrape_source_text
 
 
@@ -24,11 +24,11 @@ class CardData:
 
         field_dict = {}
         for class_ in field_classes:
-            _code_interpreter : CodeInterpreter= self._code_interpreter
+            _code_interpreter : DataStructureExtractor= self._code_interpreter
             field_dict[CardData.key_namer(class_)] = _code_interpreter.extract_field_information(field_class=class_)
         
         for id in field_ids:
-            _code_interpreter : CodeInterpreter= self._code_interpreter
+            _code_interpreter : DataStructureExtractor= self._code_interpreter
             field_dict[CardData.key_namer(id)] = _code_interpreter.extract_field_information(field_id=id)
 
         return field_dict

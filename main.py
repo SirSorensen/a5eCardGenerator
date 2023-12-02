@@ -1,13 +1,15 @@
-from Web import SourceCodeInterpreter
-from Web import a5eScraper
+
+from Web.ListScraper import ListScraper
 from tests import load_saved_spells_test
 
 
 
+list_scraper = ListScraper()
+filepath = list_scraper.scrape_table()
+print("Filepath:", filepath)
+list_scraper.extract_table("Outputs\\Lists\\source_text_1.txt")
 
-filepath = a5eScraper.a5e_scrape_source_text("1", "spells?combine=&field_spell_ritual_value=All&page=", r"Lists\\")
+next_list = list_scraper.get_all_lists_test()
 
-code_interpreter = SourceCodeInterpreter.CodeInterpreter(filepath)
-code_interpreter.prettify_soup()
 
 # load_saved_spells_test()

@@ -1,5 +1,5 @@
 from Data_Structures.CardData import CardData
-from Web.SourceCodeInterpreter import CodeInterpreter
+from Web import DataStructureExtractor
 
 
 class MaterialComponent:
@@ -22,7 +22,7 @@ class Spell(CardData):
         if scrape_source_text: 
                 super(Spell, self).scrape(web_location)
 
-        self._code_interpreter = CodeInterpreter(self.get_filepath(web_location))
+        self._code_interpreter = DataStructureExtractor(self.get_filepath(web_location))
 
         self.set_fields(self.extract_spell())
     
