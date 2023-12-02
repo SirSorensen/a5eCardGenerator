@@ -26,6 +26,6 @@ class Feat(CardData):
         self.description, self.sub_feats = divideDescription(description)
     
 def scrape_feat(feat_node_id:int):
-    a5e_scrape_source_text(str(feat_node_id), "node/", r"Outputs\\Feats\\")
+    a5e_scrape_source_text(str(feat_node_id), "node/", r"Feats\\")
 
 

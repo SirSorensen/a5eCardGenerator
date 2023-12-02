@@ -1,6 +1,6 @@
 from Data_Structures.CardData import CardData
 from Web.SourceCodeInterpreter import CodeInterpreter
-from Web.a5eScraper import a5e_scrape_source_text
+
 
 class MaterialComponent:
     def __init__(self, text: str):

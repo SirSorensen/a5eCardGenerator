@@ -35,5 +35,5 @@ class CombatManeuver(CardData):
         self.prerequisite = prerequisite
     
 def scrape_combat_manuever(combat_manuever_node_id:int):
-    a5e_scrape_source_text(str(combat_manuever_node_id), "node/", r"Outputs\\Combat Maneuvers\\")
+    a5e_scrape_source_text(str(combat_manuever_node_id), "node/", r"Combat Maneuvers\\")
     

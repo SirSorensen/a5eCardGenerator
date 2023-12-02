@@ -9,7 +9,7 @@ class CardData:
         
         print(f"Scraping {type(self).__name__}: {name}...")
         
-        output_filepath = r"Outputs\\" + type(self).__name__ + r"s\\"
+        output_filepath = type(self).__name__ + r"s\\"
 
         return a5e_scrape_source_text(name, "spell/", output_filepath)
 
