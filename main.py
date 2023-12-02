@@ -28,7 +28,7 @@ def printFont(font):
 
     print()
 
-prs = Presentation("/Users/Daket12/Documents/Programmer(ing)/Private Projekter/CardGenerator/Python/cardCreator-test.pptx")
+prs = Presentation("cardCreator-test.pptx")
 
 
 prs.slides[0].shapes[0].name = 'Background'
