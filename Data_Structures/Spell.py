@@ -101,15 +101,12 @@ class Spell:
         print("Spell target: " + spell_target)
         print("Spell component description: " + spellcomponent_description)
         print("Spell saving throw description: " + spell_saving_throw_desc)
-        print("Spell body: " + body)
         print("Spell cast at higher levels: " + spellcast_at_higher_levels)
         print("Spell source: " + spell_source)
         print("Spell body: " + body)
-        print("Spell body: " + body)
-        print("Spell body: " + body)
 
 # This function scrapes the source code of a spell's internet page
-def scrape_spell(spell_name:str) -> str:
+def scrape_spell(spell_name:str):
     spell_name = spell_name.replace(" ", "-").lower()
     print("Scraping spell: " + spell_name + "...")
     return a5e_scrape_source_text(spell_name, "spell/", r"Outputs\\Spells\\")
@@ -120,5 +117,5 @@ def read_spell_file(spell_name : str) -> str:
     spell_name = spell_name.replace(" ", "-").lower()
     filepath = r"Outputs\\Spells\\source_text_" + spell_name + r".txt"
 
-    with open(filepath, "r") as file:
+    with open(filepath, "r", encoding='utf-8') as file:
         return file.read()
