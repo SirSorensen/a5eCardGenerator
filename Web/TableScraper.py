@@ -5,7 +5,7 @@ from Web.TableExtractor import TableExtractor
 from Web import a5eScraper
 
 
-class ListScraper:
+class TableScraper:
     def __init__(self):
         self.url = "spells?combine=&field_spell_ritual_value=All&page="
         self.page = 1
