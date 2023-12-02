@@ -10,18 +10,15 @@ class CardData:
         print(f"Scraping {type(self).__name__}: {name}...")
         
         output_filepath = r"Outputs\\" + type(self).__name__ + r"s\\"
-        
+
         return a5e_scrape_source_text(name, "spell/", output_filepath)
 
 
     # This function reads the source text of a card's data from a file containing the source text of a card's data's internet page
-    def read_file(self, name : str) -> str:
+    def get_filepath(self, name : str) -> str:
         file_name = name.replace(" ", "-").lower()
 
-        filepath = r"Outputs\\" + type(self).__name__ + r"s\\source_text_" + file_name + r".txt"
-
-        with open(filepath, "r", encoding='utf-8') as file:
-            return file.read()
+        return r"Outputs\\" + type(self).__name__ + r"s\\source_text_" + file_name + r".txt"
     
     # This function extracts a card's data from a source text
     def extract_fields(self, field_classes : list[str], field_ids : list[str]):
@@ -29,11 +26,17 @@ class CardData:
 
         field_dict = {}
         for class_ in field_classes:
-            code_interpreter : CodeInterpreter= self.code_interpreter
-            field_dict[class_] = code_interpreter.extract_field_information(field_class=class_)
+            _code_interpreter : CodeInterpreter= self._code_interpreter
+            field_dict[CardData.key_namer(class_)] = _code_interpreter.extract_field_information(field_class=class_)
         
         for id in field_ids:
-            code_interpreter : CodeInterpreter= self.code_interpreter
-            field_dict[id] = code_interpreter.extract_field_information(field_id=id)
+            _code_interpreter : CodeInterpreter= self._code_interpreter
+            field_dict[CardData.key_namer(id)] = _code_interpreter.extract_field_information(field_id=id)
     
         return field_dict
+
+    def key_namer(key : str):
+        return key.replace("field--", "").replace("name-", "").replace("field-", "").replace("spell-", "").replace("-", "_")
+    
+    def prettify_soup(self):
+        self._code_interpreter.prettify_soup()
