@@ -7,7 +7,7 @@ def extractType(inputStr : str, filetext : str) -> str:
     if result:
         print(result.group(1))
 
-spell = str.lower("ACCELERANDO")
+spell = "ACCELERANDO".lower()
 url = f'https://a5e.tools/spell/{spell}'
 data = requests.get(url)
 

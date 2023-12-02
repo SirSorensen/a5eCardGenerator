@@ -66,6 +66,7 @@ class Spell:
         self.source = source
     
     
-    def scrape_spell(spell_name:str):
-        a5e_scrape_source_text(spell_name, "spells/", r"Outputs\\Spells\\")
+    def scrape_spell(spell_name:str) -> str:
+        spell_name = spell_name.replace(" ", "-").lower()
+        return a5e_scrape_source_text(spell_name, "spells/", r"Outputs\\Spells\\")
 
