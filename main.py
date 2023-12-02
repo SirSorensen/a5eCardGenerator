@@ -1,9 +1,13 @@
 
-from Web_n_Data.Web_Scrapers.TableScraper import TableScraper
-import tests
+from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
+from Web_n_Data.Data_Interpreters.TableToDataStructure import TableToDataStructure
 
 
-tests.scrape_spells_test()
+filepath = "Web_n_Data\Outputs\Lists\Spells\source_text_3.txt"
+table_extractor = TableExtractor(filepath)
+table_to_data_structure = TableToDataStructure("Spell")
+list_of_spells = table_to_data_structure.make_data_structure(table_extractor)
 
-
-# load_saved_spells_test()
+for spell in list_of_spells:
+    print(spell)
+    print("\n\n\n")

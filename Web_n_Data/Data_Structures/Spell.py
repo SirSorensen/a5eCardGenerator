@@ -15,19 +15,19 @@ class MaterialComponent:
         return f"Consumed? {self.consumed}\n{self.text}"
 
 class Spell(CardData):
-    def __init__(self, name : str, scrape_source_text : bool = False):
-        
+    def __init__(self, name : str, web_url : str = "", scrape_source_text : bool = False, summary : str = str):
+        # Summary = "*"
+        self.summary = summary
+
         web_location = name.replace(" ", "-").lower()
 
-        super(Spell, self).__init__(web_location, scrape_source_text=scrape_source_text)
+        super(Spell, self).__init__(web_location, web_url=web_url, scrape_source_text=scrape_source_text)
 
         self.set_fields(self.extract_spell())
     
     def set_fields(self, field_dict : dict):
         # Name = "*"
         self.name = self._code_interpreter.extract_name()
-        # Summary = "*"
-        self.summary = field_dict.get('summary')
         # Level = Cantrip/0, 1st, 2nd, 3rd, 4th, 5th, 6th, 7th, 8th, 9th
         self.level = field_dict.get('level')
         # Classical School = Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, Transmutation

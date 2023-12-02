@@ -27,7 +27,7 @@ class CodeInterpreter:
         write_to_file(filepath, self.soup.prettify())
 
 
-    def return_field_result(field_result):
+    def try_unwrap_list(field_result) -> list[str]|str:
         field_result = CodeInterpreter.strip_list(field_result)
 
         if len(field_result) == 1:
@@ -36,7 +36,7 @@ class CodeInterpreter:
         return field_result
 
     def strip_list(list_to_strip : list):
-        return [item.strip() for item in list_to_strip]
+        return [item.strip() if isinstance(item, str) else item for item in list_to_strip]
 
     def get_text(item):
         return re.sub(r'\s{2,}', " ", item.get_text(separator=' ').strip())

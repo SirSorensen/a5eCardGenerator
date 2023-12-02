@@ -4,6 +4,8 @@ import os
 
 
 def write_to_file(filepath:str, content:str):
+    print(f"Writing to {filepath}...")
+    
     # Create the file if it doesn't exist
     make_file_if_not_exists(filepath)
     
@@ -17,8 +19,12 @@ def make_file_if_not_exists(filepath:str):
         with open(filepath, "w") as f: pass
 
 def read_file(filepath):
-    with open(filepath, "r", encoding='utf-8') as file:
-        content = file.read()
-        file.close()
-    
+    if os.path.exists(filepath):
+        with open(filepath, "r", encoding='utf-8') as file:
+            content = file.read()
+            file.close()
+    else:
+        print(f"File not found: {filepath}")
+        content = ""
+
     return content

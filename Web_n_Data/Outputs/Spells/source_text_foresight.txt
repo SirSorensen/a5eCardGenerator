@@ -1,0 +1,1589 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--374.html.twig
+   * html--node--%.html.twig
+   * html--spell.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/layout/html.html.twig' -->
+
+<!DOCTYPE html>
+<!--[if IE 8 ]><html   lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "><![endif]-->
+<!--[if IE 9 ]><html   lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "><![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--><html   lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "><!--<![endif]-->
+<head>
+	
+	<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/sites/default/files/Level%20Up%20logo%20just%20hexagonal%20dragon%20element%20500px.png" type="image/png" />
+<link rel="canonical" href="https://a5e.tools/spell/foresight" />
+<link rel="shortlink" href="https://a5e.tools/node/374" />
+<link rel="revision" href="https://a5e.tools/spell/foresight" />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name ="robots" content="noarchive">
+        <title>Foresight | Level Up</title>
+        <link rel="shortcut icon" href="" type="image/vnd.microsoft.icon" />
+        <link rel="stylesheet" media="all" href="/sites/default/files/css/css_ixfLNt1XW4WVQ4Klp2rXnCgB0you5q1cmXvcfB1RftU.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_tsSJNg6-nZj89UZ9goV2bDuCKTCXxNzzT2k95zDZZSg.css" />
+
+        
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+                        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+        <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+		
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W322M9NC90"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W322M9NC90');
+        </script>
+
+	</head>
+		
+	<body  class="node-374 node-type-spell" style="background:#ddd url() fixed">
+    	<a href="#main-content" class="visually-hidden focusable">
+            Skip to main content
+        </a>
+		
+		<div id="layout" class="boxed">
+			
+            
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--374.html.twig
+   * page--node--%.html.twig
+   * page--node-spell.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/layout/page.html.twig' -->
+<header id="header">
+	<div class="a_head">
+		<div class="row clearfix">
+			<div class="breaking_news lefter">
+				<div class="freq_out">
+					<div class="freq"><div class="inner_f"></div><div id="layerBall"></div></div>
+				</div><!-- /freq -->
+
+				 
+
+			</div><!-- /breaking news -->
+
+			<div class="right_bar">
+				<div class="social social_head">
+
+					<a href="https://twitter.com/enpublishingrpg" class="bottomtip" title="Twitter"><i class="fa-twitter"></i></a>					<a href="https://www.facebook.com/groups/1216176805400078" class="bottomtip" title="Facebook"><i class="fa-facebook"></i></a>																													</div><!-- /social -->
+				
+				 					<span id="date_time"></span><!-- /date -->
+								
+			</div><!-- /right bar -->
+		</div><!-- /row -->
+	</div><!-- /a head -->
+
+	<div class="b_head">
+		<div class="row clearfix">
+			<div class="logo">
+				<a href="/" title="Level Up"> <img src="/sites/default/files/level-up-advanced-fifth-edition-rpg-tools-header-image-open-beta.png" alt="Level Up"> </a>
+			</div><!-- /logo -->
+			
+			 			
+			
+		</div><!-- /row -->
+	</div><!-- /b head -->
+
+	<div class="row clearfix">
+		<div class="sticky_true">
+			<div class="c_head clearfix">
+					
+					
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--primary-menu.html.twig
+   x region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--ipress-main-menu.html.twig
+   * block--system-menu-block--main.html.twig
+   x block--system-menu-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-menu-block.html.twig' -->
+<nav role="navigation" aria-labelledby="block-ipress-main-menu-menu" id="block-ipress-main-menu">
+            
+  <h2 class="visually-hidden" id="block-ipress-main-menu-menu">Main navigation</h2>
+  
+
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'menu__main' -->
+<!-- FILE NAME SUGGESTIONS:
+   x menu--main.html.twig
+   x menu--main.html.twig
+   * menu.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/navigation/menu--main.html.twig' -->
+
+        		    	<ul class="navigation clearfix sf-menu">
+	    
+	    	
+	              		<li class="color10">
+						<a href="/rules/introduction-to-level-up">Sources</a>
+							<ul>
+					        	          		<li>
+						<a href="/rules/adventurers-guide">Adventurer&#039;s Guide</a>
+					</li>
+          		<li>
+						<a href="/rules/trials-and-treasures">Trials &amp; Treasures</a>
+					</li>
+          		<li>
+						<a href="/rules/monstrous-menagerie">Monstrous Menagerie</a>
+					</li>
+          		<li>
+						<a href="/rules/zeitgeist">Adventures in ZEITGEIST</a>
+					</li>
+          		<li>
+						<a href="/rules/mythological-figures-and-maleficent-monsters">Mythological Figures &amp; Maleficent Monsters</a>
+					</li>
+          		<li>
+						<a href="/rules/dungeon-delvers-guide">Dungeon Delver&#039;s Guide</a>
+					</li>
+          		<li>
+						<a href="/rules/gate-pass-gazette">Gate Pass Gazette</a>
+					</li>
+          		<li>
+						<a href="/rules/save-kingdom">To Save A Kingdom</a>
+					</li>
+          		<li>
+						<a href="/rules/adventures">Adventures</a>
+					</li>
+          		<li>
+						<a href="/rules/other-content">Other Content</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="/rules/origin">Characters</a>
+							<ul>
+					        	          		<li>
+						<a href="/rules/heritages">Heritages</a>
+					</li>
+          		<li>
+						<a href="/rules/heritage-gifts">Heritage Gifts</a>
+					</li>
+          		<li>
+						<a href="/rules/cultures-0">Cultures</a>
+					</li>
+          		<li>
+						<a href="/rules/backgrounds">Backgrounds</a>
+					</li>
+          		<li>
+						<a href="/rules/destinies">Destinies</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/adventuring-classes">Adventuring Classes</a>
+					</li>
+          		<li>
+						<a href="/rules/archetypes">Archetypes</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/feats">Feats</a>
+					</li>
+          		<li>
+						<a href="/rules/skills">Skills</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li>
+						<a href="https://a5e.tools">Rules</a>
+							<ul>
+					        	          		<li class="color10">
+						<a href="/combat-maneuvers">Combat Maneuvers</a>
+							<ul>
+					        	          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=272&amp;combine=">Adamant Mountain</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=613&amp;combine=">Arcane Knight</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=612&amp;combine=">Beast Unity</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=273&amp;combine=">Biting Zephyr</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=616&amp;combine=">Eldritch Blackguard</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=274&amp;combine=">Mirror&#039;s Glint</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=275&amp;combine=">Mist &amp; Shade</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=276&amp;combine=">Rapid Current</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=277&amp;combine=">Razor&#039;s Edge</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=278&amp;combine=">Sanguine Knot</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=279&amp;combine=">Spirited Steed</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=280&amp;combine=">Tempered Iron</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=281&amp;combine=">Tooth &amp; Claw</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/combat-maneuvers?field_cm_tradition_target_id%5B0%5D=282&amp;combine=">Unending Wheel</a>
+					</li>
+          		<li>
+						<a href="">____________</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/basic-maneuvers">Basic Maneuvers</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="/spells">Spells</a>
+							<ul>
+					        	          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=611&amp;combine=&amp;field_spell_ritual_value=All">Artificer</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=56&amp;combine=&amp;field_spell_ritual_value=All">Bard</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=57&amp;combine=&amp;field_spell_ritual_value=All">Cleric</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=57&amp;combine=&amp;field_spell_ritual_value=All">Druid</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=78&amp;combine=&amp;field_spell_ritual_value=All">Herald</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=81&amp;combine=&amp;field_spell_ritual_value=All">Sorcerer</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=82&amp;combine=&amp;field_spell_ritual_value=All">Warlock</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/spells?field_spell_classes_target_id%5B0%5D=83&amp;combine=&amp;field_spell_ritual_value=All">Wizard</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="/magic-items">Magic Items</a>
+							<ul>
+					        	          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=301&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Armor</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_rarity_target_id%5B0%5D=320&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Artifact</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=302&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Potion</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=303&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Ring</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=304&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Rod</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=305&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Scroll</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=306&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Staff</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=307&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Wand</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=308&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Weapons</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=309&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Wondrous Item</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/magic-items?field_mi_category_target_id%5B0%5D=314&amp;field_mi_cost_value%5Bmin%5D=&amp;field_mi_cost_value%5Bmax%5D=&amp;combine=">Other</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="/monsters">Monsters</a>
+							<ul>
+					        	          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=359&amp;combine=">Aberration</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=360&amp;combine=">Beast</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=361&amp;combine=">Celestial</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=362&amp;combine=">Construct</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=363&amp;combine=">Dragon</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=364&amp;combine=">Elemental</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=365&amp;combine=">Fey</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=366&amp;combine=">Fiend</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=367&amp;combine=">Giant</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=368&amp;combine=">Humanoid</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=369&amp;combine=">Monstrosity</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=370&amp;combine=">Ooze</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=371&amp;combine=">Plant</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/monsters?field_monster_type_target_id%5B0%5D=372&amp;combine=">Undead</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/templates">Templates</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="/exploration-challenges">Exploration Challenges</a>
+							<ul>
+					        	          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=424&amp;combine=">Circumstance</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=425&amp;combine=">Constructed</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=461&amp;combine=">Creatures</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=423&amp;combine=">Supernatural</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=421&amp;combine=">Terrain</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=614&amp;combine=">Traps</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=426&amp;combine=">Urban</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/exploration-challenges?field_explorechall_type_target_id%5B0%5D=422&amp;combine=">Weather</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="">Useful Pages</a>
+							<ul>
+					        	          		<li>
+						<a href="/rules/the-core-rule">The Core Rule</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/character-walkthrough">Character Creation Walkthrough</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/example-ability-check-dcs">Ability Check DCs</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/conditions">Conditions</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/designing-encounters">Designing Encounters</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/designing-monsters">Designing Monsters</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/introduction-to-level-up/character-creation/starting-gear-past-first-level">Starting Gear Past 1st Level</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/treasure">Treasure Tables</a>
+					</li>
+          		<li>
+						<a href="https://a5e.tools/rules/journey-best-practices">Journey Best Practices</a>
+					</li>
+          		<li>
+						<a href="/rules/environment">The Environment</a>
+					</li>
+          		<li>
+						<a href="/rules/equipment-list">Equipment List</a>
+					</li>
+          		<li>
+						<a href="/rules/third-party-products">Third Party Products</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="">Tools</a>
+							<ul>
+					        	          		<li>
+						<a href="/node/2285">Encounter Builder</a>
+					</li>
+          		<li>
+						<a href="/node/2284">Monster Builder</a>
+					</li>
+          		<li>
+						<a href="/node/2292">Object Statistics</a>
+					</li>
+          		<li>
+						<a href="/node/2291">Random Book Titles</a>
+					</li>
+          		<li>
+						<a href="/node/2283">Random Boons &amp; Discoveries</a>
+					</li>
+          		<li>
+						<a href="/node/2290">Random NPCs</a>
+					</li>
+          		<li>
+						<a href="/node/2287">Random Social Encounter</a>
+					</li>
+          		<li>
+						<a href="/node/2288">Random Travel Scenery</a>
+					</li>
+          		<li>
+						<a href="/node/2282">Random Treasure Generator</a>
+					</li>
+          		<li>
+						<a href="/node/2286">Stronghold Builder</a>
+					</li>
+          		<li>
+						<a href="/node/2299">Basic Character Builder</a>
+					</li>
+          		<li>
+						<a href="/node/2311">Dungeon Builder</a>
+					</li>
+          		<li>
+						<a href="">____________</a>
+					</li>
+          		<li>
+						<a href="/node/2294">Dice Roller</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+          		<li class="color10">
+						<a href="https://a5e.tools/blog">Blog</a>
+					</li>
+          		<li>
+						<a href="">Community</a>
+							<ul>
+					        	          		<li>
+						<a href="https://www.enworld.org/forums/level-up-advanced-5th-edition-a5e.697/">Forum</a>
+					</li>
+          		<li>
+						<a href="https://www.facebook.com/groups/1216176805400078">Facebook Group</a>
+					</li>
+          		<li>
+						<a href="https://discordapp.com/invite/cmMHRSP">Chat/Discord</a>
+					</li>
+    	 
+      
+  
+				</ul>
+								
+					</li>
+    	 
+           </ul>
+     
+  
+
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/navigation/menu--main.html.twig' -->
+
+
+  </nav>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-menu-block.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+
+				<!--  Commented out by Shane -->
+				<!--
+				<div class="right_icons">
+				
+
+					<div class="search">
+						<div class="search_icon"><i class="fa-search"></i></div>
+
+						<div class="s_form">
+							<form action="" id="search" method="get">
+								<input id="inputhead" name="search" type="text" onFocus="if (this.value=='Start Searching...') this.value = '';" onBlur="if (this.value=='') this.value = 'Start Searching...';" value="Start Searching..." placeholder="Start Searching ...">
+								<button type="submit"><i class="fa-search"></i></button>
+							</form>
+						</div>
+					</div>
+				</div> end commented out by Shane --> <!-- /right icons -->
+
+			</div><!-- /c head -->
+		</div><!-- /sticky -->
+	</div><!-- /row -->
+</header><!-- /header -->
+		
+		
+
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--breadcrumb.html.twig
+   x region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--ipress-breadcrumbs.html.twig
+   * block--system-breadcrumb-block.html.twig
+   * block--system.html.twig
+   x block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+    <div id="block-ipress-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+        
+                
+                    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'breadcrumb' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/navigation/breadcrumb.html.twig' -->
+    <h2 class="visually-hidden">Breadcrumb</h2>
+    <ul class="bread-crumb clearfix">
+                    <li><a href="/">Home</a></li>
+                            <li><a href="/rules/introduction-to-level-up">Rules</a></li>
+                            <li><a href="/rules/adventurers-guide">Adventurer&#039;s Guide</a></li>
+                            <li><a href="/rules/spellcasting">Spellcasting</a></li>
+                            <li>Foresight</li>
+            	</ul>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/navigation/breadcrumb.html.twig' -->
+
+
+            </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+
+		<div class="page-content">
+			<div class="row clearfix page">
+			<div class="grid_9 alpha">
+				
+				
+								
+									<div class="grid_8 omega posts righter">
+						
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--content.html.twig
+   x region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--ipress-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--ipress-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   x block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+	<div id="block-ipress-content" class="mbf clearfix blockcontent">
+						 
+    	
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--374--full.html.twig
+   * node--374.html.twig
+   * node--spell--full.html.twig
+   x node--spell.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/node/node--spell.html.twig' -->
+
+ 
+    
+<article data-history-node-id="374" role="article" about="/spell/foresight">
+
+  
+     
+
+  
+ <div>
+
+<h1 class="page-header">Foresight</h1>
+
+    <div id="spell-top-line">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-level--spell.html.twig
+   * field--node--field-spell-level.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-level.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-spell-level field--type-entity-reference field--label-hidden field--item"><a href="/spell-levels/ninth" hreflang="en">9th</a></div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+        
+      <div id="spell-level-text">-level (</div>
+          
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-classical-spell-school--spell.html.twig
+   * field--node--field-classical-spell-school.html.twig
+   * field--node--spell.html.twig
+   * field--field-classical-spell-school.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-classical-spell-school field--type-entity-reference field--label-hidden field--item"><a href="/spells/divination" hreflang="en">Divination</a></div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-schools--spell.html.twig
+   * field--node--field-spell-schools.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-schools.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+      <div class="field field--name-field-spell-schools field--type-entity-reference field--label-hidden field--items">
+              <div class="field--item"><a href="/spells/arcane" hreflang="en">Arcane</a></div>
+              <div class="field--item"><a href="/spells/senses" hreflang="en">Senses</a></div>
+              <div class="field--item"><a href="/spells/time" hreflang="en">Time</a></div>
+          </div>
+  
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    <div id="spell-closing-parenthesis">)</div>
+    </div>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-classes--spell.html.twig
+   * field--node--field-spell-classes.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-classes.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-classes field--type-entity-reference field--label-inline">
+    <div class="field--label">Class(es)</div>
+          <div class="field--items">
+              <div class="field--item"><a href="/classes/bard" hreflang="en">Bard</a></div>
+          <div class="field--item"><a href="/classes/druid" hreflang="en">Druid</a></div>
+          <div class="field--item"><a href="/classes/Warlock" hreflang="en">Warlock</a></div>
+          <div class="field--item"><a href="/classes/wizard" hreflang="en">Wizard</a></div>
+              </div>
+      </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-casting-time--spell.html.twig
+   * field--node--field-spell-casting-time.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-casting-time.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-casting-time field--type-entity-reference field--label-inline">
+    <div class="field--label">Casting Time</div>
+              <div class="field--item"><a href="/spell-casting-times/1-minute" hreflang="en">1 Minute</a></div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+ 
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-range--spell.html.twig
+   * field--node--field-spell-range.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-range.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-range field--type-entity-reference field--label-inline">
+    <div class="field--label">Range</div>
+              <div class="field--item"><a href="/spell-ranges/touch" hreflang="en">Touch</a></div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+          
+      
+        
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-components--spell.html.twig
+   * field--node--field-spell-components.html.twig
+   * field--node--spell.html.twig
+   x field--field-spell-components.html.twig
+   * field--entity-reference.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-components.html.twig' -->
+<div class="field--label spell-components-label">Components: </div>
+<div id="spell-components-display">
+      <span class ='component-value'><a href="/spell-components/vocalized" hreflang="en">Vocalized</a></span>
+      <span class ='component-value'><a href="/spell-components/seen" hreflang="en">Seen</a></span>
+      <span class ='component-value'><a href="/spell-components/material" hreflang="en">Material</a></span>
+  </div>
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-components.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spellcomponent-description--spell.html.twig
+   * field--node--field-spellcomponent-description.html.twig
+   * field--node--spell.html.twig
+   * field--field-spellcomponent-description.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-spellcomponent-description field--type-string field--label-hidden field--item">hummingbird feather</div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  
+
+    <div id="duration">
+      <div class="field--label spell-duration-label">Duration: </div>
+          
+          
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-duration--spell.html.twig
+   * field--node--field-spell-duration.html.twig
+   * field--node--spell.html.twig
+   x field--field-spell-duration.html.twig
+   * field--entity-reference.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-duration.html.twig' -->
+    <span class ='duration-value'><a href="/spell-durations/8-hours" hreflang="en">8 hours</a></span>
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-duration.html.twig' -->
+
+ 
+            </div>
+
+             
+        
+    <div id="spell-body">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--spell.html.twig
+   * field--node--body.html.twig
+   * field--node--spell.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>You impart the ability to see flashes of the immediate future. The target can’t be surprised and has 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/node/130" title="Click to view a local node." hreflang="en">advantage</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+ on ability checks, attack rolls, and 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/rules/saving-throw" title="Click to view a local node." hreflang="en">saving throws</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+. Other creatures have 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/node/137" title="Click to view a local node." hreflang="en">disadvantage</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+ on 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/rules/making-attack" title="Click to view a local node." hreflang="en">attack rolls</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+ against the target.</p>
+</div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+</div>   
+    
+    
+
+    
+    <div class="spell-source rules-source">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-spell-source--spell.html.twig
+   * field--node--field-spell-source.html.twig
+   * field--node--spell.html.twig
+   * field--field-spell-source.html.twig
+   * field--entity-reference.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+  <div class="field field--name-field-spell-source field--type-entity-reference field--label-inline">
+    <div class="field--label">Source</div>
+              <div class="field--item"><a href="/sources/adventurers-guide" hreflang="en">﻿Adventurer&#039;s Guide</a></div>
+          </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/node/node--spell.html.twig' -->
+
+
+	</div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+					</div>
+													
+			</div>
+							<div class="grid_3 omega sidebar sidebar_a">
+					
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--sidebar-second.html.twig
+   x region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--ipress-search.html.twig
+   * block--search-form-block.html.twig
+   * block--search.html.twig
+   x block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+    <div  class="search-block-form widget" data-drupal-selector="search-block-form" id="block-ipress-search" role="search">
+        
+                	<div class="title"><h4>Search</h4></div>
+                
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'form' -->
+<!-- FILE NAME SUGGESTIONS:
+   * form--search-block-form.html.twig
+   x form.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/form/form.html.twig' -->
+<form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+  <div class="form-group">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'form_element' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/form/form-element.html.twig' -->
+<div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'form_element_label' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/form/form-element-label.html.twig' -->
+<label for="edit-keys" class="visually-hidden">Search</label>
+<!-- END OUTPUT from 'core/themes/stable/templates/form/form-element-label.html.twig' -->
+
+
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'input__search' -->
+<!-- FILE NAME SUGGESTIONS:
+   * input--search.html.twig
+   x input.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/form/input.html.twig' -->
+<input title="Enter the terms you wish to search for." placeholder="Search..." class="search-field form-search" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" />
+
+<!-- END OUTPUT from 'core/themes/stable/templates/form/input.html.twig' -->
+
+
+        </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/form/form-element.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'container' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/container.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'input__submit' -->
+<!-- FILE NAME SUGGESTIONS:
+   * input--submit.html.twig
+   * input--submit--search-submit.html.twig
+   x input.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/form/input.html.twig' -->
+<input data-search-submit="search_submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit" />
+
+<!-- END OUTPUT from 'core/themes/stable/templates/form/input.html.twig' -->
+
+</div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/container.html.twig' -->
+
+
+</form>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/form/form.html.twig' -->
+
+
+    </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--views-block--blog-block-1.html.twig
+   * block--views-block--blog-block-1.html.twig
+   * block--views-block.html.twig
+   * block--views.html.twig
+   x block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+    <div  class="views-element-container widget" id="block-views-block-blog-block-1">
+        
+                	<div class="title"><h4>Recent Blog Posts</h4></div>
+                
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'container' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/container.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view' -->
+<!-- FILE NAME SUGGESTIONS:
+   * views-view--blog.html.twig
+   x views-view.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/views/views-view.html.twig' -->
+<div class="view view-blog view-id-blog view-display-id-block_1 js-view-dom-id-8bd23c65f029ea930217df90c469f1402b10bb93606153b76ce94306af61aab2">
+  
+    
+      
+      <div class="view-content">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_list' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-list.html.twig' -->
+<div class="item-list">
+  
+  <ul>
+
+          <li>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_fields' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+<div class="views-field views-field-title"><span class="field-content">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_field' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+<a href="/node/3308" hreflang="en">Top Tools Site Pages</a>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+
+</span></div>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+
+</li>
+          <li>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_fields' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+<div class="views-field views-field-title"><span class="field-content">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_field' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+<a href="/node/3271" hreflang="en">Gate Pass Gazette Issue #16 Added</a>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+
+</span></div>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+
+</li>
+          <li>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_fields' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+<div class="views-field views-field-title"><span class="field-content">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_field' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+<a href="/node/3238" hreflang="en">Gate Pass Gazette Issue #15 Added</a>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+
+</span></div>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+
+</li>
+          <li>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_fields' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+<div class="views-field views-field-title"><span class="field-content">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_field' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+<a href="/node/3196" hreflang="en">To Save A Kingdom Player Content</a>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+
+</span></div>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+
+</li>
+          <li>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_fields' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+<div class="views-field views-field-title"><span class="field-content">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'views_view_field' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+<a href="/node/3182" hreflang="en">Feats Content Redesign</a>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-field.html.twig' -->
+
+</span></div>
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-fields.html.twig' -->
+
+</li>
+    
+  </ul>
+
+</div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/views/views-view-list.html.twig' -->
+
+
+    </div>
+  
+          
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'container' -->
+<!-- FILE NAME SUGGESTIONS:
+   * container--more-link.html.twig
+   * container--more-link--blog.html.twig
+   * container--more-link--block.html.twig
+   * container--more-link--blog--block.html.twig
+   * container--more-link--block-1.html.twig
+   * container--more-link--blog--block-1.html.twig
+   x container.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/container.html.twig' -->
+<a href="/blog">More blog posts</a>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/container.html.twig' -->
+
+
+      </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/views/views-view.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/container.html.twig' -->
+
+
+    </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--maina5esite.html.twig
+   * block--block-content--5682a2f9-8bbb-4924-97d7-9e8d92963a9d.html.twig
+   * block--block-content.html.twig
+   * block--bundle--basic.html.twig
+   * block--block-content.html.twig
+   x block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+    <div  id="block-maina5esite" class="widget">
+        
+                	<div class="title"><h4>Looking For The Main A5E Site?</h4></div>
+                
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--block-content--body--basic.html.twig
+   * field--block-content--body.html.twig
+   * field--block-content--basic.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p><em>Level Up: Advanced 5th Edition</em> is an "advanced", standalone version of the 5E ruleset. It adds more customization and depth to the game. A5E is 100% compatible with 5E, however, it is a core ruleset. It includes everything you need to play. </p>
+
+<p><strong>This</strong> website is a tools resource for A5E. <a href="https://www.levelup5e.com/">Please click here to visit the main Level Up: Advanced 5th Edition website</a>.</p>
+</div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--betatoolset.html.twig
+   * block--block-content--f732c717-3eca-41a7-80cd-6c097922628d.html.twig
+   * block--block-content.html.twig
+   * block--bundle--basic.html.twig
+   * block--block-content.html.twig
+   x block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+    <div  id="block-betatoolset" class="widget">
+        
+                	<div class="title"><h4>Open Beta Toolset</h4></div>
+                
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--block-content--body--basic.html.twig
+   * field--block-content--body.html.twig
+   * field--block-content--basic.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>This is an OPEN BETA toolset, and is a work-in-progress. Content, appearance, and functionality are continually being added and tweaked. This is all part of the process. Please be patient!</p>
+</div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--opengamingcontentnotice.html.twig
+   * block--block-content--1f9eacb2-effc-489f-a93d-ea39614c6659.html.twig
+   * block--block-content.html.twig
+   * block--bundle--basic.html.twig
+   * block--block-content.html.twig
+   x block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+    <div  id="block-opengamingcontentnotice" class="widget">
+        
+                	<div class="title"><h4>Open Gaming Content Notice</h4></div>
+                
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--block-content--body--basic.html.twig
+   * field--block-content--body.html.twig
+   * field--block-content--basic.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>Open Gaming Content and Creative Commons content can be found in the separate A5E System Reference Document, <a href="https://a5esrd.com/a5esrd">available to download as a PDF</a>. This online toolset is <strong>not</strong> the A5ESRD and should not be used as a reference for open content.</p>
+</div>
+      
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+    </div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/block.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+				</div>
+					</div>
+	</div>
+
+<footer id="footer">
+			<div class="row clearfix">
+				<div class="grid_3">
+											
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--footer-col1.html.twig
+   x region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--ipress-footer.html.twig
+   * block--system-menu-block--footer.html.twig
+   x block--system-menu-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-menu-block.html.twig' -->
+<nav role="navigation" aria-labelledby="block-ipress-footer-menu" id="block-ipress-footer">
+            
+  <h2 class="visually-hidden" id="block-ipress-footer-menu">Footer menu</h2>
+  
+
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'menu__footer' -->
+<!-- FILE NAME SUGGESTIONS:
+   x menu--footer.html.twig
+   x menu--footer.html.twig
+   * menu.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/navigation/menu--footer.html.twig' -->
+
+              <ul class="footer-nav">
+                    <li class="menu-item">
+        <a href="/node/1632" data-drupal-link-system-path="node/1632">Help</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/2424" data-drupal-link-system-path="node/2424">Open Game License</a>
+              </li>
+        </ul>
+  
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/navigation/menu--footer.html.twig' -->
+
+
+  </nav>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-menu-block.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/blocks/region.html.twig' -->
+
+
+					 					
+				</div><!-- /grid3 -->
+
+				<div class="grid_3">
+										 
+					
+				</div><!-- /grid3 -->
+
+				<div class="grid_3">
+									</div><!-- /grid3 -->
+
+				<div class="grid_3">
+										
+				</div><!-- /grid3 -->
+
+			</div><!-- /row -->
+
+			<div class="row clearfix">
+				<div class="footer_last">
+								<span class="copyright">
+					Copyright 2021 EN Publishing
+				</span>
+								
+					
+
+					<div id="toTop" class="toptip" title="Back to Top"><i class="icon-arrow-thin-up"></i></div>
+				</div><!-- /last footer -->
+			</div><!-- /row -->
+
+		</footer>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+            
+		</div>
+		
+		
+		<script src="/sites/default/files/js/js_c-aepnT-EweO1I5OZImRjEyePB9a9DN-ezh0EwpRwbg.js"></script>
+
+	</body>
+</html>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/layout/html.html.twig' -->
+
