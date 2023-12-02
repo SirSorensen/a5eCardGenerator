@@ -33,7 +33,7 @@
         <title>Accelerando | Level Up</title>
         <link rel="shortcut icon" href="" type="image/vnd.microsoft.icon" />
         <link rel="stylesheet" media="all" href="/sites/default/files/css/css_ixfLNt1XW4WVQ4Klp2rXnCgB0you5q1cmXvcfB1RftU.css" />
-<link rel="stylesheet" media="all" href="/sites/default/files/css/css_-mIoiCZkcGJdoINYyzeAUmC-JeP2HP4G_smJr4Dn8_M.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_tsSJNg6-nZj89UZ9goV2bDuCKTCXxNzzT2k95zDZZSg.css" />
 
         
 <!--[if lte IE 8]>
@@ -1289,7 +1289,7 @@
    x views-view.html.twig
 -->
 <!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/views/views-view.html.twig' -->
-<div class="view view-blog view-id-blog view-display-id-block_1 js-view-dom-id-ecc8d9189f506ff6f0623f96c18e0f40e0ffacc88a175ac9feef088c29834c20">
+<div class="view view-blog view-id-blog view-display-id-block_1 js-view-dom-id-8bd23c65f029ea930217df90c469f1402b10bb93606153b76ce94306af61aab2">
   
     
       

@@ -2,5 +2,10 @@
     "cSpell.words": [
         "Shapechanging",
         "Scrying"
+    ],
+    "python.analysis.extraPaths": [
+        "./WebScraping",
+        "./Data Structures",
+        "./Old Modules"
     ]
 }
