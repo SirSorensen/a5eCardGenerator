@@ -1,6 +1,4 @@
+from Data_Structures.Spell import scrape_spell
+from WebScraping import a5eScraper
 
-
-from Data_Structures import Spell
-
-
-Spell.scrape_spell("abstraction")
+scrape_spell("abstraction")

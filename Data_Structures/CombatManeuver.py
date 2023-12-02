@@ -1,6 +1,4 @@
-
-
-from a5eScraper import a5e_scrape_source_text
+from WebScraping.a5eScraper import a5e_scrape_source_text
 
 
 class CombatManeuver:
@@ -35,6 +33,6 @@ class CombatManeuver:
         # Prerequisite: "*"
         self.prerequisite = prerequisite
     
-    def scrape_combat_manuever(combat_manuever_node_id:int):
-        a5e_scrape_source_text(str(combat_manuever_node_id), "node/", r"Outputs\\Combat Maneuvers\\")
+def scrape_combat_manuever(combat_manuever_node_id:int):
+    a5e_scrape_source_text(str(combat_manuever_node_id), "node/", r"Outputs\\Combat Maneuvers\\")
     
