@@ -1,7 +1,8 @@
 {
     "cSpell.words": [
+        "Scrying",
         "Shapechanging",
-        "Scrying"
+        "spellcast"
     ],
     "python.analysis.extraPaths": [
         "./Web",

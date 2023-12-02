@@ -74,14 +74,39 @@ class Spell:
     # This function extracts a spell from a source text
     def extract_spell(self, spell_source_text : str):
         print("Extracting spell...")
-        
-        spell_level = self.code_interpreter.extract_single("spell-level")
-        classical_spell_school = self.code_interpreter.extract_single("classical-spell-school")
-        spellcomponent_description = self.code_interpreter.extract_single("spellcomponent-description")
+    
+        spell_level = self.code_interpreter.extract_field_information("field-spell-level")
+        classical_spell_school = self.code_interpreter.extract_field_information("field-classical-spell-school")
+        spell_schools = self.code_interpreter.extract_field_information("field-spell-schools")
+        spell_classes = self.code_interpreter.extract_field_information("field-spell-classes")
+        spell_casting_time = self.code_interpreter.extract_field_information("field-spell-casting-time")
+        spell_range = self.code_interpreter.extract_field_information("field-spell-range")
+        spell_target = self.code_interpreter.extract_field_information("field-spell-target")
+        spellcomponent_description = self.code_interpreter.extract_field_information("field-spellcomponent-description")
+        spell_saving_throw_desc = self.code_interpreter.extract_field_information("field-spell-saving-throw-desc")
+        body = self.code_interpreter.extract_field_information("body")
+        spellcast_at_higher_levels = self.code_interpreter.extract_field_information("field-spellcast-at-higher-levels")
+        spell_source = self.code_interpreter.extract_field_information("field-spell-source")
+        body = self.code_interpreter.extract_field_information("body")
+        body = self.code_interpreter.extract_field_information("body")
+        body = self.code_interpreter.extract_field_information("body")
 
+        print("Spell extracted!")
         print("Spell level: " + spell_level)
         print("Classical spell school: " + classical_spell_school)
+        print("Spell schools: " + str(spell_schools))
+        print("Spell classes: " + str(spell_classes))
+        print("Spell casting time: " + spell_casting_time)
+        print("Spell range: " + spell_range)
+        print("Spell target: " + spell_target)
         print("Spell component description: " + spellcomponent_description)
+        print("Spell saving throw description: " + spell_saving_throw_desc)
+        print("Spell body: " + body)
+        print("Spell cast at higher levels: " + spellcast_at_higher_levels)
+        print("Spell source: " + spell_source)
+        print("Spell body: " + body)
+        print("Spell body: " + body)
+        print("Spell body: " + body)
 
 # This function scrapes the source code of a spell's internet page
 def scrape_spell(spell_name:str) -> str:
