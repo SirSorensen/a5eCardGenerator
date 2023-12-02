@@ -31,7 +31,7 @@ class CardData:
     
     # This function extracts a card's data from a source text
     def extract_fields(self, field_classes : list[str], field_ids : list[str]):
-        print(f"Extracting fields for {type(self).__name__}...")
+        print(f"Extracting fields for {type(self).__name__} \'{self.title}\'...")
 
         field_dict = {}
         for class_ in field_classes:

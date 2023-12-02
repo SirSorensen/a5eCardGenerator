@@ -1,18 +1,6 @@
 from Web_n_Data.Data_Structures.CardData import CardData
 
 
-class MaterialComponent:
-    def __init__(self, text: str):
-        self.text = text
-        self.consumed = MaterialComponent.evalIfConsumed(text)
-        
-    # TODO: Check if this works
-    def evalIfConsumed(text: str) -> bool:
-        return "consumed" in text.lower()
-
-    def __str__(self):
-        return f"Consumed? {self.consumed}\n{self.text}"
-
 class Spell(CardData):
     def __init__(self, name : str, web_url : str = "", scrape_source_text : bool = False, summary : str = str):
         # Summary = "*"
@@ -125,3 +113,16 @@ class Spell(CardData):
 
         # Concatenate the field strings with newlines
         return '\n'.join(field_strings)
+
+
+class MaterialComponent:
+    def __init__(self, text: str):
+        self.text = text
+        self.consumed = MaterialComponent.evalIfConsumed(text)
+        
+    # TODO: Check if this works
+    def evalIfConsumed(text: str) -> bool:
+        return "consumed" in text.lower()
+
+    def __str__(self):
+        return f"Consumed? {self.consumed}\n{self.text}"
