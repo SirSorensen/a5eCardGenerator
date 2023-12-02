@@ -3,7 +3,7 @@ from Web.a5eScraper import a5e_scrape_source_text
 
 
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
-class CardData:  
+class CardData:
     # This function scrapes the source code of a card's data's internet page
     def scrape (self, name : str):
         
