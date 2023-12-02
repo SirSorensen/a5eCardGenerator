@@ -4,6 +4,7 @@ class MaterialComponent:
     def __init__(self, text: str):
         self.text = text
         self.consumed = self.evalIfConsumed(text)
+        
     # TODO: Check if this works
     def evalIfConsumed(text: str) -> bool:
         return "consumed" in text.lower()
