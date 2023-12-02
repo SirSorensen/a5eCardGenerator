@@ -1,4 +1,4 @@
-from Web_n_Data.Data_Interpreters import DataStructureExtractor
+from Web_n_Data.Data_Interpreters.DataStructureExtractor import DataStructureExtractor
 from Web_n_Data.Web_Scrapers.a5eScraper import a5e_scrape_source_text
 
 

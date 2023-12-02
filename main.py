@@ -1,11 +1,9 @@
 
 from Web_n_Data.Web_Scrapers.TableScraper import TableScraper
-from tests import load_saved_spells_test
+import tests
 
 
-
-list_scraper = TableScraper()
-filepath = list_scraper.get_all_tables()
+tests.scrape_spells_test()
 
 
 # load_saved_spells_test()
