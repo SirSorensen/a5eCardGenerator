@@ -1,3 +1,4 @@
-from Data_Structures.Spell import scrape_spell
+from Data_Structures.Spell import read_spell_file
+from Data_Structures.Spell import extract_spell
 
-scrape_spell("abstraction")
+extract_spell(read_spell_file("abstraction"))
