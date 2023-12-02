@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from Web.CodeInterpreter import CodeInterpreter
+from Data_Interpreters.CodeInterpreter import CodeInterpreter
 
 
 class TableExtractor(CodeInterpreter):

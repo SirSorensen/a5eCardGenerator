@@ -1,6 +1,6 @@
 
 
-from Web.CodeInterpreter import CodeInterpreter
+from Data_Interpreters.CodeInterpreter import CodeInterpreter
 
 
 class DataStructureExtractor(CodeInterpreter):

@@ -2,8 +2,8 @@
 
 import time
 from FileHandler.FileHandler import write_to_file
-from Web.TableExtractor import TableExtractor
-from Web import a5eScraper
+from Data_Interpreters.TableExtractor import TableExtractor
+from Web_Scrapers import a5eScraper
 
 
 class TableScraper:
@@ -38,6 +38,8 @@ class TableScraper:
             self.page += 1
             time.sleep(2)
             self.get_all_tables()
+    
+
         
 
 

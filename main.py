@@ -1,5 +1,5 @@
 
-from Web.TableScraper import TableScraper
+from Web_Scrapers.TableScraper import TableScraper
 from tests import load_saved_spells_test
 
 
