@@ -1,0 +1,208 @@
+Note: Anything writte '-- whatever --' is by me, and to indicate sections.
+
+-- Spell level --
+<div class="field field--name-field-spell-level field--type-entity-reference field--label-hidden field--item"><a href="/spell-levels/second" hreflang="en">2nd</a></div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+
+<div id="spell-level-text">-level (</div>
+
+
+-- Classical Spell School --
+<div class="field field--name-field-classical-spell-school field--type-entity-reference field--label-hidden field--item"><a href="/spells/transmutation" hreflang="en">Transmutation</a></div>
+
+
+-- Spell Schools --
+<div class="field field--name-field-spell-schools field--type-entity-reference field--label-hidden field--items">
+<div class="field--item"><a href="/spells/affliction" hreflang="en">Affliction</a></div>
+<div class="field--item"><a href="/spells/prismatic" hreflang="en">Prismatic</a></div>
+<div class="field--item"><a href="/spells/transformation" hreflang="en">Transformation</a></div>
+</div>
+
+
+-- Class(es) --
+<div class="field field--name-field-spell-classes field--type-entity-reference field--label-inline">
+<div class="field--label">Class(es)</div>
+<div class="field--items">
+<div class="field--item"><a href="/classes/bard" hreflang="en">Bard</a></div>
+<div class="field--item"><a href="/classes/sorcerer" hreflang="en">Sorcerer</a></div>
+<div class="field--item"><a href="/classes/Warlock" hreflang="en">Warlock</a></div>
+</div>
+</div>
+
+
+-- Casting time --
+<div class="field field--name-field-spell-casting-time field--type-entity-reference field--label-inline">
+<div class="field--label">Casting Time</div>
+<div class="field--item"><a href="/spell-casting-times/1-action" hreflang="en">1 Action</a></div>
+</div>
+
+
+-- Range --
+<div class="field field--name-field-spell-range field--type-entity-reference field--label-inline">
+<div class="field--label">Range</div>
+<div class="field--item"><a href="/spell-ranges/medium" hreflang="en">Medium (60 feet)</a></div>
+</div>
+
+
+-- Target --
+<div class="field field--name-field-spell-target field--type-string field--label-inline">
+<div class="field--label">Target</div>
+<div class="field--item">One creature</div>
+</div>
+
+
+-- Components --
+<div class="field--label spell-components-label">Components: </div>
+<div id="spell-components-display">
+<span class ='component-value'><a href="/spell-components/vocalized" hreflang="en">Vocalized</a></span>
+<span class ='component-value'><a href="/spell-components/seen" hreflang="en">Seen</a></span>
+<span class ='component-value'><a href="/spell-components/material" hreflang="en">Material</a></span>
+</div>
+
+
+-- Material Components --
+<div class="field field--name-field-spellcomponent-description field--type-string field--label-hidden field--item">a mechanical device that  has been completely disassembled</div>
+
+
+-- Duration --
+<div id="duration">
+<div class="field--label spell-duration-label">Duration: </div>
+Concentration (
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+* field--node--field-spell-duration--spell.html.twig
+* field--node--field-spell-duration.html.twig
+* field--node--spell.html.twig
+x field--field-spell-duration.html.twig
+* field--entity-reference.html.twig
+* field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-duration.html.twig' -->
+<span class ='duration-value'><a href="/spell-durations/1-minute" hreflang="en">1 minute</a></span>
+
+
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field--field-spell-duration.html.twig' -->
+
+)   
+</div>
+
+
+-- Saving Throw --
+<div class="field field--name-field-spell-saving-throw-desc field--type-string field--label-inline">
+<div class="field--label">Saving Throw</div>
+<div class="field--item">Charisma Negates</div>
+</div>
+
+
+-- Spell Body --
+<div id="spell-body">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+* field--node--body--spell.html.twig
+* field--node--body.html.twig
+* field--node--spell.html.twig
+* field--body.html.twig
+* field--text-with-summary.html.twig
+x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>You imagine a creature you can see within range in a deconstructed and simplified form. The target must make a Charisma 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/rules/saving-throw" title="Click to view a local node." hreflang="en">saving throw</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+. On a failed save, the target becomes a barely recognizable, abstracted version of itself until the spell ends.</p>
+
+<p>An abstracted creature’s speed is halved, it takes a −2 penalty to AC and Dexterity saving throws, and it can’t use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature’s abilities or magic items, it can’t make more than one melee or ranged attack during its turn.</p>
+
+<p>At the end of each of its turns, an abstracted target repeats the saving throw to end the spell’s effect on it.</p>
+</div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+</div>   
+
+
+-- Cast at higher level --
+<div class="field field--name-field-spellcast-at-higher-levels field--type-text-long field--label-above">
+<div class="field--label">Cast at Higher Levels</div>
+<div class="field--item"><p>You can choose one additional target for each slot level above 2nd.</p>
+</div>
+</div>
+
+
+
+-- Rare Version --
+<div class="field field--name-field-spell-rare-versions field--type-text-long field--label-above">
+<div class="field--label">Rare Versions</div>
+<div class="field--item"><p><em><strong>Koren’s Agile Accelerando</strong></em>. A target’s additional action can be used to escape a 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/node/642" title="Click to view a local node." hreflang="en">grapple</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+, and targets have 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/node/130" title="Click to view a local node." hreflang="en">advantage</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+on 
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'freelink' -->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+<span class="freelinking-link" ><a href="/rules/saving-throw" title="Click to view a local node." hreflang="en">saving throws</a></span>
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/content/freelink.html.twig' -->
+
+made to avoid or escape a grapple.<br />
+ </p>
+</div>
+</div>
+
+
+
+-- Source --
+<div class="spell-source rules-source">
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+* field--node--field-spell-source--spell.html.twig
+* field--node--field-spell-source.html.twig
+* field--node--spell.html.twig
+* field--field-spell-source.html.twig
+* field--entity-reference.html.twig
+x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+<div class="field field--name-field-spell-source field--type-entity-reference field--label-inline">
+<div class="field--label">Source</div>
+<div class="field--item"><a href="/sources/gate-pass-gazette" hreflang="en">Gate Pass Gazette</a></div>
+</div>
+
+<!-- END OUTPUT from 'themes/contrib/ipress/templates/field/field.html.twig' -->
+
+
+</div>
+
+</div>
+

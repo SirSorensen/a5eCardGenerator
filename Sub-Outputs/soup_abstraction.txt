@@ -1,0 +1,352 @@
+
+
+Abstraction | Level Up
+
+Skip to main content
+
+Main navigation
+
+Sources
+
+Adventurer's Guide
+
+Trials & Treasures
+
+Monstrous Menagerie
+
+Adventures in ZEITGEIST
+
+Mythological Figures & Maleficent Monsters
+
+Dungeon Delver's Guide
+
+Gate Pass Gazette
+
+To Save A Kingdom
+
+Adventures
+
+Other Content
+
+Characters
+
+Heritages
+
+Heritage Gifts
+
+Cultures
+
+Backgrounds
+
+Destinies
+
+Adventuring Classes
+
+Archetypes
+
+Feats
+
+Skills
+
+Rules
+
+Combat Maneuvers
+
+Adamant Mountain
+
+Arcane Knight
+
+Beast Unity
+
+Biting Zephyr
+
+Eldritch Blackguard
+
+Mirror's Glint
+
+Mist & Shade
+
+Rapid Current
+
+Razor's Edge
+
+Sanguine Knot
+
+Spirited Steed
+
+Tempered Iron
+
+Tooth & Claw
+
+Unending Wheel
+
+____________
+
+Basic Maneuvers
+
+Spells
+
+Artificer
+
+Bard
+
+Cleric
+
+Druid
+
+Herald
+
+Sorcerer
+
+Warlock
+
+Wizard
+
+Magic Items
+
+Armor
+
+Artifact
+
+Potion
+
+Ring
+
+Rod
+
+Scroll
+
+Staff
+
+Wand
+
+Weapons
+
+Wondrous Item
+
+Other
+
+Monsters
+
+Aberration
+
+Beast
+
+Celestial
+
+Construct
+
+Dragon
+
+Elemental
+
+Fey
+
+Fiend
+
+Giant
+
+Humanoid
+
+Monstrosity
+
+Ooze
+
+Plant
+
+Undead
+
+Templates
+
+Exploration Challenges
+
+Circumstance
+
+Constructed
+
+Creatures
+
+Supernatural
+
+Terrain
+
+Traps
+
+Urban
+
+Weather
+
+Useful Pages
+
+The Core Rule
+
+Character Creation Walkthrough
+
+Ability Check DCs
+
+Conditions
+
+Designing Encounters
+
+Designing Monsters
+
+Starting Gear Past 1st Level
+
+Treasure Tables
+
+Journey Best Practices
+
+The Environment
+
+Equipment List
+
+Third Party Products
+
+Tools
+
+Encounter Builder
+
+Monster Builder
+
+Object Statistics
+
+Random Book Titles
+
+Random Boons & Discoveries
+
+Random NPCs
+
+Random Social Encounter
+
+Random Travel Scenery
+
+Random Treasure Generator
+
+Stronghold Builder
+
+Basic Character Builder
+
+Dungeon Builder
+
+____________
+
+Dice Roller
+
+Blog
+
+Community
+
+Forum
+
+Facebook Group
+
+Chat/Discord
+
+Breadcrumb
+
+Home
+Rules
+Gate Pass Gazette
+Gate Pass Gazette Issue #14
+Abstraction
+
+Abstraction
+
+2nd
+
+-level (
+
+Transmutation
+
+Affliction
+Prismatic
+Transformation
+
+)
+
+Class(es)
+
+Bard
+Sorcerer
+Warlock
+
+Casting Time
+1 Action
+
+Range
+Medium (60 feet)
+
+Target
+One creature
+
+Components: 
+
+Vocalized
+Seen
+Material
+
+a mechanical device that  has been completely disassembled
+
+Duration: 
+                  Concentration (
+
+1 minute
+
+)   
+
+Saving Throw
+Charisma Negates
+
+You imagine a creature you can see within range in a deconstructed and simplified form. The target must make a Charisma 
+
+saving throw
+
+. On a failed save, the target becomes a barely recognizable, abstracted version of itself until the spell ends.
+An abstracted creature’s speed is halved, it takes a −2 penalty to AC and Dexterity saving throws, and it can’t use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature’s abilities or magic items, it can’t make more than one melee or ranged attack during its turn.
+At the end of each of its turns, an abstracted target repeats the saving throw to end the spell’s effect on it.
+
+Cast at Higher Levels
+You can choose one additional target for each slot level above 2nd.
+
+Source
+Gate Pass Gazette
+
+Search
+
+Search
+
+Recent Blog Posts
+
+Top Tools Site Pages
+
+Gate Pass Gazette Issue #16 Added
+
+Gate Pass Gazette Issue #15 Added
+
+To Save A Kingdom Player Content
+
+Feats Content Redesign
+
+More blog posts
+
+Looking For The Main A5E Site?
+
+Level Up: Advanced 5th Edition is an "advanced", standalone version of the 5E ruleset. It adds more customization and depth to the game. A5E is 100% compatible with 5E, however, it is a core ruleset. It includes everything you need to play. 
+This website is a tools resource for A5E. Please click here to visit the main Level Up: Advanced 5th Edition website.
+
+Open Beta Toolset
+
+This is an OPEN BETA toolset, and is a work-in-progress. Content, appearance, and functionality are continually being added and tweaked. This is all part of the process. Please be patient!
+
+Open Gaming Content Notice
+
+Open Gaming Content and Creative Commons content can be found in the separate A5E System Reference Document, available to download as a PDF. This online toolset is not the A5ESRD and should not be used as a reference for open content.
+
+Footer menu
+
+Help
+
+Open Game License
+
+Copyright 2021 EN Publishing
+
