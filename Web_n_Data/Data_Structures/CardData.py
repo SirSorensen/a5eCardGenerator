@@ -1,5 +1,5 @@
-from Data_Interpreters import DataStructureExtractor
-from Web_Scrapers.a5eScraper import a5e_scrape_source_text
+from Web_n_Data.Data_Interpreters import DataStructureExtractor
+from Web_n_Data.Web_Scrapers.a5eScraper import a5e_scrape_source_text
 
 
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
@@ -24,7 +24,7 @@ class CardData:
 
     # This function reads the source text of a card's data from a file containing the source text of a card's data's internet page
     def get_filepath(self, filename : str) -> str:
-        return r"Outputs\\" + type(self).__name__ + r"s\\source_text_" + filename + r".txt"
+        return r"Web_n_Data\\Outputs\\" + type(self).__name__ + r"s\\source_text_" + filename + r".txt"
     
     # This function extracts a card's data from a source text
     def extract_fields(self, field_classes : list[str], field_ids : list[str]):

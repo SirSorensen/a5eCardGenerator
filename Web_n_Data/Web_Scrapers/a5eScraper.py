@@ -1,12 +1,12 @@
 
 
-from FileHandler.FileHandler import write_to_file
+from Web_n_Data.File_Handlers.FileHandler import write_to_file
 
 
 def a5e_scrape_source_text(name : str, sub_url : str, output_folder : str = "") -> str:
     import requests
 
-    output_folder = r'Outputs\\' + output_folder
+    output_folder = r'Web_n_Data\\Outputs\\' + output_folder
 
     name = str.lower(name)
     output_filepath = f"{output_folder}source_text_{name}.txt"

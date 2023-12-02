@@ -1,7 +1,7 @@
 import os
 import pickle
 
-from FileHandler import FileHandler
+from Web_n_Data.File_Handlers import FileHandler
 
 def save_object(obj):
     filepath = generate_filepath(obj)

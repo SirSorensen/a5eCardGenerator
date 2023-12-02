@@ -1,5 +1,5 @@
-from Data_Structures.CardData import CardData
-from Data_Interpreters import DataStructureExtractor
+from Web_n_Data.Data_Structures.CardData import CardData
+from Web_n_Data.Data_Interpreters import DataStructureExtractor
 
 
 class MaterialComponent:

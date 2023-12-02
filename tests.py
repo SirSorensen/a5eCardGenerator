@@ -1,8 +1,8 @@
 
 
 
-from FileHandler import PickleHandler
-from Data_Structures import Spell
+from Web_n_Data.File_Handlers import PickleHandler
+from Web_n_Data.Data_Structures import Spell
 
 
 def scrape_spells_test():

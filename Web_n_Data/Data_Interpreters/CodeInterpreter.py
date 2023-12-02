@@ -3,7 +3,7 @@ import os
 import re
 from bs4 import BeautifulSoup, Comment
 
-from FileHandler.FileHandler import read_file, write_to_file
+from Web_n_Data.File_Handlers.FileHandler import read_file, write_to_file
 
 
 class CodeInterpreter:
