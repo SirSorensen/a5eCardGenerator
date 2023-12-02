@@ -153,4 +153,4 @@ dmypy.json
 cython_debug/
 
 # User
-Web_n_Data/Outputs/
+.Web_n_Data/Outputs/
