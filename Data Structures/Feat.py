@@ -1,4 +1,7 @@
 
+from a5eScraper import a5e_scrape_source_text
+
+
 class SubFeat:
     def __init__(self,
             name: str = "", description: str = ""
@@ -21,6 +24,9 @@ class Feat:
         self.origin = origin
         self.summary = summary
         self.prerequisites = prerequisites
-        self.description, self.sub_feats = divideDescription(description) 
+        self.description, self.sub_feats = divideDescription(description)
+    
+    def scrape_feat(feat_node_id:int):
+        a5e_scrape_source_text(str(feat_node_id), "node/", r"Outputs\\Feats\\")
 
 

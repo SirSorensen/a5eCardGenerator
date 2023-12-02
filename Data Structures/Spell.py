@@ -1,3 +1,5 @@
+from a5eScraper import a5e_scrape_source_text
+
 class MaterialComponent:
     def __init__(self, text: str):
         self.text = text
@@ -62,4 +64,8 @@ class Spell:
         self.rare_versions = rare_versions
         # Source = "*"
         self.source = source
+    
+    
+    def scrape_spell(spell_name:str):
+        a5e_scrape_source_text(spell_name, "spells/", r"Outputs\\Spells\\")
 
