@@ -1,4 +1,4 @@
-from Web.SourceCodeInterpreter import extractType
+from Web.SourceCodeInterpreter import CodeInterpreter
 from Web.a5eScraper import a5e_scrape_source_text
 import pip._vendor.requests as requests
 import re
@@ -69,27 +69,25 @@ class Spell:
             # Source = "*"
             self.source = source
         else:
-            self = extract_spell(source_text)
+            self.code_interpreter = CodeInterpreter(source_text)
 
+    # This function extracts a spell from a source text
+    def extract_spell(self, spell_source_text : str):
+        print("Extracting spell...")
+        
+        spell_level = self.code_interpreter.extract_single("spell-level")
+        classical_spell_school = self.code_interpreter.extract_single("classical-spell-school")
+        spellcomponent_description = self.code_interpreter.extract_single("spellcomponent-description")
+
+        print("Spell level: " + spell_level)
+        print("Classical spell school: " + classical_spell_school)
+        print("Spell component description: " + spellcomponent_description)
 
 # This function scrapes the source code of a spell's internet page
 def scrape_spell(spell_name:str) -> str:
     spell_name = spell_name.replace(" ", "-").lower()
     print("Scraping spell: " + spell_name + "...")
     return a5e_scrape_source_text(spell_name, "spell/", r"Outputs\\Spells\\")
-
-# This function extracts a spell from a source text
-def extract_spell(spell_source_text : str) -> Spell:
-    spell_level = extractType("spell-level", spell_source_text)
-    classical_spell_school = extractType("classical-spell-school", spell_source_text)
-    spellcomponent_description = extractType("spellcomponent-description", spell_source_text)
-
-    print("Extracting spell...")
-    print("Spell level: " + spell_level)
-    print("Classical spell school: " + classical_spell_school)
-    print("Spell component description: " + spellcomponent_description)
-
-    return Spell(level=spell_level, classical_school=classical_spell_school, component_material=spellcomponent_description)
 
 
 # This function reads the source text of a spell from a file containing the source text of a spell's internet page
