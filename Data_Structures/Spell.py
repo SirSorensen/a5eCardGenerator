@@ -1,7 +1,7 @@
+from Data_Structures.CardData import CardData
 from Web.SourceCodeInterpreter import CodeInterpreter
 from Web.a5eScraper import a5e_scrape_source_text
-import pip._vendor.requests as requests
-import re
+
 class MaterialComponent:
     def __init__(self, text: str):
         self.text = text
@@ -11,11 +11,11 @@ class MaterialComponent:
     def evalIfConsumed(text: str) -> bool:
         return "consumed" in text.lower()
 
-class Spell:
+class Spell(CardData):
     def __init__(self,
             name:                  str       = "",    summary:          str       = "",
             level:                 int       = 0,     classical_school: str       = "",
-            spell_schools:         list[str] = [""],  classes:          list[str] = [""],
+            schools:               list[str] = [""],  classes:          list[str] = [""],
             casting_time:          str       = "",    ritual:           bool      = False,
             range:                 str       = "",    target:           str       = "",
             area:                  str       = "",    area_shape:       str       = "",
@@ -23,10 +23,10 @@ class Spell:
             component_vocalized:   bool      = False, duration:         str       = "",
             saving_throw:          str       = "",    description:      str       = "",
             cast_at_higher_levels: str       = "",    rare_versions:    str       = [("", "")],
-            source:                str       = "",    source_text:      str       = ""
+            source:                str       = "",    source_name:      str       = "",
             ):
         
-        if source_text == "":
+        if source_name == "":
             # Name = "*"
             self.name = name
             # Summary = "*"
@@ -36,7 +36,7 @@ class Spell:
             # Classical School = Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, Transmutation
             self.classical_school = classical_school
             # Spell School(s) = Acid, Affliction, Air, Arcane, Attack, Beasts, Chaos, Cold, Communication, Compulsion, Divine, Earth, Enhancement, Evil, Fear, Fire, Force, Good, Healing, Knowledge, Law, Lightning, Movement, Nature, Necrotic, Negation, Obscurement, Planar, Plants, Poison, Prismatic, Protection, Psychic, Radiant, Scrying, Senses, Shadow, Shapechanging, Sound, Storm, Summoning, Technological, Teleportation, Terrain, Thunder, Transformation, Utility, Water, Weaponry, Weather
-            self.spell_schools = spell_schools
+            self.schools = schools
             # Class(es) = Artificer, Bard, Cleric, Druid, Herald, Sorcerer, Warlock, Wizard
             self.classes = classes
             # Casting Time = 1 Action, 1 Bonus Action, 1 Hour, 1 Minute, 1 Reaction, 10 Minutes, 12 Hours, 24 Hours, 8 Hours, 1 Week
@@ -69,53 +69,42 @@ class Spell:
             # Source = "*"
             self.source = source
         else:
-            self.code_interpreter = CodeInterpreter(source_text)
+            #self.scrape(source_name)
+            self.code_interpreter = CodeInterpreter(self.read_file(source_name))
+
+    def scrape (self, name : str):
+        return super(Spell, self).scrape(name)
+    
+    def read_file(self, name : str) -> str:
+        return super(Spell, self).read_file(name)
 
     # This function extracts a spell from a source text
-    def extract_spell(self, spell_source_text : str):
-        print("Extracting spell...")
+    def extract_spell(self):
+        field_classes = ["field--name-field-spell-level",
+            "field--name-field-classical-spell-school",
+            "field--name-field-spell-schools",
+            "field--name-field-spell-classes",
+            "field--name-field-spell-casting-time",
+            "field--name-field-spell-range",
+            "field--name-field-spell-target",
+            "field--label spell-duration-label",
+            "field--name-field-spellcomponent-description",
+            "field--name-field-spell-saving-throw-desc",
+            "field--name-field-spellcast-at-higher-levels",
+            "field--name-field-spell-source",
+            "field--name-body"]
+
+        field_ids = [
+            "spell-components-display",
+            "duration"
+            "spell-body",
+            "spell-summary",
+            "spell-description",
+            "spell-rare-versions"]
+
+        field_dict = super(Spell, self).extract_fields(field_classes, field_ids)
     
-        spell_level = self.code_interpreter.extract_field_information("field-spell-level")
-        classical_spell_school = self.code_interpreter.extract_field_information("field-classical-spell-school")
-        spell_schools = self.code_interpreter.extract_field_information("field-spell-schools")
-        spell_classes = self.code_interpreter.extract_field_information("field-spell-classes")
-        spell_casting_time = self.code_interpreter.extract_field_information("field-spell-casting-time")
-        spell_range = self.code_interpreter.extract_field_information("field-spell-range")
-        spell_target = self.code_interpreter.extract_field_information("field-spell-target")
-        spellcomponent_description = self.code_interpreter.extract_field_information("field-spellcomponent-description")
-        spell_saving_throw_desc = self.code_interpreter.extract_field_information("field-spell-saving-throw-desc")
-        body = self.code_interpreter.extract_field_information("body")
-        spellcast_at_higher_levels = self.code_interpreter.extract_field_information("field-spellcast-at-higher-levels")
-        spell_source = self.code_interpreter.extract_field_information("field-spell-source")
-        body = self.code_interpreter.extract_field_information("body")
-        body = self.code_interpreter.extract_field_information("body")
-        body = self.code_interpreter.extract_field_information("body")
-
-        print("Spell extracted!")
-        print("Spell level: " + spell_level)
-        print("Classical spell school: " + classical_spell_school)
-        print("Spell schools: " + str(spell_schools))
-        print("Spell classes: " + str(spell_classes))
-        print("Spell casting time: " + spell_casting_time)
-        print("Spell range: " + spell_range)
-        print("Spell target: " + spell_target)
-        print("Spell component description: " + spellcomponent_description)
-        print("Spell saving throw description: " + spell_saving_throw_desc)
-        print("Spell cast at higher levels: " + spellcast_at_higher_levels)
-        print("Spell source: " + spell_source)
-        print("Spell body: " + body)
-
-# This function scrapes the source code of a spell's internet page
-def scrape_spell(spell_name:str):
-    spell_name = spell_name.replace(" ", "-").lower()
-    print("Scraping spell: " + spell_name + "...")
-    return a5e_scrape_source_text(spell_name, "spell/", r"Outputs\\Spells\\")
-
-
-# This function reads the source text of a spell from a file containing the source text of a spell's internet page
-def read_spell_file(spell_name : str) -> str:
-    spell_name = spell_name.replace(" ", "-").lower()
-    filepath = r"Outputs\\Spells\\source_text_" + spell_name + r".txt"
-
-    with open(filepath, "r", encoding='utf-8') as file:
-        return file.read()
+        for key, value in field_dict.items():
+            key = key.replace("field--", "").replace("name-field-", "").replace("spell-", "").replace("-", "_").capitalize()
+            print(f"\n{key}: {value}")
+        

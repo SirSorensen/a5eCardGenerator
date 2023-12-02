@@ -1,5 +1,5 @@
 from Web.a5eScraper import a5e_scrape_source_text
-
+from Data_Structures.CardData import CardData
 
 class SubFeat:
     def __init__(self,
@@ -16,7 +16,7 @@ def divideDescription(text: str) -> (str, list[SubFeat]):
     return body, sub_feats
 
 
-class Feat:
+class Feat(CardData):
     def __init__(self,
             name: str = "", origin: str = "", summary: str = "", prerequisites: str = "", description: str = ""):
         self.name = name

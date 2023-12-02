@@ -1,7 +1,8 @@
 from Web.a5eScraper import a5e_scrape_source_text
+from Data_Structures.CardData import CardData
 
 
-class CombatManeuver:
+class CombatManeuver(CardData):
     def __init__(self,
             name: str        = "", summary: str      = "",
             description: str = "", points: int       = 0 ,
