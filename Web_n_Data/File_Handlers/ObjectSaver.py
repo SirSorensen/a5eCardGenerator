@@ -1,7 +1,7 @@
 import os
 import pickle
 
-from Web_n_Data.File_Handlers import FileHandler
+from Web_n_Data.File_Handlers.FileHandler import FileHandler
 
 
 def save_object(obj):

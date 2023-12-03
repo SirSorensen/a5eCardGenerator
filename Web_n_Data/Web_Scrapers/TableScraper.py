@@ -1,4 +1,3 @@
-from Web_n_Data.File_Handlers.FileHandler import write_to_file
 from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
 from Web_n_Data.Web_Scrapers import a5eScraper
 

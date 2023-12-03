@@ -2,14 +2,14 @@
 import re
 from bs4 import BeautifulSoup, Comment
 
-from Web_n_Data.File_Handlers.FileHandler import read_file, write_to_file
+from Web_n_Data.File_Handlers.FileHandler import FileHandler
 
 
 class CodeInterpreter:
     def __init__(self, filepath : str):
         self.filepath = filepath
 
-        html_code = read_file(filepath)
+        html_code = FileHandler.read_file(filepath)
 
         self.soup = BeautifulSoup(html_code, 'html.parser')
 
@@ -23,7 +23,7 @@ class CodeInterpreter:
         filename = re.search(r'[^\\]+\.\w+', self.filepath).group()
         filepath = self.filepath.replace(filename, 'Pretty\\' + filename.replace(".txt", ".html"))
             
-        write_to_file(filepath, self.soup.prettify())
+        FileHandler.write_to_file(filepath, self.soup.prettify())
 
 
     def try_unwrap_list(field_result) -> list[str]|str:

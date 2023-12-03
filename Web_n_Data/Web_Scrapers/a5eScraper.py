@@ -2,7 +2,7 @@
 
 import re
 import time
-from Web_n_Data.File_Handlers.FileHandler import write_to_file
+from Web_n_Data.File_Handlers.FileHandler import FileHandler
 import requests
 
 
@@ -29,7 +29,7 @@ def a5e_scrape_source_text(name : str, sub_url : str, output_folder : str = "", 
     else:
         response.raise_for_status()
 
-    write_to_file(output_filepath, response.text)
+    FileHandler.write_to_file(output_filepath, response.text)
 
     time.sleep(3)
     
