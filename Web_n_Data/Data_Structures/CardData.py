@@ -15,7 +15,7 @@ class CardData:
         if scrape_source_text: 
                 self.scrape()
         
-        self._code_interpreter = DataStructureExtractor(self.get_filepath(web_location))
+        self._code_interpreter = DataStructureExtractor(self.get_filepath(self.title))
 
         
     # This function scrapes the source code of a card's data's internet page
@@ -44,7 +44,8 @@ class CardData:
 
         return field_dict
 
-    
+    def title_namer(title : str):
+        return title.replace(" ", "-").replace("/", "-").lower()    
 
     def key_namer(key : str):
         return key.replace("field--", "").replace("name-", "").replace("field-", "").replace("spell-", "").replace("-indicator", "").replace("-", "_")

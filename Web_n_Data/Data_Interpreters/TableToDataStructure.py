@@ -26,13 +26,17 @@ class TableToDataStructure:
         list_of_spells : list[Spell] = []
         
         for i in range(len(list_of_names)):
-            os_filepath = r"Web_n_Data\\Outputs\\Spells\\source_text_" + list_of_names[i][0].replace(" ", "-").lower() + r".txt"
-        
+            os_filepath = r"Web_n_Data\\Outputs\\Spells\\source_text_" + CardData.title_namer(list_of_names[i][0]) + r".txt"
+            scrape_source_text=not os.path.exists(os_filepath)
+
+            if scrape_source_text:
+                print(f"{os_filepath} does not exist.")
+
             list_of_spells.append(Spell(
                 name=list_of_names[i][0],
                 web_url=list_of_names[i][1],
                 summary=list_of_all_summaries[i],
-                scrape_source_text=not os.path.exists(os_filepath)
+                scrape_source_text=scrape_source_text
                 )
             )
         

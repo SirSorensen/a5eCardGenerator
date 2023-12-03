@@ -6,7 +6,7 @@ class Spell(CardData):
         # Summary = "*"
         self.summary = summary
 
-        web_location = name.replace(" ", "-").lower()
+        web_location = CardData.title_namer(name)
 
         super(Spell, self).__init__(web_location, web_url=web_url, scrape_source_text=scrape_source_text)
 
