@@ -30,7 +30,10 @@ def load_object(filename:str, type:str):
     else:
         print(f'Object "{filename}" does not exist')
         return None
-
+    
+def save_object_string(filepath:str, obj:str):
+    print(f"Saving object to {filepath}...")
+    FileHandler.write_to_file(filepath, str(obj))
 
 def generate_filepath(obj):
-    return f"FileHandler\\Saved_Data\\{type(obj).__name__}\\{obj.name}.pkl"
+    return f"Web_n_Data\\Outputs\\Saved_Data\\{type(obj).__name__}\\{obj.name}.pkl"

@@ -13,7 +13,7 @@ class CardData:
             self.web_url = web_url
 
         if scrape_source_text: 
-                self.scrape(web_url)
+                self.scrape()
         
         self._code_interpreter = DataStructureExtractor(self.get_filepath(web_location))
 
