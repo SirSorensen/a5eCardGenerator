@@ -11,6 +11,7 @@ class TableExtractor(CodeInterpreter):
         self.page = page
         self.file_extension = file_extension
         abs_filepath = f"{filepath}{str(page)}{file_extension}"
+        print(f"Extracting data from {abs_filepath}")
         super().__init__(abs_filepath)
 
     # This function extracts a the contents of list tags from a source text 
