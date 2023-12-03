@@ -3,11 +3,16 @@ from Web_n_Data.Data_Interpreters.TableToDataStructure import TableToDataStructu
 from Web_n_Data.File_Handlers.ObjectSaver import ObjectSaver
 from Web_n_Data.Data_Structures.Spell import Spell
 
-def scrape_spell_table_test(spell_page : int = 0, save_object_to_file : bool = False):
+def scrape_spell_table_test(spell_page : int = 0, save_object_to_file : bool = False, save_object_str_to_file:bool = False) -> list[Spell]:
     filepath = f"Outputs\Lists\Spells\source_text_"
     table_extractor = TableExtractor(filepath, spell_page, ".txt")
-    table_to_data_structure = TableToDataStructure("Spell", save_object_to_file=save_object_to_file)
-    list_of_spells = table_to_data_structure.make_data_structures(table_extractor)
+    table_to_data_structure = TableToDataStructure("Spell", save_object_to_file=save_object_to_file, save_object_str_to_file=save_object_str_to_file)
+    return table_to_data_structure.make_data_structures(table_extractor)
+
+
+def prettify_spells_test(list_of_spells: list[Spell]):
+    for spell in list_of_spells:
+        spell.prettify_soup()
 
 
 def scrape_spells_test():

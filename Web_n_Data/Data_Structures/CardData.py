@@ -1,5 +1,5 @@
 from Web_n_Data.Data_Interpreters.DataStructureExtractor import DataStructureExtractor
-from Web_n_Data.Web_Scrapers.a5eScraper import a5e_scrape_source_text
+from Web_n_Data.Web_Scrapers import a5eScraper
 
 
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
@@ -22,7 +22,7 @@ class CardData:
     def scrape(self):        
         output_filepath = type(self).__name__ + r"s\\"
 
-        return a5e_scrape_source_text(self.data_name, output_filepath, url_ending=self.url_ending)
+        return a5eScraper.a5e_scrape_source_text(self.data_name, output_filepath, url_ending=self.url_ending)
 
 
     # This function reads the source text of a card's data from a file containing the source text of a card's data's internet page
@@ -31,14 +31,15 @@ class CardData:
     
     # This function extracts a card's data from a source text
     def extract_fields(self, field_classes : list[str], field_ids : list[str]):
+        print(f"Extracting fields from {self.data_name}...")
         field_dict = {}
         for class_ in field_classes:
-            _code_interpreter : DataStructureExtractor= self._code_interpreter
-            field_dict[CardData.key_namer(class_)] = _code_interpreter.extract_field_information(field_class=class_)
+            field_info = self._code_interpreter.extract_field_information_from_class(class_)
+            field_dict[CardData.key_namer(class_)] = field_info
         
         for id in field_ids:
-            _code_interpreter : DataStructureExtractor= self._code_interpreter
-            field_dict[CardData.key_namer(id)] = _code_interpreter.extract_field_information(field_id=id)
+            field_info = self._code_interpreter.extract_field_information_from_id(id)
+            field_dict[CardData.key_namer(id)] = field_info
 
         return field_dict
 

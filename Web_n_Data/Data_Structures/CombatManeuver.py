@@ -1,4 +1,3 @@
-from Web_n_Data.Web_Scrapers.a5eScraper import a5e_scrape_source_text
 from Web_n_Data.Data_Structures.CardData import CardData
 
 

@@ -3,6 +3,7 @@ from Web_n_Data.Data_Structures.CardData import CardData
 
 class Spell(CardData):
     def __init__(self, name : str, url_ending : str = "", should_scrape_source_text : bool = False, summary : str = str):
+        print(f"Making a Spell! {name}, {url_ending}, {should_scrape_source_text}, {summary}")
         # Summary = "*"
         self.summary = summary
 
@@ -60,7 +61,7 @@ class Spell(CardData):
         self.rare_versions = field_dict.get('rare_versions')
         # Source = "*"
         self.source = field_dict.get('source')
-
+        
     def scrape (self):
         return super(Spell, self).scrape()
 
