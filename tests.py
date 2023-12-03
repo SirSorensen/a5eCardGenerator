@@ -1,8 +1,13 @@
-
-
-
+from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
+from Web_n_Data.Data_Interpreters.TableToDataStructure import TableToDataStructure
 from Web_n_Data.File_Handlers import ObjectSaver
 from Web_n_Data.Data_Structures.Spell import Spell
+
+def scrape_spells_test(spell_page : int = 0):
+    filepath = f"Outputs\Lists\Spells\source_text_{str(spell_page)}.txt"
+    table_extractor = TableExtractor(filepath)
+    table_to_data_structure = TableToDataStructure("Spell", save_object_to_file=True)
+    list_of_spells = table_to_data_structure.make_data_structures(table_extractor)
 
 
 def scrape_spells_test():

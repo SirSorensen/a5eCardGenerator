@@ -27,43 +27,45 @@ def printFont(font):
 
     print()
 
-prs = Presentation("cardCreator-test.pptx")
+def main():
+
+    prs = Presentation("cardCreator-test.pptx")
 
 
-prs.slides[0].shapes[0].name = 'Background'
-prs.slides[0].shapes[1].name = 'Back Image'
-prs.slides[0].shapes[2].name = 'Back Title'
-prs.slides[0].shapes[3].name = 'Back Subtitle'
-prs.slides[0].shapes[4].name = 'Front Subtitle'
-prs.slides[0].shapes[5].name = 'Front Description'
-prs.slides[0].shapes[6].name = 'Front Title'
-prs.slides[0].shapes[7].name = 'Back Icon 1'
+    prs.slides[0].shapes[0].name = 'Background'
+    prs.slides[0].shapes[1].name = 'Back Image'
+    prs.slides[0].shapes[2].name = 'Back Title'
+    prs.slides[0].shapes[3].name = 'Back Subtitle'
+    prs.slides[0].shapes[4].name = 'Front Subtitle'
+    prs.slides[0].shapes[5].name = 'Front Description'
+    prs.slides[0].shapes[6].name = 'Front Title'
+    prs.slides[0].shapes[7].name = 'Back Icon 1'
 
-for shape in prs.slides[0].shapes:
-    print("")
-    print(prs.slides[0].shapes.index(shape), shape.name, type(shape), shape.width, shape.height)
-    if type(shape) is pptx.shapes.picture.Picture:
-        print("Picture!")
-    elif type(shape) is pptx.shapes.autoshape.Shape:
-        print("Autoshape!")
-        #print(shape.text)
+    for shape in prs.slides[0].shapes:
+        print("")
+        print(prs.slides[0].shapes.index(shape), shape.name, type(shape), shape.width, shape.height)
+        if type(shape) is pptx.shapes.picture.Picture:
+            print("Picture!")
+        elif type(shape) is pptx.shapes.autoshape.Shape:
+            print("Autoshape!")
+            #print(shape.text)
 
-    if shape.has_text_frame:
-        textFrame = shape.text_frame
-        print("Number of paragraphs = ", len(textFrame.paragraphs))
-        for par in textFrame.paragraphs:
-            print(par.text)
-            print()
+        if shape.has_text_frame:
+            textFrame = shape.text_frame
+            print("Number of paragraphs = ", len(textFrame.paragraphs))
+            for par in textFrame.paragraphs:
+                print(par.text)
+                print()
 
-            print("Number of runs = ", len(par.runs))
-            for run in par.runs:
-                print(run.text)
-                printFont(run.font)
-    else:  
-        print("No text_frame :(")
-
-
+                print("Number of runs = ", len(par.runs))
+                for run in par.runs:
+                    print(run.text)
+                    printFont(run.font)
+        else:  
+            print("No text_frame :(")
 
 
-prs.save('output-test.pptx')
-        
+
+
+    prs.save('Outputs\\output-test.pptx')
+            
