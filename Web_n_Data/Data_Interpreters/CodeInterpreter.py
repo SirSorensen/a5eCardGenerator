@@ -6,24 +6,23 @@ from Web_n_Data.File_Handlers.FileHandler import FileHandler
 
 
 class CodeInterpreter:
-    def __init__(self, filepath : str):
-        self.filepath = filepath
+    def __init__(self, abs_filepath : str):
+        self.abs_filepath = abs_filepath
 
-        html_code = FileHandler.read_file(filepath)
+        html_code = FileHandler.read_file(abs_filepath)
 
         self.soup = BeautifulSoup(html_code, 'html.parser')
 
     def prettify_soup(self):
-        print(f"Prettifying {self.filepath}...")
+        print(f"Prettifying {self.abs_filepath}...")
 
         comments = self.soup.find_all(string=lambda text: isinstance(text, Comment))
         for comment in comments:
             comment.extract()
 
-        filename = re.search(r'[^\\]+\.\w+', self.filepath).group()
-        filepath = self.filepath.replace(filename, 'Pretty\\' + filename.replace(".txt", ".html"))
+        filename = re.search(r'[^\\]+(?=\.\w+$)', self.abs_filepath).group()
             
-        FileHandler.write_to_file(filepath, self.soup.prettify())
+        FileHandler.write_to_file_name(self.soup.prettify(), self.abs_filepath, filename, ".html")
 
 
     def try_unwrap_list(field_result) -> list[str]|str:

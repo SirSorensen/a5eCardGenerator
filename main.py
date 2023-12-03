@@ -1,4 +1,5 @@
 
 from PowerPoint_Editing import PowerPointInspector
+from tests import *
 
-PowerPointInspector.main()
+scrape_spell_table_test(1, True)

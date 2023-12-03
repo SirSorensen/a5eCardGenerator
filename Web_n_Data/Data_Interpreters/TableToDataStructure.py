@@ -3,7 +3,7 @@ import os
 from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
 from Web_n_Data.Data_Structures.CardData import CardData
 from Web_n_Data.Data_Structures.Spell import Spell
-from Web_n_Data.File_Handlers.ObjectSaver import save_object, save_object_string
+from Web_n_Data.File_Handlers.ObjectSaver import ObjectSaver
 
 
 class TableToDataStructure:
@@ -29,24 +29,26 @@ class TableToDataStructure:
         
         for i in range(len(list_of_names)):
             print(f"\nMaking spell data structure for {list_of_names[i][0]}...")
-            os_filepath = r"Outputs\\Spells\\source_text_" + CardData.title_namer(list_of_names[i][0]) + r".txt"
-            scrape_source_text=not os.path.exists(os_filepath)
-
-            if scrape_source_text:
+            os_filepath = r"Outputs\Spells\source_text_" + CardData.name_to_data_name(list_of_names[i][0]) + r".html"
+            
+            should_scrape_source_text=not os.path.exists(os_filepath)
+            if should_scrape_source_text:
                 print(f"{os_filepath} does not exist.")
             
             spell = Spell(
                 name=list_of_names[i][0],
-                web_url=list_of_names[i][1],
+                url_ending=list_of_names[i][1],
                 summary=list_of_all_summaries[i],
-                scrape_source_text=scrape_source_text
+                should_scrape_source_text=should_scrape_source_text
                 )
 
             list_of_spells.append(spell)
 
+
             if self.save_to_file:
-                save_object(spell)
-                save_object_string(f"Outputs\\Spells\\Strings\\{spell.title}.txt", spell)
+                print(f"Saving {type(spell).__name__} \'{spell.name}\' to file...")
+                ObjectSaver.save_object(spell)
+                ObjectSaver.save_object_string(spell)
                 print("\n")
 
 

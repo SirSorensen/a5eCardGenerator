@@ -2,8 +2,12 @@ from Web_n_Data.Data_Interpreters.CodeInterpreter import CodeInterpreter
 
 
 class TableExtractor(CodeInterpreter):
-    def __init__(self, filepath : str):
-        super().__init__(filepath)
+    def __init__(self, filepath : str, page : int = 0, file_extension : str = ".html"):
+        self.filepath = filepath
+        self.page = page
+        self.file_extension = file_extension
+        abs_filepath = f"{filepath}{str(page)}{file_extension}"
+        super().__init__(abs_filepath)
         
     def extract_list_of_class(self, class_:str) -> list[str]|str:
         field_td = self.soup.find_all('td', class_=class_)

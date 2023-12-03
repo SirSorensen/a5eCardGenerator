@@ -2,13 +2,11 @@ from Web_n_Data.Data_Structures.CardData import CardData
 
 
 class Spell(CardData):
-    def __init__(self, name : str, web_url : str = "", scrape_source_text : bool = False, summary : str = str):
+    def __init__(self, name : str, url_ending : str = "", should_scrape_source_text : bool = False, summary : str = str):
         # Summary = "*"
         self.summary = summary
 
-        web_location = CardData.title_namer(name)
-
-        super(Spell, self).__init__(web_location, web_url=web_url, scrape_source_text=scrape_source_text)
+        super(Spell, self).__init__(name, url_ending=url_ending, should_scrape_source_text=should_scrape_source_text)
 
         self.set_fields(self.extract_spell())
     
@@ -65,9 +63,6 @@ class Spell(CardData):
 
     def scrape (self):
         return super(Spell, self).scrape()
-    
-    def get_filepath(self, name : str) -> str:
-        return super(Spell, self).get_filepath(name)
 
     # This function extracts a spell from a source text
     def extract_spell(self):

@@ -4,14 +4,14 @@ from Web_n_Data.Web_Scrapers import a5eScraper
 
 class TableScraper:
     def __init__(self):
-        self.url = "spells?combine=&field_spell_ritual_value=All&page="
+        self.sub_url = r"spells?combine=&field_spell_ritual_value=All&page="
         self.page = 0
         self.output_filePath = r'Outputs\\Lists\\Spells\\'
         self.scrape_output_filepath = r"Lists\\Spells\\"
         self.table_extractors : list[TableExtractor] = []
 
     def scrape_table(self) -> str:
-        return a5eScraper.a5e_scrape_source_text(str(self.page), self.url, self.scrape_output_filepath)
+        return a5eScraper.a5e_scrape_source_text(str(self.page), self.scrape_output_filepath, sub_url=self.sub_url)
 
     def get_table_extractor(self, index : int) -> TableExtractor:
         return self.table_extractors[index]
