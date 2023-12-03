@@ -40,14 +40,15 @@ class Spell(CardData):
         self.component_seen = False
         self.component_vocalized = False
         
-        for component in field_dict.get('components_display'):
-            if component.lower().startswith("material"):
-                self.component_material = True
-                self.component_material_components = [MaterialComponent(text) for text in field_dict.get('spellcomponent_description').split(",")]
-            elif component.lower().startswith("seen"):
-                self.component_seen = True
-            elif component.lower().startswith("vocalized"):
-                self.component_vocalized = True
+        if field_dict.get('components_display') is not None:
+            for component in field_dict.get('components_display'):
+                if component.lower().startswith("material"):
+                    self.component_material = True
+                    self.component_material_components = [MaterialComponent(text) for text in field_dict.get('spellcomponent_description').split(",")]
+                elif component.lower().startswith("seen"):
+                    self.component_seen = True
+                elif component.lower().startswith("vocalized"):
+                    self.component_vocalized = True
 
         # Duration = Instantaneous, 1 round, 1 minute, 10 minutes, 1 hour, 8 hours, 24 hours, 7 days, 10 days, 30 days, Until dispelled, Until dispelled or triggered, Special, Concentration (1 round), Concentration (1 minute), Concentration (10 minutes), Concentration (1 hour), Concentration (8 hours), Concentration (24 hours), Concentration (7 days), Concentration (10 days), Concentration (30 days), Concentration (Until dispelled), Concentration (Until dispelled or triggered), Concentration (Special)
         self.duration = field_dict.get('duration')

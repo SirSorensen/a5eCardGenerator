@@ -29,20 +29,32 @@ class DataStructureExtractor(CodeInterpreter):
         return ""  # Field not found in the HTML
         
     # This function extracts a div-tag's tag object from an id
-    def extract_field_information_from_id(self, field_id : str) -> list[str]|str:
+    def extract_field_information_from_id(self, field_id : str, flatten : bool = False) -> list[str]|str:
         field_div = self.soup.find('div', id=field_id)
-        result = self.__extract_field_information(field_div)
+        if not flatten:
+            result = self.__extract_field_information(field_div)
+        else:
+            result = CodeInterpreter.get_text(field_div)
+
         if result == "":
             print(f"Id {field_id} not found in {self.abs_filepath}")
         return result
 
     # This function extracts a div-tag's tag object from a class
-    def extract_field_information_from_class(self, field_class : str) -> list[str]|str:
+    def extract_field_information_from_class(self, field_class : str, flatten : bool = False) -> list[str]|str:
         field_div = self.soup.find('div', class_=field_class)
-        result = self.__extract_field_information(field_div)
+        if not flatten:
+            result = self.__extract_field_information(field_div)
+        elif field_div is not None:
+            result = CodeInterpreter.prettify_list([CodeInterpreter.get_text(field_div)])
+        else:
+            result = ""
+
         if result == "":
             print(f"Id {field_class} not found in {self.abs_filepath}")
         return result
+
+
 
     # This function extracts the title of a card-data from the HTML
     def extract_name(self) -> str:
