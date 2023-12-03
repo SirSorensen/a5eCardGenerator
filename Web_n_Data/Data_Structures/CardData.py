@@ -27,12 +27,10 @@ class CardData:
 
     # This function reads the source text of a card's data from a file containing the source text of a card's data's internet page
     def get_filepath(self, filename : str) -> str:
-        return r"Web_n_Data\\Outputs\\" + type(self).__name__ + r"s\\source_text_" + filename + r".txt"
+        return r"Outputs\\" + type(self).__name__ + r"s\\source_text_" + filename + r".txt"
     
     # This function extracts a card's data from a source text
     def extract_fields(self, field_classes : list[str], field_ids : list[str]):
-        print(f"Extracting fields for {type(self).__name__} \'{self.title}\'...")
-
         field_dict = {}
         for class_ in field_classes:
             _code_interpreter : DataStructureExtractor= self._code_interpreter

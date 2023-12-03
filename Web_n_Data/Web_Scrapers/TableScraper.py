@@ -7,7 +7,7 @@ class TableScraper:
     def __init__(self):
         self.url = "spells?combine=&field_spell_ritual_value=All&page="
         self.page = 0
-        self.output_filePath = r'Web_n_Data\\Outputs\\Lists\\Spells\\'
+        self.output_filePath = r'Outputs\\Lists\\Spells\\'
         self.scrape_output_filepath = r"Lists\\Spells\\"
         self.table_extractors : list[TableExtractor] = []
 

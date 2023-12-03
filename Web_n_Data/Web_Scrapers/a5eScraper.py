@@ -16,7 +16,7 @@ def a5e_scrape_source_text(name : str, sub_url : str, output_folder : str = "", 
         web_url = re.sub(r'[\w-]+(?=\/)', '', web_url)
         _name = web_url.replace("/", "")
 
-    output_folder = r'Web_n_Data\\Outputs\\' + output_folder
+    output_folder = r'Outputs\\' + output_folder
     output_filepath = f"{output_folder}source_text_{name}.txt"
     
 
