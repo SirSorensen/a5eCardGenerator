@@ -8,7 +8,7 @@ class DataStructureExtractor(CodeInterpreter):
     def __init__(self, abs_filepath : str):
         super().__init__(abs_filepath)
 
-    
+    # This function extracts a field's information from a Tag object
     def __extract_field_information(self, field_div) -> list[str]|str:
         if field_div:
             item_fields = field_div.find_all('div', class_='field--item')
@@ -28,6 +28,7 @@ class DataStructureExtractor(CodeInterpreter):
             
         return ""  # Field not found in the HTML
         
+    # This function extracts a div-tag's tag object from an id
     def extract_field_information_from_id(self, field_id : str) -> list[str]|str:
         field_div = self.soup.find('div', id=field_id)
         result = self.__extract_field_information(field_div)
@@ -35,6 +36,7 @@ class DataStructureExtractor(CodeInterpreter):
             print(f"Id {field_id} not found in {self.abs_filepath}")
         return result
 
+    # This function extracts a div-tag's tag object from a class
     def extract_field_information_from_class(self, field_class : str) -> list[str]|str:
         field_div = self.soup.find('div', class_=field_class)
         result = self.__extract_field_information(field_div)
@@ -42,6 +44,7 @@ class DataStructureExtractor(CodeInterpreter):
             print(f"Id {field_class} not found in {self.abs_filepath}")
         return result
 
+    # This function extracts the title of a card-data from the HTML
     def extract_name(self) -> str:
         name = self.soup.find('title')
 

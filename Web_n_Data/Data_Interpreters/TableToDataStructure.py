@@ -25,17 +25,13 @@ class TableToDataStructure:
         for i in range(len(list_of_names)):
             print(f"\nMaking a {self.type_} data structure for {list_of_names[i][0]}...")
             os_filepath = f"Outputs\{self.type_}s\source_text_" + CardData.name_to_data_name(list_of_names[i][0]) + r".html"
-            
 
             should_scrape_source_text=not os.path.exists(os_filepath)
             if should_scrape_source_text:
                 print(f"{os_filepath} does not exist.")
             
             card_data = self.__make_card_data(list_of_names[i][0], list_of_names[i][1], list_of_all_summaries[i], should_scrape_source_text)
-        
-
             card_data_list.append(card_data)
-
 
             if self.save_object_to_file:
                 print(f"Pickling {type(card_data).__name__} \'{card_data.name}\' to file...")

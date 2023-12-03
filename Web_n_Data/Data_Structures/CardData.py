@@ -1,3 +1,4 @@
+import re
 from Web_n_Data.Data_Interpreters.DataStructureExtractor import DataStructureExtractor
 from Web_n_Data.Web_Scrapers import a5eScraper
 
@@ -5,16 +6,19 @@ from Web_n_Data.Web_Scrapers import a5eScraper
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
 class CardData:
     def __init__(self, name : str, url_ending : str, should_scrape_source_text : bool = False):
+        # data_name is the naming of the data structure when saved to a file.
         self.data_name = CardData.name_to_data_name(name)
 
+        # url_ending is the ending of the web-url of the card's data's internet page.
+        self.url_ending = url_ending
         if url_ending == "":
             print(f"ERROR! No web-url provided for {type(self).__name__.lower()} {name}!")    
-        
-        self.url_ending = url_ending
 
+        # should_scrape_source_text is a boolean that determines whether the source text of a card's data's internet page should be scraped.
         if should_scrape_source_text: 
                 self.scrape()
         
+        # _code_interpreter is a DataStructureExtractor object that extracts data from the source text of a card's data's internet page.
         self._code_interpreter = DataStructureExtractor(self.__get_filepath())
 
         
@@ -43,11 +47,23 @@ class CardData:
 
         return field_dict
 
-    def name_to_data_name(title : str):
-        return title.replace(" ", "_").replace("/", "_").replace("’", "").replace("'", "").lower()
+    # This function converts a card's name to a data name, by replacing spaces and special characters with underscores or nothing
+    def name_to_data_name(name : str):
+        data_name = name.lower()
+        data_name = re.sub(r"\s| |\\|\/|\{|\}|\[|\]|\(|\)|\>|\#|\+|\:|\!|\?|\&|\||\<", "_", data_name)
+        data_name = re.sub(r"\`|\´|\*|\’|\'|\"", "", data_name)
+        return data_name
 
+    # This function generates a key name from a field class or id
     def key_namer(key : str):
-        return key.replace("field--", "").replace("name-", "").replace("field-", "").replace("spell-", "").replace("-indicator", "").replace("-", "_")
+        key_name = key.lower()
+        for ch in ["field--", "name-", "field-", "spell-", "-indicator"]:
+            key_name = key_name.replace(ch,"")
+        
+        key_name = re.sub(r"\s|-", "_", key_name)
+
+        return key_name.replace("-", "_")
     
+    # This function prettifies the soup of a card's data
     def prettify_soup(self):
         self._code_interpreter.prettify_soup()
