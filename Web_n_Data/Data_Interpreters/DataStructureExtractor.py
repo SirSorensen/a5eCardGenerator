@@ -13,6 +13,8 @@ class DataStructureExtractor(CodeInterpreter):
         if field_div:
             item_fields = field_div.find_all('div', class_='field--item')
             if item_fields:
+                if len(item_fields) == 1:
+                    return CodeInterpreter.get_text(item_fields[0])
                 return CodeInterpreter.prettify_list([CodeInterpreter.get_text(item) for item in item_fields])
                 
             # Concatenate the text within <p> tags while preserving line breaks
