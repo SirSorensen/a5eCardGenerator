@@ -54,8 +54,7 @@ class CardData:
     # This function converts a card's name to a data name, by replacing spaces and special characters with underscores or nothing
     def name_to_data_name(name : str):
         data_name = name.lower()
-        data_name = re.sub(r"\s| |\\|\/|\{|\}|\[|\]|\(|\)|\>|\#|\+|\:|\!|\?|\&|\||\<", "_", data_name)
-        data_name = re.sub(r"\`|\´|\*|\’|\'|\"", "", data_name)
+        data_name = re.sub(r"[^\w\d]", "_", data_name)
         return data_name
 
     # This function generates a key name from a field class or id
@@ -64,9 +63,9 @@ class CardData:
         for ch in ["field--", "name-", "field-", "spell-", "mi-", "magic-item-", "category-", "-indicator"]:
             key_name = key_name.replace(ch,"")
         
-        key_name = re.sub(r"\s|-", "_", key_name)
+        key_name = CardData.name_to_data_name(key_name)
 
-        return key_name.replace("-", "_")
+        return key_name
     
     # This function prettifies the soup of a card's data
     def prettify_soup(self):

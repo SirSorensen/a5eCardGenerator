@@ -5,6 +5,13 @@ from Web_n_Data.File_Handlers.ObjectSaver import ObjectSaver
 from Web_n_Data.Data_Structures.Spell import Spell
 from Web_n_Data.Web_Scrapers.TableScraper import TableScraper
 
+from Web_n_Data.Data_Structures.Tests.CardData_Tests import TestCardData
+
+
+
+
+
+
 
 # Magic Item Tests
 def extract_spells_from_magic_item_table_test(page : int = 0, save_object_to_file : bool = False, save_object_str_to_file:bool = False) -> list[Spell]:
