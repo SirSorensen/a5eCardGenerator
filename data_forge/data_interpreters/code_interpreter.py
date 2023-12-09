@@ -22,7 +22,7 @@ class CodeInterpreter:
 
 
     # Prettify the html code and save it to a new file
-    def prettify_soup(self):
+    def prettify_html(self) -> str:
         print(f"Prettifying {self.abs_filepath}...")
 
         # Remove comments of the soup
@@ -33,8 +33,7 @@ class CodeInterpreter:
         # Prettify the soup by adding newlines and indents and remove extra whitespace in between tags    
         pretty_contents = self.soup.prettify()
 
-        # Save the prettified soup to a new file
-        FileHandler.write_to_file_absolute_path(pretty_contents, self.abs_filepath, ".pretty.html")
+        return pretty_contents
 
 
 

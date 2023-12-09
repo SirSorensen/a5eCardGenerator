@@ -30,13 +30,16 @@ class TableExtractor(CodeInterpreter):
             
         return CodeInterpreter.prettify_list(results)
 
+
     # This function extracts the names their hyper-links of a table
     def extract_list_of_names_with_link(self):
         return self.__extract_list_of_class_with_link(name_tag_class)
 
+
     # This function extracts the summaries of a table
     def extract_list_of_summaries(self) -> list[str]|str:
         return self.__extract_list_of_class(summary_tag_class)
+
 
     # This function evaluates whether or not there is a next page
     def is_next_page(self) -> bool:

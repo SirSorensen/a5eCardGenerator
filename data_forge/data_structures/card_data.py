@@ -68,5 +68,5 @@ class CardData:
         return key_name
     
     # This function prettifies the soup of a card's data
-    def prettify_soup(self):
-        self._code_interpreter.prettify_soup()
+    def prettify_html(self):
+        self._code_interpreter.prettify_html()
