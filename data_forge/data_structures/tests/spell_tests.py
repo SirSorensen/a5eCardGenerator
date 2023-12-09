@@ -1,11 +1,10 @@
 
 import unittest
-from data_forge.data_interpreters.table_extractor import TableExtractor
-from data_forge.data_interpreters.table_to_data_structure import TableToDataStructure
+from data_forge.data_interpreters.table_interpreter import TableExtractor
+from data_forge.table_to_data_structure import TableToDataStructure
 
 from data_forge.data_structures.spell import Spell
 from data_forge.file_handlers.object_saver import ObjectSaver
-from data_forge.web_scrapers.table_controller import TableController
 
 
 class SpellTests(unittest.TestCase):

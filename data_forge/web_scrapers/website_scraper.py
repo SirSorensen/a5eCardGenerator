@@ -7,19 +7,14 @@ import requests
 from data_forge.data_structures.magic_item import MagicItem
 from data_forge.data_structures.spell import Spell
 
-
-def scrape_source_text(url_ending : str, sub_url : str = "") -> str:
-
-    # If the url_ending contains a sub-url, remove it and add it to the sub_url
-    url_ending_head_match = re.match(r'[\s\S]*\/', url_ending)
-    if url_ending_head_match is not None:
-        web_url_head = url_ending_head_match.group()
-        sub_url += web_url_head
-        url_ending = url_ending.replace(web_url_head, "")
+# Scrapes the source text of a given website. 
+# Inputs: For example in https://a5e.tools/spell/aid, url_ending = 'spell/aid' and url_start = 'https://a5e.tools/'
+# Returns the contents of the scraped website.
+def scrape_source_text(url_ending : str, url_start : str = "https://a5e.tools/") -> str:
     
-    url = f'https://a5e.tools/{sub_url}{url_ending}'
+    url = rf'{url_start}{url_ending}'
 
-    print(f"Scraping \'{url_ending}\' with url \'{url}\'...")
+    print(f"Scraping \'{url}\'...")
 
     response = requests.get(url)
     if response.status_code == 404:
@@ -31,11 +26,22 @@ def scrape_source_text(url_ending : str, sub_url : str = "") -> str:
     
     return response.text
 
-def _get_sub_url(card_data_type : str):
-    match card_data_type:
+# Scrapes the source text of a table with the given parge number and card type
+# Returns the contents of the scraped table's website.
+def scrape_table_source_text(card_type : str, page_number : int = 0) -> str:
+    # Generate the url ending of the table
+    url_ending = __get_table_url_ending(card_type, page_number)
+    # Scrape the source text
+    source_text = scrape_source_text(url_ending)
+    return source_text
+
+# Generates the url ending for a table of a given card type.
+# Returns the generated url ending
+def __get_table_url_ending(card_type : str, page_number):
+    match card_type:
         case Spell.__name__:
-            return r"spells?combine=&field_spell_ritual_value=All&page="
+            return r"spells?combine=&field_spell_ritual_value=All&page=" + str(page_number)
         case MagicItem.__name__:
-            return r"magic-items?field_mi_cost_value%5Bmin%5D=&field_mi_cost_value%5Bmax%5D=&combine=&page="
+            return r"magic-items?field_mi_cost_value%5Bmin%5D=&field_mi_cost_value%5Bmax%5D=&combine=&page=" + str(page_number)
         case _:
-            raise ValueError(f"Card data type {card_data_type} is not supported by website_scraper.py")
+            raise ValueError(f"Card data type {card_type} is not supported by TableScraper.py")
