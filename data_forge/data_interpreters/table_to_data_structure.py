@@ -1,12 +1,13 @@
 
 import os
-from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
-from Web_n_Data.Data_Structures.CardData import CardData
-from Web_n_Data.Data_Structures.CombatManeuver import CombatManeuver
-from Web_n_Data.Data_Structures.Feat import Feat
-from Web_n_Data.Data_Structures.MagicItem import MagicItem
-from Web_n_Data.Data_Structures.Spell import Spell
-from Web_n_Data.File_Handlers.ObjectSaver import ObjectSaver
+
+from data_forge.data_interpreters.table_extractor import TableExtractor
+from data_forge.data_structures.card_data import CardData
+from data_forge.data_structures.combat_maneuver import CombatManeuver
+from data_forge.data_structures.feat import Feat
+from data_forge.data_structures.magic_item import MagicItem
+from data_forge.data_structures.spell import Spell
+from data_forge.file_handlers.object_saver import ObjectSaver
 
 # This class extracts a list of data structures from a table
 class TableToDataStructure:

@@ -1,7 +1,7 @@
 import os
 import pickle
-from Web_n_Data.Data_Structures.CardData import CardData
-from Web_n_Data.File_Handlers.FileHandler import FileHandler
+from data_forge.data_structures.card_data import CardData
+from data_forge.file_handlers.file_handler import FileHandler
 
 class ObjectSaver(FileHandler):
     def save_object(obj):

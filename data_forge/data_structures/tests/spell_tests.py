@@ -1,11 +1,11 @@
 
 import unittest
-from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
-from Web_n_Data.Data_Interpreters.TableToDataStructure import TableToDataStructure
+from data_forge.data_interpreters.table_extractor import TableExtractor
+from data_forge.data_interpreters.table_to_data_structure import TableToDataStructure
 
-from Web_n_Data.Data_Structures.Spell import Spell
-from Web_n_Data.File_Handlers.ObjectSaver import ObjectSaver
-from Web_n_Data.Web_Scrapers.TableScraper import TableScraper
+from data_forge.data_structures.spell import Spell
+from data_forge.file_handlers.object_saver import ObjectSaver
+from data_forge.web_scrapers.table_scraper import TableScraper
 
 
 class SpellTests(unittest.TestCase):

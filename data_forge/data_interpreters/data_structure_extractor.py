@@ -1,7 +1,9 @@
 
 
 import bs4
-from Web_n_Data.Data_Interpreters.CodeInterpreter import CodeInterpreter
+
+from data_forge.data_interpreters.code_interpreter import CodeInterpreter
+
 
 # This class extracts data from the HTML of a data structure
 class DataStructureExtractor(CodeInterpreter):

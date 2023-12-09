@@ -1,5 +1,5 @@
 import bs4
-from Web_n_Data.Data_Interpreters.CodeInterpreter import CodeInterpreter
+from data_forge.data_interpreters.code_interpreter import CodeInterpreter
 
 name_tag_class = "views-field views-field-title"
 summary_tag_class = "views-field views-field-field-spell-summary"

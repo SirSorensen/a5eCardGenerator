@@ -1,6 +1,6 @@
 import re
-from Web_n_Data.Data_Interpreters.DataStructureExtractor import DataStructureExtractor
-from Web_n_Data.Web_Scrapers import a5eScraper
+from data_forge.data_interpreters.data_structure_extractor import DataStructureExtractor
+from data_forge.web_scrapers import a5eScraper
 
 
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.

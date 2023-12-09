@@ -1,5 +1,5 @@
 import unittest
-import Web_n_Data.Data_Structures.CardData as CardData
+import data_forge.data_structures.card_data as CardData
 
 
 # # This function converts a card's name to a data name, by replacing spaces and special characters with underscores or nothing

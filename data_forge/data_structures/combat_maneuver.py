@@ -1,4 +1,4 @@
-from Web_n_Data.Data_Structures.CardData import CardData
+from data_forge.data_structures.card_data import CardData
 
 
 class CombatManeuver(CardData):

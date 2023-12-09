@@ -2,7 +2,10 @@
 import re
 from bs4 import BeautifulSoup, Comment
 
-from Web_n_Data.File_Handlers.FileHandler import FileHandler
+from data_forge.file_handlers.file_handler import FileHandler
+
+
+
 
 # CodeInterpreter is a class that interprets the code of a HTML file
 class CodeInterpreter:

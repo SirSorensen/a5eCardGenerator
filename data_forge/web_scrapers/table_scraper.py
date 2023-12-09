@@ -1,7 +1,7 @@
-from Web_n_Data.Data_Interpreters.TableExtractor import TableExtractor
-from Web_n_Data.Data_Structures.MagicItem import MagicItem
-from Web_n_Data.Data_Structures.Spell import Spell
-from Web_n_Data.Web_Scrapers import a5eScraper
+from data_forge.data_interpreters.table_extractor import TableExtractor
+from data_forge.data_structures.magic_item import MagicItem
+from data_forge.data_structures.spell import Spell
+from data_forge.web_scrapers import a5eScraper
 
 # This class scrapes and extracts tables from the a5e.tools (such as the spell list or magic item list)
 class TableScraper:

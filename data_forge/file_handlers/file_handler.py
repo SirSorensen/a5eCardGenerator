@@ -76,3 +76,17 @@ class FileHandler:
             content = ""
 
         return content
+    
+    def save_source_code(output_directory:str, output_name:str, content:str, file_extension:str = "") -> str:
+        # If the output_folder does not end with "source_text_", add it
+        if not output_directory.endswith("source_text_"):
+            output_directory = f"{output_directory}source_text_"
+        
+        return FileHandler.save_output(output_directory, output_name, content, file_extension)
+    
+    def save_output(output_directory:str, output_name:str, content:str, file_extension:str = "") -> str:
+        # If the output_directory does not start with "Outputs\", add it
+        if not output_directory.startswith("Outputs\\"):
+            output_directory = f"Outputs\\{output_directory}"
+
+        return FileHandler.write_to_file_name(content, output_directory, output_name, file_extension)
