@@ -1,7 +1,9 @@
 import os
 import pickle
-from data_forge.data_structures.card import Card
 from data_forge.file_handlers.file_handler import FileHandler
+from data_forge.data_structures.card import Card
+
+global_pickled_output_directory = rf"{FileHandler._get_global_output_directory()}Pickled/"
 
 class ObjectHandler(FileHandler):
 
@@ -55,10 +57,10 @@ class ObjectHandler(FileHandler):
 
     
     def gen_pickled_object_filepath(obj_name : str):
-        return rf"{FileHandler._get_global_output_directory()}/Pickled/{obj_name}.pkl"
+        return rf"{global_pickled_output_directory}{obj_name}.pkl"
     
     def gen_pickled_card_filepath(card_type : str, context_name : str):
-        return rf"{FileHandler._get_global_output_directory()}/{card_type}s/Pickled/{context_name}.pkl"
+        return rf"{global_pickled_output_directory}{card_type}s/{context_name}.pkl"
     
     def gen_pickled_card_dict_filepath():
-        return rf"{FileHandler._get_global_output_directory()}/Pickled/card_dict.pkl"
+        return rf"{global_pickled_output_directory}card_dict.pkl"

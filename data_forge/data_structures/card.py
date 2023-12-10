@@ -1,7 +1,6 @@
 import re
 from data_forge.data_interpreters.code_interpreter import CodeInterpreter
 
-
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
 class Card:
     def __init__(self, title : str, source_code : str, field_classes : list[str], field_ids : list[str]):

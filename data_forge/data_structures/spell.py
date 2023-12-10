@@ -1,4 +1,3 @@
-from data_forge.data_interpreters.code_interpreter import CodeInterpreter
 from data_forge.data_structures.card import Card
 
 field_classes = [

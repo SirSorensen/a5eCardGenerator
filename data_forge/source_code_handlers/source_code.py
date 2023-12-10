@@ -1,8 +1,8 @@
 
-from data_forge.data_structures.card import Card
-from data_forge.file_handlers.file_handler import FileHandler
 from data_forge.source_code_handlers.website_scraper import scrape_table_source_code, scrape_source_code
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
+from data_forge.file_handlers.file_handler import FileHandler
+from data_forge.data_structures.card import Card
 
 class SourceCode:
 

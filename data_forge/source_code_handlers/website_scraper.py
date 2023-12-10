@@ -1,11 +1,11 @@
 
-
-import re
+from data_forge.data_structures.combat_maneuver import CombatManeuver
+from data_forge.data_structures.magic_item import MagicItem
+from data_forge.data_structures.monster import Monster
+from data_forge.data_structures.spell import Spell
+from data_forge.data_structures.feat import Feat
 import time
 import requests
-
-from data_forge.data_structures.magic_item import MagicItem
-from data_forge.data_structures.spell import Spell
 
 # Scrapes the source text of a given website. 
 # Inputs: For example in https://a5e.tools/spell/aid, url_ending = 'spell/aid' and url_start = 'https://a5e.tools/'
@@ -44,5 +44,11 @@ def __get_table_url_ending(card_type : str, page_number):
             return r"spells?combine=&field_spell_ritual_value=All&page=" + str(page_number)
         case MagicItem.__name__:
             return r"magic-items?field_mi_cost_value%5Bmin%5D=&field_mi_cost_value%5Bmax%5D=&combine=&page=" + str(page_number)
+        case CombatManeuver.__name__:
+            return r"combat-maneuvers?combine=&page=" + str(page_number)
+        case Feat.__name__:
+            return r"feats"
+        case Monster.__name__:
+            return r"monsters?combine=&page=" + str(page_number)
         case _:
             raise ValueError(f"Card data type {card_type} is not supported by TableScraper.py")

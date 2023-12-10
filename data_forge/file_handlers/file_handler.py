@@ -1,5 +1,4 @@
 import os
-import re
 
 global_output_directory = r"Outputs/"
 global_source_code_output_directory = rf"{global_output_directory}Source_Code/"
@@ -65,7 +64,7 @@ class FileHandler:
         return rf"{global_source_code_output_directory}{card_type}s/Pretty/pretty_code_of_page_{context_name}.html"
     
     def gen_card_str_directory(card_type : str, context_name : str):
-        return rf"{global_output_directory}{card_type}s/Strings/{context_name}.txt"
+        return rf"{global_output_directory}Strings/{card_type}s/{context_name}.txt"
 
     def gen_card_list_source_code_directory(card_type : str, page_number : str):
         return rf"{global_list_output_directory}{card_type}s/source_code_of_page_{page_number}.html"
