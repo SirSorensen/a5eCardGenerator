@@ -37,6 +37,7 @@ class FileHandler:
         if not FileHandler.does_file_exist(abs_filepath):
             return FileHandler.write_to_file(content, abs_filepath)
         else:
+            print(f"{abs_filepath} already exists.")
             return FileHandler.read_file(abs_filepath)
 
 
@@ -48,10 +49,7 @@ class FileHandler:
     
 
     def does_file_exist(abs_filepath : str) -> bool:
-        result = os.path.exists(abs_filepath)
-        if result: 
-            print(f"{abs_filepath} already exists.")
-        return result
+        return os.path.exists(abs_filepath)
 
 
 
