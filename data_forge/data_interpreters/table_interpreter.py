@@ -1,4 +1,5 @@
 from data_forge.data_interpreters.code_interpreter import CodeInterpreter
+from data_forge.data_structures.spell import Spell
 
 name_tag_class = "views-field views-field-title"
 summary_tag_class = "views-field views-field-field-spell-summary"
@@ -37,3 +38,10 @@ class TableInterpreter(CodeInterpreter):
     def is_next_page(self) -> bool:
         next_page_li = self.soup.find('li', class_="next")
         return next_page_li is not None
+    
+    def list_of_card(self, card_type) -> list[(str,str)]:
+        list_of_names = self.extract_list_of_names_with_link()
+
+        
+
+        should_scrape_source_text = not os.path.exists(os_filepath)

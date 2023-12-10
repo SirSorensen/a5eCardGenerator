@@ -19,6 +19,20 @@ class CodeInterpreter:
         pretty_contents = self.soup.prettify()
 
         return pretty_contents
+    
+    # Prettify the html code and save it to a new file
+    def prettify_html_source_code(source_code : str) -> str:
+        soup = BeautifulSoup(source_code, 'html.parser')
+
+        # Remove comments of the soup
+        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        for comment in comments:
+            comment.extract()
+
+        # Prettify the soup by adding newlines and indents and remove extra whitespace in between tags    
+        pretty_contents = soup.prettify()
+
+        return pretty_contents
 
     # Strip list of strings and return it as a list of strings, unless there is only one string in the list, in which case return the string
     def prettify_list(list_to_prettify):

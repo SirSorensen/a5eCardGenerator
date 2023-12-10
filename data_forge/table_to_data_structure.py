@@ -1,7 +1,7 @@
 
 import os
 
-from data_forge.data_interpreters.table_interpreter import TableExtractor
+from data_forge.data_interpreters.table_interpreter import TableInterpreter
 
 from data_forge.data_structures.card_data import CardData
 from data_forge.data_structures.combat_maneuver import CombatManeuver
@@ -11,14 +11,12 @@ from data_forge.data_structures.feat import Feat
 
 # This class extracts a list of data structures from a table
 class TableToDataStructure:
-    def __init__(self, card_type:str, save_object_to_file:bool = False, save_object_str_to_file:bool = False):
+    def __init__(self, card_type:str):
         self.page = 0
         self.card_type = card_type
-        self.save_object_to_file = save_object_to_file
-        self.save_object_str_to_file = save_object_str_to_file
 
     # This function extracts a list of data structures from a table
-    def make_data_structures(self, table_extractor : TableExtractor) -> list[CardData]:
+    def make_data_structures(self, table_extractor : TableInterpreter) -> list[CardData]:
         list_of_names = table_extractor.extract_list_of_names_with_link()
         if self.card_type == Spell.__name__:
             list_of_all_summaries = table_extractor.extract_list_of_summaries()
@@ -26,7 +24,7 @@ class TableToDataStructure:
         card_data_list : list[CardData] = []
         
         for i in range(len(list_of_names)):
-            print(f"\nMaking a {self.card_type} data structure for {list_of_names[i][0]}...")
+            print(f"Making a {self.card_type} data structure for {list_of_names[i][0]}...")
             os_filepath = f"Outputs\{self.card_type}s\source_text_" + CardData.name_to_data_name(list_of_names[i][0]) + r".html"
 
             should_scrape_source_text=not os.path.exists(os_filepath)
@@ -39,7 +37,6 @@ class TableToDataStructure:
                 card_data = self.__make_card_data(list_of_names[i][0], list_of_names[i][1], should_scrape_source_text)
 
             card_data_list.append(card_data)
-            print("\n")
 
         return card_data_list
 

@@ -12,21 +12,6 @@ class CardData:
         if url_ending == "":
             print(f"ERROR! No web-url provided for {type(self).__name__.lower()} {name}!")    
 
-        # should_scrape_source_text is a boolean that determines whether the source text of a card's data's internet page should be scraped.
-        if should_scrape_source_text: 
-                self.scrape()
-        
-        # _code_interpreter is a DataStructureExtractor object that extracts data from the source text of a card's data's internet page.
-        self._code_interpreter = DataStructureExtractor(self.__get_filepath())
-
-        
-    # This function scrapes the source code of a card's data's internet page
-    def scrape(self):        
-        output_filepath = type(self).__name__ + r"s\\"
-
-        return a5eScraper.a5e_scrape_source_text(self.data_name, output_filepath, url_ending=self.url_ending)
-
-
     # This function reads the source text of a card's data from a file containing the source text of a card's data's internet page
     def __get_filepath(self) -> str:
         return r"Outputs\\" + type(self).__name__ + r"s\\source_text_" + self.data_name + r".html"
@@ -64,7 +49,3 @@ class CardData:
         key_name = CardData.name_to_data_name(key_name)
 
         return key_name
-    
-    # This function prettifies the soup of a card's data
-    def prettify_html(self):
-        self._code_interpreter.prettify_html()
