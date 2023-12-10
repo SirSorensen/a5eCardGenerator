@@ -22,7 +22,7 @@ def scrape_source_code(url_ending : str, url_start : str = "https://a5e.tools/")
     else:
         response.raise_for_status()
 
-    time.sleep(3)
+    time.sleep(10)
     
     return response.text
 

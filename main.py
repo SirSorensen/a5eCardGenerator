@@ -35,8 +35,6 @@ def test_input(controller : Controller):
 
 # Insert runs below
 
-test_update_all_tables(Feat.__name__)
-
 test_update_all_tables_all_types()
 
 controller = Controller(MagicItem.__name__)
