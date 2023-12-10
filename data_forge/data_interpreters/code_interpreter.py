@@ -105,7 +105,7 @@ class CodeInterpreter:
         return result
     
     
-    # This function extracts the title of a card-data from the HTML
+    # This function extracts the title of a context from the HTML
     def extract_name(self) -> str:
         name = self.soup.find('title')
 

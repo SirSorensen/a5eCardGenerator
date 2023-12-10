@@ -1,7 +1,7 @@
-from data_forge.data_structures.card_data import CardData
+from data_forge.data_structures.context import Context
 
 
-class Spell(CardData):
+class Spell(Context):
     def __init__(self, name : str, url_ending : str = "", should_scrape_source_text : bool = False, summary : str = str):
         print(f"Making a Spell! {name}, {url_ending}, {should_scrape_source_text}, {summary}")
         # Summary = "*"

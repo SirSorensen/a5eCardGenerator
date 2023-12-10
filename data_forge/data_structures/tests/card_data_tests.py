@@ -1,5 +1,5 @@
 import unittest
-import data_forge.data_structures.card_data as CardData
+import data_forge.data_structures.context as Context
 
 
 # # This function converts a card's name to a data name, by replacing spaces and special characters with underscores or nothing
@@ -18,8 +18,8 @@ class TestCardData(unittest.TestCase):
         test_card_name_2 = "Test/Card"
 
         # Act
-        test_card_data_name_1 = CardData.CardData.name_to_data_name(test_card_name_1)
-        test_card_data_name_2 = CardData.CardData.name_to_data_name(test_card_name_2)
+        test_card_data_name_1 = Context.Context.name_to_data_name(test_card_name_1)
+        test_card_data_name_2 = Context.Context.name_to_data_name(test_card_name_2)
 
         # Assert
         self.assertEqual(test_card_data_name_1, "test_card")

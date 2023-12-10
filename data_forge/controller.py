@@ -5,7 +5,7 @@
 
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
 from data_forge.data_structures.card import Card
-from data_forge.data_structures.card_data import CardData
+from data_forge.data_structures.context import Context
 from data_forge.data_structures.magic_item import MagicItem
 from data_forge.data_structures.spell import Spell
 from data_forge.source_code import SourceCode

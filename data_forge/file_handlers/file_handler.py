@@ -57,15 +57,15 @@ class FileHandler:
 
 
     
-    def get_card_source_code_directory(card_type : str, card_data_name : str):
-        return rf"{global_source_code_output_directory}{card_type}s/source_code_{card_data_name}.html"
+    def get_card_source_code_directory(card_type : str, context_name : str):
+        return rf"{global_source_code_output_directory}{card_type}s/source_code_{context_name}.html"
     
 
-    def get_card_pretty_code_directory(card_type : str, card_data_name : str) -> str:
-        return rf"{global_source_code_output_directory}{card_type}s/Pretty/pretty_code_of_page_{card_data_name}.html"
+    def get_card_pretty_code_directory(card_type : str, context_name : str) -> str:
+        return rf"{global_source_code_output_directory}{card_type}s/Pretty/pretty_code_of_page_{context_name}.html"
     
-    def get_card_str_directory(card_type : str, card_data_name : str):
-        return rf"{global_output_directory}{card_type}s/Strings/{card_data_name}.txt"
+    def get_card_str_directory(card_type : str, context_name : str):
+        return rf"{global_output_directory}{card_type}s/Strings/{context_name}.txt"
 
     def get_card_list_source_code_directory(card_type : str, page_number : str):
         return rf"{global_list_output_directory}{card_type}s/source_code_of_page_{page_number}.html"
