@@ -1,26 +1,21 @@
-import bs4
-from Web_n_Data.Data_Interpreters.CodeInterpreter import CodeInterpreter
+from data_forge.data_interpreters.code_interpreter import CodeInterpreter
+from data_forge.data_structures.spell import Spell
 
 name_tag_class = "views-field views-field-title"
 summary_tag_class = "views-field views-field-field-spell-summary"
 
 # This class extracts data from the HTML of a table
-class TableExtractor(CodeInterpreter):
-    def __init__(self, filepath : str, page : int = 0, file_extension : str = ".html"):
-        self.filepath = filepath
-        self.page = page
-        self.file_extension = file_extension
-        abs_filepath = f"{filepath}{str(page)}{file_extension}"
-        print(f"Extracting data from {abs_filepath}")
-        super().__init__(abs_filepath)
+class TableInterpreter(CodeInterpreter):
+    def __init__(self, source_code : str):
+        super().__init__(source_code)
 
     # This function extracts a the contents of list tags from a source text 
     def __extract_list_of_class(self, class_:str) -> list[str]|str:
         field_td = self.soup.find_all('td', class_=class_)
 
-        result_texts = [CodeInterpreter.get_text(item) for item in field_td]
+        results = [CodeInterpreter.get_text(item) for item in field_td]
             
-        return CodeInterpreter.prettify_list(result_texts)
+        return CodeInterpreter.prettify_list(results)
 
     # This function extracts a the contents of list tags and their hyper-links from a source text
     def __extract_list_of_class_with_link(self, class_:str):
@@ -29,6 +24,7 @@ class TableExtractor(CodeInterpreter):
         results = [(CodeInterpreter.get_text(item), item.find('a')['href']) for item in field_td]
             
         return CodeInterpreter.prettify_list(results)
+
 
     # This function extracts the names their hyper-links of a table
     def extract_list_of_names_with_link(self):
@@ -42,3 +38,6 @@ class TableExtractor(CodeInterpreter):
     def is_next_page(self) -> bool:
         next_page_li = self.soup.find('li', class_="next")
         return next_page_li is not None
+    
+    def list_of_card(self, card_type) -> list[(str,str)]:
+        list_of_names = self.extract_list_of_names_with_link()

@@ -1,19 +1,42 @@
-from Web_n_Data.Data_Structures.CardData import CardData
+from data_forge.data_interpreters.code_interpreter import CodeInterpreter
+from data_forge.data_structures.card import Card
 
+field_classes = [
+            "field--name-field-spell-level",
+            "field--name-field-classical-spell-school",
+            "field--name-field-spell-schools",
+            "field--name-field-spell-classes",
+            "field--name-field-spell-casting-time",
+            "field--name-field-spell-range",
+            "field--name-field-area-shape",
+            "field--name-field-spell-target",
+            "field--name-field-spell-area",
+            "field--name-field-spellcomponent-description",
+            "field--name-field-spell-saving-throw-desc",
+            "field--name-field-spellcast-at-higher-levels",
+            "field--name-field-spell-source",
+            "field--name-body",
+            "field--name-field-spell-rare-versions",
+            "ritual-indicator"]
 
-class Spell(CardData):
-    def __init__(self, name : str, url_ending : str = "", should_scrape_source_text : bool = False, summary : str = str):
-        print(f"Making a Spell! {name}, {url_ending}, {should_scrape_source_text}, {summary}")
+field_ids = [
+    "spell-components-display",
+    "duration",
+    "spell-summary"
+    ]
+
+class Spell(Card):
+    def __init__(self, title : str, source_code : str, summary : str):
+        # Title = "*"
+        self.title = title
         # Summary = "*"
         self.summary = summary
 
-        super(Spell, self).__init__(name, url_ending=url_ending, should_scrape_source_text=should_scrape_source_text)
+        super(Spell, self).__init__(title, source_code, field_classes, field_ids)
 
-        self.set_fields(self.extract_spell())
+        self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):
-        # Name = "*"
-        self.name = self._code_interpreter.extract_name()
         # Level = Cantrip/0, 1st, 2nd, 3rd, 4th, 5th, 6th, 7th, 8th, 9th
         self.level = field_dict.get('level')
         # Classical School = Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, Transmutation
@@ -62,54 +85,6 @@ class Spell(CardData):
         self.rare_versions = field_dict.get('rare_versions')
         # Source = "*"
         self.source = field_dict.get('source')
-        
-    def scrape (self):
-        return super(Spell, self).scrape()
-
-    # This function extracts a spell from a source text
-    def extract_spell(self):
-        field_classes = [
-            "field--name-field-spell-level",
-            "field--name-field-classical-spell-school",
-            "field--name-field-spell-schools",
-            "field--name-field-spell-classes",
-            "field--name-field-spell-casting-time",
-            "field--name-field-spell-range",
-            "field--name-field-area-shape",
-            "field--name-field-spell-target",
-            "field--name-field-spell-area",
-            "field--name-field-spellcomponent-description",
-            "field--name-field-spell-saving-throw-desc",
-            "field--name-field-spellcast-at-higher-levels",
-            "field--name-field-spell-source",
-            "field--name-body",
-            "field--name-field-spell-rare-versions",
-            "ritual-indicator"]
-
-        field_ids = [
-            "spell-components-display",
-            "duration",
-            "spell-summary"
-            ]
-
-        return super(Spell, self).extract_fields(field_classes, field_ids)
-        
-    def __str__(self):
-        # Create an empty list to store field name and value pairs
-        field_strings = []
-
-        # Iterate through all the attributes of the class
-        for attr_name, attr_value in vars(self).items():
-            # Exclude private attributes (those starting with underscores)
-            if not attr_name.startswith('_'):
-                if attr_value is list:
-                    for item in attr_value:
-                        field_strings.append(f"{attr_name}: {str(item)}")
-                else:
-                    field_strings.append(f"{attr_name}: {attr_value}")
-
-        # Concatenate the field strings with newlines
-        return '\n'.join(field_strings)
 
 
 class MaterialComponent:

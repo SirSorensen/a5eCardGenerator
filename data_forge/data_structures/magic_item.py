@@ -1,7 +1,7 @@
-from Web_n_Data.Data_Structures.CardData import CardData
+from data_forge.data_structures.card import Card
 
 
-class MagicItem(CardData):
+class MagicItem(Card):
     def __init__(self, name : str, url_ending : str = "", should_scrape_source_text : bool = False):
         print(f"Making a MagicItem! {name}, {url_ending}, {should_scrape_source_text}")
 

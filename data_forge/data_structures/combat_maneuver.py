@@ -1,7 +1,7 @@
-from Web_n_Data.Data_Structures.CardData import CardData
+from data_forge.data_structures.card import Card
 
 
-class CombatManeuver(CardData):
+class CombatManeuver(Card):
     def __init__(self,
             name: str        = "", summary: str      = "",
             description: str = "", points: int       = 0 ,
