@@ -32,6 +32,11 @@ def test_input(controller : Controller):
     controller.get_card(card_name)
 
 
+
+# Insert runs below
+
+test_update_all_tables(Feat.__name__)
+
 test_update_all_tables_all_types()
 
 controller = Controller(MagicItem.__name__)

@@ -110,8 +110,8 @@ class Controller:
         table_interpreter = TableInterpreter(source_code)
 
         # Scrape cards
-        print(f"\nUpdating {self.card_type} cards, from table-page {page_number}.")
         list_of_titles = table_interpreter.extract_list_of_names_with_link()
+        print(f"\nUpdating {len(list_of_titles)} {self.card_type} cards, from table-page {page_number}.")
         SourceCode.update_card_table_source_code(self.card_type, list_of_titles)
 
         # Return TableExtractor of table

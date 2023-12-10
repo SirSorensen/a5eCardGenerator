@@ -1,8 +1,9 @@
 from data_forge.data_interpreters.code_interpreter import CodeInterpreter
 from data_forge.data_structures.spell import Spell
 
-name_tag_class = "views-field views-field-title"
-summary_tag_class = "views-field views-field-field-spell-summary"
+name_tag_class = "views-field-title"
+summary_spell_tag_class = "views-field-field-spell-summary"
+summary_combatManuever_tag_class = "views-field-field-cm-summary"
 
 # This class extracts data from the HTML of a table
 class TableInterpreter(CodeInterpreter):
@@ -32,7 +33,14 @@ class TableInterpreter(CodeInterpreter):
 
     # This function extracts the summaries of a table
     def extract_list_of_summaries(self) -> list[str]|str:
-        return self.__extract_list_of_class(summary_tag_class)
+        list_of_summaries = self.__extract_list_of_class(summary_spell_tag_class)
+        
+        if len(list_of_summaries) == 0:
+            list_of_summaries = self.__extract_list_of_class(summary_combatManuever_tag_class)
+
+        if len(list_of_summaries) == 0:
+            print("ERROR: No summaries found!")
+        return list_of_summaries
 
     # This function evaluates whether or not there is a next page
     def is_next_page(self) -> bool:
