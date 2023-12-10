@@ -29,7 +29,7 @@ def scrape_source_text(url_ending : str, url_start : str = "https://a5e.tools/")
 
 # Scrapes the source text of a table with the given parge number and card type
 # Returns the contents of the scraped table's website.
-def scrape_table_source_text(card_type : str, page_number : int = 0) -> str:
+def scrape_table_source_code(card_type : str, page_number : int = 0) -> str:
     # Generate the url ending of the table
     url_ending = __get_table_url_ending(card_type, page_number)
     # Scrape the source text

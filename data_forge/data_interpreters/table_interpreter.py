@@ -41,7 +41,3 @@ class TableInterpreter(CodeInterpreter):
     
     def list_of_card(self, card_type) -> list[(str,str)]:
         list_of_names = self.extract_list_of_names_with_link()
-
-        
-
-        should_scrape_source_text = not os.path.exists(os_filepath)
