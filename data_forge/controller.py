@@ -1,18 +1,14 @@
-
-
-
-
-
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
+from data_forge.source_code_handlers.source_code import SourceCode
+from data_forge.file_handlers.object_handler import ObjectHandler
+from data_forge.file_handlers.file_handler import FileHandler
+
 from data_forge.data_structures.card import Card
 from data_forge.data_structures.combat_maneuver import CombatManeuver
-from data_forge.data_structures.card import Card
-from data_forge.data_structures.feat import Feat
 from data_forge.data_structures.magic_item import MagicItem
+from data_forge.data_structures.monster import Monster
 from data_forge.data_structures.spell import Spell
-from data_forge.file_handlers.object_handler import ObjectHandler
-from data_forge.source_code_handlers.source_code import SourceCode
-from data_forge.file_handlers.file_handler import FileHandler
+from data_forge.data_structures.feat import Feat
 
 
 class Controller:
@@ -45,14 +41,26 @@ class Controller:
                         summary=summary
                     )
                 case Feat.__name__:
-                    card = Feat()
+                    card = Feat(
+                        title=title,
+                        source_code=card_source_code
+                    )
                 case CombatManeuver.__name__:
-                    card = CombatManeuver()
+                    card = CombatManeuver(
+                        title=title,
+                        source_code=card_source_code,
+                        summary=summary
+                    )
                 case MagicItem.__name__:
                     card = MagicItem(
                         title=title,
                         source_code=card_source_code
-                        )
+                    )
+                case Monster.__name__:
+                    card = Monster(
+                        title=title,
+                        source_code=card_source_code
+                    )
                 case _:
                     raise ValueError(f"ERROR! {self.card_type} is not a valid type!")
 
@@ -75,7 +83,7 @@ class Controller:
             table_source_code = FileHandler.read_file(card_list_source_code_path)
             table_interpreter = TableInterpreter(table_source_code)
             list_of_titles = table_interpreter.extract_list_of_names_with_link()
-            if self.card_type == Spell.__name__:
+            if self.card_type == Spell.__name__ or self.card_type == CombatManeuver.__name__:
                 list_of_summaries = table_interpreter.extract_list_of_summaries()
             
             for i in range(len(list_of_titles)):
