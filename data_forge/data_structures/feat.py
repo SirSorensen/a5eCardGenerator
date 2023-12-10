@@ -1,6 +1,6 @@
-from data_forge.data_structures.context import Context
+from data_forge.data_structures.card import Card
 
-class Feat(Context):
+class Feat(Card):
     def __init__(self,
             name: str = "", origin: str = "", summary: str = "", prerequisites: str = "", description: str = ""):
         self.name = name

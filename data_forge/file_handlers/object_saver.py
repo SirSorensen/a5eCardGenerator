@@ -1,6 +1,6 @@
 import os
 import pickle
-from data_forge.data_structures.context import Context
+from data_forge.data_structures.card import Card
 from data_forge.file_handlers.file_handler import FileHandler
 
 class ObjectSaver(FileHandler):
@@ -27,10 +27,10 @@ class ObjectSaver(FileHandler):
             print(f'Object "{filename}" does not exist')
             return None
 
-    def save_object_string(obj:Context):
+    def save_object_string(obj:Card):
         filepath = ObjectSaver.__generate_filepath(obj, "String")
         FileHandler.write_to_file_absolute_path(str(obj), filepath, ".txt")
         
 
     def __generate_filepath(obj, type_:str):
-        return f"Outputs\\Saved_Data\\{type(obj).__name__}s\\{type_}s\\{obj.data_name}"
+        return f"Outputs\\Saved_Data\\{type(obj).__name__}s\\{type_}s\\{obj.name}"

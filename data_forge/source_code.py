@@ -1,5 +1,5 @@
 
-from data_forge.data_structures.context import Context
+from data_forge.data_structures.card import Card
 from data_forge.file_handlers.file_handler import FileHandler
 from data_forge.web_scrapers.website_scraper import scrape_table_source_code, scrape_source_text
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
@@ -34,7 +34,7 @@ class SourceCode:
         print(f"\nUpdating {card_type} card \'{card_name}\'.")
 
         # Scrape card source code
-        context_name = Context.name_to_data_name(card_name)
+        context_name = Card.title_to_context_name(card_name)
         card_source_code_path = FileHandler.get_card_source_code_directory(card_type, context_name)
         if not FileHandler.does_file_exist(card_source_code_path):
             card_source_code = scrape_source_text(card_url_ending)
