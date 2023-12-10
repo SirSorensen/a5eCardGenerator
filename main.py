@@ -10,3 +10,5 @@ from data_forge.data_structures.spell import Spell
 controller = Controller(Spell.__name__)
 controller.update_all_tables()
 controller.update_all_cards()
+
+print(str(controller.get_card("Acid Arrow")))

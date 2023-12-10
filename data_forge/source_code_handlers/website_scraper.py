@@ -10,7 +10,7 @@ from data_forge.data_structures.spell import Spell
 # Scrapes the source text of a given website. 
 # Inputs: For example in https://a5e.tools/spell/aid, url_ending = 'spell/aid' and url_start = 'https://a5e.tools/'
 # Returns the contents of the scraped website.
-def scrape_source_text(url_ending : str, url_start : str = "https://a5e.tools/") -> str:
+def scrape_source_code(url_ending : str, url_start : str = "https://a5e.tools/") -> str:
     
     url = rf'{url_start}{url_ending}'
 
@@ -33,7 +33,7 @@ def scrape_table_source_code(card_type : str, page_number : int = 0) -> str:
     # Generate the url ending of the table
     url_ending = __get_table_url_ending(card_type, page_number)
     # Scrape the source text
-    source_text = scrape_source_text(url_ending)
+    source_text = scrape_source_code(url_ending)
     return source_text
 
 # Generates the url ending for a table of a given card type.
