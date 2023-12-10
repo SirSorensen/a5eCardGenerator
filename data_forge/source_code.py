@@ -23,7 +23,7 @@ class SourceCode:
         card_data_name = CardData.name_to_data_name(card_name)
         if not FileHandler.does_card_source_code_exist(card_type, card_data_name):
             card_source_code = scrape_source_text(card_url_ending)
-            FileHandler.save_card_source_code(card_source_code, card_type, card_data_name)
+            FileHandler.write_to_file_absolute_path(card_source_code, FileHandler.get_card_source_code_directory())
         else:
             card_source_code = FileHandler.read_card_source_code(card_type, card_data_name)
 

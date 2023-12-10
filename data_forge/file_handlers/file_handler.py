@@ -54,99 +54,99 @@ class FileHandler:
 
 
     
-    def __get_card_source_code_directory(card_type : str, card_data_name : str):
+    def get_card_source_code_directory(card_type : str, card_data_name : str):
         return rf"{global_source_code_output_directory}{card_type}s/source_code_{card_data_name}.html"
 
     def save_card_source_code(content:str, card_type : str, card_data_name : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_source_code_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_source_code_directory(card_type, card_data_name)
         
         return FileHandler.write_to_file_absolute_path(content, output_directory)
     
     def does_card_source_code_exist(card_type : str, card_data_name : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_source_code_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_source_code_directory(card_type, card_data_name)
         return FileHandler.__does_file_already_exist(output_directory)
     
     def read_card_source_code(card_type : str, card_data_name : str) -> str:
-        output_directory = FileHandler.__get_card_source_code_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_source_code_directory(card_type, card_data_name)
         return FileHandler.__read_file(output_directory)
     
 
-    def __get_card_pretty_code_directory(card_type : str, card_data_name : str) -> str:
+    def get_card_pretty_code_directory(card_type : str, card_data_name : str) -> str:
         return rf"{global_source_code_output_directory}{card_type}s/Pretty/pretty_code_of_page_{card_data_name}.html"
     
     def save_card_pretty_code(content : str, card_type : str, card_data_name : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_pretty_code_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_pretty_code_directory(card_type, card_data_name)
         
         return FileHandler.write_to_file_absolute_path(content, output_directory)
     
     def does_card_pretty_code_exist(card_type : str, card_data_name : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_pretty_code_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_pretty_code_directory(card_type, card_data_name)
         return FileHandler.__does_file_already_exist(output_directory)
 
 
 
-    def __get_card_str_directory(card_type : str, card_data_name : str):
+    def get_card_str_directory(card_type : str, card_data_name : str):
         return rf"{global_output_directory}{card_type}s/Strings/{card_data_name}.txt"
 
     
     def save_card_str(card_str : str, card_type : str, card_data_name : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_str_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_str_directory(card_type, card_data_name)
         
         return FileHandler.write_to_file_absolute_path(card_str, output_directory)
     
     def does_card_str_exist(card_type : str, card_data_name : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_str_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_str_directory(card_type, card_data_name)
         return FileHandler.__does_file_already_exist(output_directory)
     
     def read_card_str(card_type : str, card_data_name : str) -> str:
-        output_directory = FileHandler.__get_card_str_directory(card_type, card_data_name)
+        output_directory = FileHandler.get_card_str_directory(card_type, card_data_name)
 
         return FileHandler.__read_file(output_directory)
     
 
 
 
-    def __get_card_list_source_code_directory(card_type : str, page_number : str):
+    def get_card_list_source_code_directory(card_type : str, page_number : str):
         return rf"{global_list_output_directory}{card_type}s/source_code_of_page_{page_number}.html"
     
     def save_card_list_source_code(content:str, card_type : str, page_number : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_list_source_code_directory(card_type, page_number)
+        output_directory = FileHandler.get_card_list_source_code_directory(card_type, page_number)
         
         return FileHandler.write_to_file_absolute_path(content, output_directory)
     
     def does_card_list_source_code_exist(card_type : str, page_number : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_list_source_code_directory(card_type, page_number)
+        output_directory = FileHandler.get_card_list_source_code_directory(card_type, page_number)
 
         return FileHandler.__does_file_already_exist(output_directory)
     
     def read_card_list_source_code(card_type : str, page_number : str) -> str:
-        output_directory = FileHandler.__get_card_list_source_code_directory(card_type, page_number)
+        output_directory = FileHandler.get_card_list_source_code_directory(card_type, page_number)
 
         return FileHandler.__read_file(output_directory)
         
 
 
 
-    def __get_card_list_pretty_code_directory(card_type : str, page_number : str):
+    def get_card_list_pretty_code_directory(card_type : str, page_number : str):
         return rf"{global_list_output_directory}{card_type}s/Pretty/pretty_code_of_page_{page_number}.html"
 
     def save_card_list_pretty_code(content:str, card_type : str, page_number : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_list_pretty_code_directory(card_type, page_number)
+        output_directory = FileHandler.get_card_list_pretty_code_directory(card_type, page_number)
         
         return FileHandler.write_to_file_absolute_path(content, output_directory)
 
     def does_card_list_pretty_code_exist(card_type : str, page_number : str) -> str:
         # Set output_directory
-        output_directory = FileHandler.__get_card_list_pretty_code_directory(card_type, page_number)
+        output_directory = FileHandler.get_card_list_pretty_code_directory(card_type, page_number)
 
         return FileHandler.__does_file_already_exist(output_directory)
     
