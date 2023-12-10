@@ -37,7 +37,6 @@ class Controller:
         
         # Make TableInterpreter for table
         table_interpreter = TableInterpreter(source_code)
-        FileHandler.save_card_list_pretty_code(table_interpreter.prettify_html(), card_type, page_number)
 
         # Scrape cards
         print(f"\nUpdating {card_type} cards, from table-page {page_number}.")
