@@ -33,6 +33,14 @@ class CodeInterpreter:
         pretty_contents = soup.prettify()
 
         return pretty_contents
+    
+    def get_article_code(self) -> str:
+        article = self.soup.find('article')
+        return str(article)
+    
+    def prettify_article_code(self) -> str:
+        article = self.soup.find('article')
+        return CodeInterpreter.prettify_html_source_code(str(article))
 
     # Strip list of strings and return it as a list of strings, unless there is only one string in the list, in which case return the string
     def prettify_list(list_to_prettify):
@@ -112,3 +120,4 @@ class CodeInterpreter:
         if name:
             return CodeInterpreter.get_text(name).replace("| Level Up", "").strip()
         return ""
+        
