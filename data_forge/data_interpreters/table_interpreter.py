@@ -47,5 +47,10 @@ class TableInterpreter(CodeInterpreter):
         next_page_li = self.soup.find('li', class_="next")
         return next_page_li is not None
     
-    def list_of_card(self, card_type) -> list[(str,str)]:
-        list_of_names = self.extract_list_of_names_with_link()
+    def get_article_code(self) -> str:
+        table = self.soup.find('table')
+        return str(table)
+    
+    def prettify_article_code(self) -> str:
+        table = self.soup.find('table')
+        return CodeInterpreter.prettify_html_source_code(str(table))
