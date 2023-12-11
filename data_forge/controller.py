@@ -28,38 +28,38 @@ class Controller:
         print(f"\nUpdating {self.card_type} card {title}...")
         context_name = Card.title_to_context_name(title)
 
-        card = self.card_collection[context_name]
+        card = self.card_collection.get(context_name)
 
         if card is None:
-            card_source_code_path = FileHandler.gen_card_source_code_directory(self.card_type, context_name)
-            card_source_code = FileHandler.read_file(card_source_code_path)
+            card_article_code_path = FileHandler.gen_card_article_code_directory(self.card_type, context_name)
+            card_article_code = FileHandler.read_file(card_article_code_path)
             match self.card_type:
                 case Spell.__name__:
                     card = Spell(
                         title=title,
-                        source_code=card_source_code,
+                        source_code=card_article_code,
                         summary=summary
                     )
                 case Feat.__name__:
                     card = Feat(
                         title=title,
-                        source_code=card_source_code
+                        source_code=card_article_code
                     )
                 case CombatManeuver.__name__:
                     card = CombatManeuver(
                         title=title,
-                        source_code=card_source_code,
+                        source_code=card_article_code,
                         summary=summary
                     )
                 case MagicItem.__name__:
                     card = MagicItem(
                         title=title,
-                        source_code=card_source_code
+                        source_code=card_article_code
                     )
                 case Monster.__name__:
                     card = Monster(
                         title=title,
-                        source_code=card_source_code
+                        source_code=card_article_code
                     )
                 case _:
                     raise ValueError(f"ERROR! {self.card_type} is not a valid type!")
@@ -77,25 +77,24 @@ class Controller:
         return card
 
     def update_all_cards(self, starting_page : int = 0):
-        card_list_source_code_path = FileHandler.gen_card_list_source_code_directory(self.card_type, starting_page)
-        if FileHandler.does_file_exist(card_list_source_code_path):
-            print(f"\nUpdating {self.card_type} cards, from table-page {starting_page}.")
-            table_source_code = FileHandler.read_file(card_list_source_code_path)
-            table_interpreter = TableInterpreter(table_source_code)
-            list_of_titles = table_interpreter.extract_list_of_names_with_link()
+        table_interpreter = SourceCode.update_cards_from_table_file(self.card_type, starting_page)
+
+        list_of_titles = table_interpreter.extract_list_of_names_with_link()
+        if self.card_type == Spell.__name__ or self.card_type == CombatManeuver.__name__:
+            list_of_summaries = table_interpreter.extract_list_of_summaries()
+        
+        for i in range(len(list_of_titles)):
+            card_title = list_of_titles[i][0]
+
             if self.card_type == Spell.__name__ or self.card_type == CombatManeuver.__name__:
-                list_of_summaries = table_interpreter.extract_list_of_summaries()
-            
-            for i in range(len(list_of_titles)):
-                card_title = list_of_titles[i][0]
-                if self.card_type == Spell.__name__:
-                    self.update_card(card_title, list_of_summaries[i])
-                else:
-                    self.update_card(card_title)
-            
+                self.update_card(card_title, list_of_summaries[i])
+            else:
+                self.update_card(card_title)
+        
+        if table_interpreter.is_next_page():
             self.update_all_cards(starting_page + 1)
-        else:
-            print(f"\nFinished updating all {self.card_type} card. {len(self.card_collection)} card(s) updated.")
+        else: 
+            print(f"\nFinished updating all {self.card_type} card. {len(self.card_collection)} card(s) in card_collection.")
             ObjectHandler.save_object(self.card_collection, ObjectHandler.gen_pickled_card_dict_filepath())
         
 
@@ -105,17 +104,9 @@ class Controller:
     def update_table(self, page_number : int) -> bool:
         # Scrape source text of table
         source_code = SourceCode.update_table_source_code(self.card_type, page_number)
-        
-        # Make TableInterpreter for table
-        table_interpreter = TableInterpreter(source_code)
 
-        # Scrape cards
-        list_of_titles = table_interpreter.extract_list_of_names_with_link()
-        print(f"\nUpdating {len(list_of_titles)} {self.card_type} cards, from table-page {page_number}.")
-        SourceCode.update_card_table_source_code(self.card_type, list_of_titles)
-
-        # Return TableExtractor of table
-        return table_interpreter.is_next_page()
+        # Return is_next_page
+        return TableInterpreter.is_next_page_from_code(source_code)
 
 
     # Update all files for tables with the given card type. 
