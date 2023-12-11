@@ -106,7 +106,7 @@ class Controller:
         source_code = SourceCode.update_table_source_code(self.card_type, page_number)
 
         # Return is_next_page
-        return TableInterpreter.is_next_page_from_code(source_code)
+        return TableInterpreter(source_code).is_next_page()
 
 
     # Update all files for tables with the given card type. 
