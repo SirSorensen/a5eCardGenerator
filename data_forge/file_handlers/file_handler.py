@@ -72,29 +72,3 @@ class FileHandler:
     
     def _get_global_output_directory():
         return global_output_directory
-    
-    def rename_old_files():
-        for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
-            for name in filenames:
-                abs_filepath = os.path.join(dirpath, name)
-                if name == "0.html":
-                    print(abs_filepath)
-                new_abs_filepath = abs_filepath              
-                if name.startswith("source_code_of_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("source_code_of_", ""))
-                elif name.startswith("source_code_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("source_code_", ""))
-                elif name.startswith("pretty_code_of_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("pretty_code_of_", ""))
-                elif name.startswith("pretty_code_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("pretty_code_", ""))
-                elif not name.startswith("page_") and "\\Lists\\" in abs_filepath:
-                    new_abs_filepath = os.path.join(dirpath, "page_" + name)
-                elif name.startswith("page_") and not ("\\Lists\\" in abs_filepath):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("page_", ""))
-                
-                if not FileHandler.does_file_exist(new_abs_filepath):
-                    os.rename(abs_filepath, new_abs_filepath)
-                elif new_abs_filepath != abs_filepath:
-                    os.remove(abs_filepath)
-                    print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
