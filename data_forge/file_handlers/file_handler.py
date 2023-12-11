@@ -87,25 +87,3 @@ class FileHandler:
 
     def old_gen_card_list_pretty_code_directory(card_type : str, page_number : str):
         return rf"{global_list_output_directory}{card_type}s/Pretty/pretty_code_of_page_{page_number}.html"
-    
-    def rename_old_files():
-        for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
-            for name in filenames:
-                abs_filepath = os.path.join(dirpath, name)
-                new_abs_filepath = abs_filepath              
-                if name.startswith("source_code_of_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("source_code_of_", ""))
-                elif name.startswith("source_code_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("source_code_", ""))
-                elif name.startswith("pretty_code_of_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("pretty_code_of_", ""))
-                elif name.startswith("pretty_code_"):
-                    new_abs_filepath = os.path.join(dirpath, name.replace("pretty_code_", ""))
-                elif name.startswith("page_") and '/Lists/' not in abs_filepath:
-                    new_abs_filepath = os.path.join(dirpath, name.replace("page_", ""))
-                
-                if not FileHandler.does_file_exist(new_abs_filepath):
-                    os.rename(abs_filepath, new_abs_filepath)
-                elif new_abs_filepath != abs_filepath:
-                    os.remove(abs_filepath)
-                    print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
