@@ -1,28 +1,31 @@
 
+import requests
+import random
+import time
 from data_forge.data_structures.combat_maneuver import CombatManeuver
 from data_forge.data_structures.magic_item import MagicItem
 from data_forge.data_structures.monster import Monster
 from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
-import time
-import requests
 
 # Scrapes the source text of a given website. 
 # Inputs: For example in https://a5e.tools/spell/aid, url_ending = 'spell/aid' and url_start = 'https://a5e.tools/'
 # Returns the contents of the scraped website.
 def scrape_source_code(url_ending : str, url_start : str = "https://a5e.tools/") -> str:
     
+    sleep_time = round(random.uniform(10.0, 30.0), 4)
     url = rf'{url_start}{url_ending}'
 
-    print(f"Scraping \'{url}\'...")
+    print(f"Waiting {sleep_time} seconds to scrape \'{url}\'...")
+    time.sleep(sleep_time)
+    print(f"Scraping...")
+ 
 
     response = requests.get(url)
     if response.status_code == 404:
         print(f"404: {url}")
     else:
         response.raise_for_status()
-
-    time.sleep(10)
     
     return response.text
 
