@@ -62,14 +62,16 @@ class FileHandler:
         code_type = None
         file_extension = ".html"
         if is_table:
-                code_type = "Tables"
+            code_type = "Tables"
+            if is_article:
+                code_type += "/Articles"
         elif is_article:
-                code_type = "Articles"
+            code_type = "Articles"
         elif is_str:
-                code_type = "Strings"
-                file_extension = ".txt"
+            code_type = "Strings"
+            file_extension = ".txt"
         else:
-                code_type = "Source_Code"
+            code_type = "Source_Code"
 
         if code_type is None:
             raise ValueError("ERROR! code_type is None!")
@@ -90,8 +92,8 @@ class FileHandler:
     def gen_card_str_directory(card_type : str, context_name : str):
         return FileHandler.__gen_source_code_directory(card_type, context_name, is_str=True)
 
-    def gen_card_list_source_code_directory(card_type : str, page_number : int, is_pretty : bool = False):
-        return FileHandler.__gen_source_code_directory(card_type, f"page_{str(page_number)}", is_table=True, is_pretty=is_pretty)
+    def gen_card_list_source_code_directory(card_type : str, page_number : int, is_pretty : bool = False, is_article : bool = False):
+        return FileHandler.__gen_source_code_directory(card_type, f"page_{str(page_number)}", is_table=True, is_pretty=is_pretty, is_article=is_article)
     
     def _get_global_output_directory():
         return global_output_directory
