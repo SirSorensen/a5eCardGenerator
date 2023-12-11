@@ -13,21 +13,28 @@ class SourceCode:
         # Scrape table source code if it doesn't exist yet
         card_list_source_code_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number)
         if not FileHandler.does_file_exist(card_list_source_code_path):
-            source_code = scrape_table_source_code(card_type, page_number)
+            table_source_code = scrape_table_source_code(card_type, page_number)
         else:
-            source_code = ""        
-        source_code = FileHandler.write_to_file_if_not_exists(source_code, card_list_source_code_path)
+            table_source_code = ""        
+        table_source_code = FileHandler.write_to_file_if_not_exists(table_source_code, card_list_source_code_path)
 
-        # Prettify table source code if it doesn't exist yet
-        card_list_pretty_code_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number, is_pretty=True)
-        if not FileHandler.does_file_exist(card_list_pretty_code_path):
-            pretty_code = TableInterpreter.prettify_html_source_code(source_code)
-        else:
-            pretty_code = ""
-        pretty_code = FileHandler.write_to_file_if_not_exists(pretty_code, card_list_pretty_code_path)
+        # Set up TableInterpreter
+        table_interpreter = TableInterpreter(table_source_code)
+
+        # Prettify table source code
+        table_pretty_code_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number, is_pretty=True)
+        table_pretty_code = SourceCode.__process_code(table_pretty_code_path, table_interpreter.prettify_html)
+
+        # Generate/find table article code
+        table_article_code_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number, is_article=True)
+        table_article_code = SourceCode.__process_code(table_article_code_path, table_interpreter.get_article_code)
+
+        # Prettify table article code
+        table_article_pretty_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number, is_article=True, is_pretty=True)
+        table_article_code = SourceCode.__process_code(table_article_pretty_path, table_interpreter.prettify_article_code)
 
         # Return table source code 
-        return source_code
+        return table_source_code
     
 
     # Update a card from a type, a name & url ending
@@ -46,25 +53,17 @@ class SourceCode:
         # Set up CodeInterpreter
         code_interpreter = CodeInterpreter(card_source_code)
 
-        # Function to handle prettifying and extracting article code
-        def process_code(file_path: str, processing_func):
-            if not FileHandler.does_file_exist(file_path):
-                processed_code = processing_func()
-            else:
-                processed_code = ""
-            return FileHandler.write_to_file_if_not_exists(processed_code, file_path)
-
         # Prettify card source code
         card_pretty_code_path = FileHandler.gen_card_source_code_directory(card_type, context_name, is_pretty=True)
-        card_pretty_code = process_code(card_pretty_code_path, code_interpreter.prettify_html)
+        card_pretty_code = SourceCode.__process_code(card_pretty_code_path, code_interpreter.prettify_html)
         
-        # Find card article code
+        # Generate/find card article code
         card_article_code_path = FileHandler.gen_card_article_code_directory(card_type, context_name)
-        card_article_code = process_code(card_article_code_path, code_interpreter.get_article_code)
+        card_article_code = SourceCode.__process_code(card_article_code_path, code_interpreter.get_article_code)
 
         # Prettify card article code
         card_pretty_article_path = FileHandler.gen_card_article_code_directory(card_type, context_name, is_pretty=True)
-        card_pretty_article = process_code(card_pretty_article_path, code_interpreter.prettify_article_code)
+        card_pretty_article = SourceCode.__process_code(card_pretty_article_path, code_interpreter.prettify_article_code)
 
         # Return card article code
         return card_article_code
@@ -89,3 +88,12 @@ class SourceCode:
         SourceCode.update_card_table_source_code(card_type, list_of_titles)
 
         return table_interpreter
+    
+
+    # Function to handle prettifying and extracting article code
+    def __process_code(file_path: str, processing_func):
+        if not FileHandler.does_file_exist(file_path):
+            processed_code = processing_func()
+        else:
+            processed_code = ""
+        return FileHandler.write_to_file_if_not_exists(processed_code, file_path)
