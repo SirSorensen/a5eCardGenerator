@@ -94,7 +94,7 @@ class FileCleaner(FileHandler):
         for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
             for name in filenames:
                 # Remove all files that are not source code or tables, and if they are then only remove them if they are in the Pretty folder
-                if not ("Source_Code" in dirpath or "Tables" in dirpath) or "Pretty" in dirpath:
+                if not ("Source_Code" in dirpath or "Tables" in dirpath) or "Pretty" in dirpath or "Articles" in dirpath:
                     abs_filepath = os.path.join(dirpath, name)
                     os.remove(abs_filepath)
                     print(f"Removed {abs_filepath}.")
