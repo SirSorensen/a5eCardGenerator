@@ -59,7 +59,7 @@ class FileHandler:
         return rf"{global_source_code_output_directory}{card_type}s/Article/{context_name}.html"
 
     def gen_card_pretty_code_directory(card_type : str, context_name : str) -> str:
-        return rf"{global_source_code_output_directory}{card_type}s/Pretty/page_{context_name}.html"
+        return rf"{global_source_code_output_directory}{card_type}s/Pretty/{context_name}.html"
     
     def gen_card_str_directory(card_type : str, context_name : str):
         return rf"{global_output_directory}Strings/{card_type}s/{context_name}.txt"
@@ -68,22 +68,33 @@ class FileHandler:
         return rf"{global_list_output_directory}{card_type}s/page_{page_number}.html"
 
     def gen_card_list_pretty_code_directory(card_type : str, page_number : str):
-        return rf"{global_list_output_directory}{card_type}s/Pretty/{page_number}.html"
+        return rf"{global_list_output_directory}{card_type}s/Pretty/page_{page_number}.html"
     
     def _get_global_output_directory():
         return global_output_directory
-
-
     
-    def old_gen_card_source_code_directory(card_type : str, context_name : str):
-        return rf"{global_source_code_output_directory}{card_type}s/source_code_{context_name}.html"
-    
-
-    def old_gen_card_pretty_code_directory(card_type : str, context_name : str) -> str:
-        return rf"{global_source_code_output_directory}{card_type}s/Pretty/pretty_code_of_page_{context_name}.html"
-
-    def old_gen_card_list_source_code_directory(card_type : str, page_number : str):
-        return rf"{global_list_output_directory}{card_type}s/source_code_of_page_{page_number}.html"
-
-    def old_gen_card_list_pretty_code_directory(card_type : str, page_number : str):
-        return rf"{global_list_output_directory}{card_type}s/Pretty/pretty_code_of_page_{page_number}.html"
+    def rename_old_files():
+        for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
+            for name in filenames:
+                abs_filepath = os.path.join(dirpath, name)
+                if name == "0.html":
+                    print(abs_filepath)
+                new_abs_filepath = abs_filepath              
+                if name.startswith("source_code_of_"):
+                    new_abs_filepath = os.path.join(dirpath, name.replace("source_code_of_", ""))
+                elif name.startswith("source_code_"):
+                    new_abs_filepath = os.path.join(dirpath, name.replace("source_code_", ""))
+                elif name.startswith("pretty_code_of_"):
+                    new_abs_filepath = os.path.join(dirpath, name.replace("pretty_code_of_", ""))
+                elif name.startswith("pretty_code_"):
+                    new_abs_filepath = os.path.join(dirpath, name.replace("pretty_code_", ""))
+                elif not name.startswith("page_") and "\\Lists\\" in abs_filepath:
+                    new_abs_filepath = os.path.join(dirpath, "page_" + name)
+                elif name.startswith("page_") and not ("\\Lists\\" in abs_filepath):
+                    new_abs_filepath = os.path.join(dirpath, name.replace("page_", ""))
+                
+                if not FileHandler.does_file_exist(new_abs_filepath):
+                    os.rename(abs_filepath, new_abs_filepath)
+                elif new_abs_filepath != abs_filepath:
+                    os.remove(abs_filepath)
+                    print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
