@@ -4,8 +4,9 @@ from data_forge.data_structures.magic_item import MagicItem
 from data_forge.data_structures.monster import Monster
 from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
+from data_forge.file_handlers.file_handler import FileHandler
 
-card_types = [MagicItem.__name__, Spell.__name__, Feat.__name__, CombatManeuver.__name__, Monster.__name__]
+card_types = [Spell.__name__, MagicItem.__name__, Feat.__name__, CombatManeuver.__name__, Monster.__name__]
 
 def test_update_all_tables(card_type : str) -> Controller:
     controller = Controller(card_type)
@@ -35,7 +36,18 @@ def test_input(controller : Controller):
 
 # Insert runs below
 
-test_update_all_tables_all_types()
+# FileHandler.move_old_files()
+
+# test_update_all_tables_all_types()
+test_update_all_cards_all_types()
+
+# test_update_all_tables(Feat.__name__)
+# test_update_all_tables(CombatManeuver.__name__)
+# test_update_all_tables(MagicItem.__name__)
+# test_update_all_tables(Monster.__name__)
+# test_update_all_tables(Spell.__name__)
+
+
 
 controller = Controller(MagicItem.__name__)
 
