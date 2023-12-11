@@ -1,13 +1,19 @@
 from data_forge.data_structures.card import Card
 
-field_classes = []
+article_class = "combat-maneuver"
+
+field_classes = [
+    'combat-maneuver-points-actions',
+    'combat-maneuver-degree-tradition-action-type',
+    'field--name-body',
+    'combat-maneuver-prerequisite',
+    'combat-maneuver-source'
+]
 
 field_ids = []
 
 class CombatManeuver(Card):
     def __init__(self, title : str, source_code : str, summary : str):
-        # Title = "*"
-        self.title = title
         # Summary = "*"
         self.summary = summary
 
@@ -17,8 +23,6 @@ class CombatManeuver(Card):
     
     def set_fields(self, field_dict : dict):
         return
-        # Name = "*"
-        self.name = field_dict.get('name')
         
         # Summary = "*"
         self.summary = field_dict.get('summary')

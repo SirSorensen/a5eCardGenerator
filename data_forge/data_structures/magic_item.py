@@ -11,19 +11,23 @@ field_ids = []
 
 class MagicItem(Card):
     def __init__(self, title : str, source_code : str):
-        # Title = "*"
-        self.title = title
-
         super(MagicItem, self).__init__(title, source_code, field_classes, field_ids)
 
         self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):
-        # Name = "*"
-        self.name = self._code_interpreter.extract_name()
-
-        if field_dict.get('tags') is not None:
-            for tag in field_dict.get('tags'):
+        # Tags = Attunement, Sentient, Charges, Consumable, Cursed
+        tags = field_dict.get('tags')
+        self.attunement = False
+        self.component_seen = False
+        self.charges = False
+        self.consumable = False
+        self.cursed = False
+        if tags is not None:
+            if type(tags) != list:
+                tags = [tags]
+            
+            for tag in tags:
                 match tag.lower().strip():
                     case "attunement":
                         self.attunement = True
@@ -47,10 +51,3 @@ class MagicItem(Card):
 
         # Source = "*"
         self.source = field_dict.get('source')
-
-    # This function extracts a spell from a source text
-    def extract_fields(self):
-        field_dict = super(MagicItem, self).extract_fields()
-        field_dict = super(MagicItem, self).extra_field_class("magic-item-category-rarity-cost", field_dict, True)
-        return field_dict
-

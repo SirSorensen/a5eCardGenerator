@@ -6,16 +6,12 @@ field_ids = []
 
 class Feat(Card):
     def __init__(self, title : str, source_code : str):
-        # Title = "*"
-        self.title = title
-
         super(Feat, self).__init__(title, source_code, field_classes, field_ids)
 
         self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):
         return
-        self.name = field_dict.get('name')
         self.origin = field_dict.get('origin')
         self.summary = field_dict.get('summary')
         self.prerequisites = field_dict.get('prerequisites')

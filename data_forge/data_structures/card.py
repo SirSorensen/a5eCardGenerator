@@ -4,6 +4,8 @@ from data_forge.data_interpreters.code_interpreter import CodeInterpreter
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
 class Card:
     def __init__(self, title : str, source_code : str, field_classes : list[str], field_ids : list[str]):
+
+        self.title = title
         # data_name is the naming of the data structure when saved to a file.
         self.name = Card.title_to_context_name(title)
 
@@ -14,7 +16,6 @@ class Card:
 
         self._code_interpreter = CodeInterpreter(source_code)
 
-        # self.title = title
         # self.subtitle = subtitle
         # self.description = description
         # self.image = Image(image_filepath)
@@ -34,11 +35,6 @@ class Card:
             field_dict[Card.key_namer(id)] = field_info
 
         return field_dict
-
-    def extra_field_class(self, field_class : str, field_dict : dict = {},  flatten : bool = False):
-            field_info = self._code_interpreter.extract_field_information_from_class(field_class, flatten=flatten)
-            field_dict[Card.key_namer(f"single-{field_class}")] = field_info
-            return field_dict
             
     # This function converts a card's name to a data name, by replacing spaces and special characters with underscores or nothing
     def title_to_context_name(name : str):

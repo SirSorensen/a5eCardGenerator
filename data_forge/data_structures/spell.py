@@ -26,8 +26,6 @@ field_ids = [
 
 class Spell(Card):
     def __init__(self, title : str, source_code : str, summary : str):
-        # Title = "*"
-        self.title = title
         # Summary = "*"
         self.summary = summary
 
