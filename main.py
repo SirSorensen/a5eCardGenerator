@@ -37,7 +37,7 @@ def test_input(controller : Controller):
 # Insert runs below
 
 
-# FileCleaner.clean_generated_files()
+FileCleaner.clean_generated_files()
 # FileCleaner.move_old_files()
 
 test_update_all_tables_all_types()
