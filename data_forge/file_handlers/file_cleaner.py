@@ -2,12 +2,13 @@
 import os
 from data_forge.file_handlers.file_handler import FileHandler
 
+root = FileHandler._get_global_output_directory()
 
 class FileCleaner(FileHandler):
 
 
     def move_old_files():
-        for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
+        for dirpath, dirnames, filenames in os.walk(root):
             for name in filenames:
                 abs_filepath = os.path.join(dirpath, name)
                 
@@ -29,15 +30,20 @@ class FileCleaner(FileHandler):
                 code_type = None
                 match dirpath:
                     case l if "Lists" in l or "Tables" in l:
-                        if "Pretty" in l:
-                            code_type = "Tables/Pretty"
-                        else:
-                            code_type = "Tables"
+                        code_type = "Tables"
                     case l if "Source_Code" in l:
-                        if "Pretty" in l:
-                            code_type = "Source_Code/Pretty"
-                        else:
-                            code_type = "Source_Code"
+                        code_type = "Source_Code"
+                    case l if "Pickled" in l:
+                        pass
+                    case _:
+                        print(f"ERROR! Could not determine code_type for {abs_filepath}.")
+
+                if code_type:
+                    if "Stripped" in dirpath or "Article" in dirpath:
+                        code_type += "/Stripped"
+
+                    if "Pretty" in dirpath:
+                        code_type += "/Pretty"
 
                 # Card type and code type are both known, so we can move the file
                 if card_type and code_type:
@@ -59,9 +65,10 @@ class FileCleaner(FileHandler):
 
 
 
-
+    # Rename all files with legacy naming
+    # Update as you go
     def rename_old_files():
-        for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
+        for dirpath, dirnames, filenames in os.walk(root):
             for name in filenames:
                 abs_filepath = os.path.join(dirpath, name)
 
@@ -95,12 +102,15 @@ class FileCleaner(FileHandler):
                     print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
     
 
-    
+    # Delete all files that are not source code or tables
     def clean_generated_files():
-        for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
+        for dirpath, dirnames, filenames in os.walk(root):
             for name in filenames:
-                # Remove all files that are not source code or tables
+
                 if not (dirpath.endswith("Source_Code") or dirpath.endswith("Tables")):
                     abs_filepath = os.path.join(dirpath, name)
                     os.remove(abs_filepath)
                     print(f"Removed {abs_filepath}.")
+
+
+    
