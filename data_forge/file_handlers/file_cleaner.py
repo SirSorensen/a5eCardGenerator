@@ -93,8 +93,8 @@ class FileCleaner(FileHandler):
     def clean_generated_files():
         for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
             for name in filenames:
-                # Remove all files that are not source code or tables, and if they are then only remove them if they are in the Pretty folder
-                if not ("Source_Code" in dirpath or "Tables" in dirpath) or "Pretty" in dirpath or "Articles" in dirpath:
+                # Remove all files that are not source code or tables
+                if not (dirpath.endswith("Source_Code") or dirpath.endswith("Tables")):
                     abs_filepath = os.path.join(dirpath, name)
                     os.remove(abs_filepath)
                     print(f"Removed {abs_filepath}.")
