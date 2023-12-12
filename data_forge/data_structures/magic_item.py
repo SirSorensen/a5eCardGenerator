@@ -51,3 +51,13 @@ class MagicItem(Card):
 
         # Source = "*"
         self.source = field_dict.get('source')
+
+    # This function generates a key name from a field class or id
+    def key_namer(self, key : str):
+        key_name = key.lower()
+        for ch in ["mi-","magic-item-category-"]:
+            key_name = key_name.replace(ch,"")
+        
+        key_name = super(MagicItem, self).key_namer(key_name)
+
+        return key_name

@@ -28,11 +28,11 @@ class Card:
         print(f"Extracting fields from {self.name}...")
         for class_ in self._field_classes:
             field_info = self._code_interpreter.extract_field_information_from_class(class_)
-            field_dict[Card.key_namer(class_)] = field_info
+            field_dict[self.key_namer(class_)] = field_info
         
         for id in self._field_ids:
             field_info = self._code_interpreter.extract_field_information_from_id(id)
-            field_dict[Card.key_namer(id)] = field_info
+            field_dict[self.key_namer(id)] = field_info
 
         return field_dict
             
@@ -43,12 +43,14 @@ class Card:
         return data_name
 
     # This function generates a key name from a field class or id
-    def key_namer(key : str):
+    def key_namer(self, key : str):
         key_name = key.lower()
-        for ch in ["field--", "name-", "field-", "spell-", "mi-", "magic-item-", "category-", "-indicator"]:
+        for ch in ["field--", "name-", "field-"]:
             key_name = key_name.replace(ch,"")
         
         key_name = Card.title_to_context_name(key_name)
+
+        print(f"Key name: {key_name}")
 
         return key_name
     
