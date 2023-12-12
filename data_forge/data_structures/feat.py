@@ -1,6 +1,10 @@
 from data_forge.data_structures.card import Card
 
-field_classes = []
+field_classes = [
+    "feat-prerequisite",
+    "feat-details",
+    "feat-source"
+]
 
 field_ids = []
 
@@ -11,12 +15,21 @@ class Feat(Card):
         self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):
-        return
-        self.origin = field_dict.get('origin')
-        self.summary = field_dict.get('summary')
-        self.prerequisites = field_dict.get('prerequisites')
-        self.description, self.sub_feats = SubFeat.divideDescription(field_dict.get('description'))
+        # self.origin = field_dict.get('origin')
+        # self.summary = field_dict.get('summary')
+        self.prerequisites = field_dict.get('prerequisite')
+        self.description, self.sub_feats = SubFeat.divideDescription(field_dict.get('details'))
+        self.source = field_dict.get('source')
 
+    # This function generates a key name from a field class or id
+    def key_namer(self, key : str):
+        key_name = key.lower()
+        for ch in ["feat-"]:
+            key_name = key_name.replace(ch,"")
+        
+        key_name = super(Feat, self).key_namer(key_name)
+
+        return key_name
 
 class SubFeat:
     def __init__(self,
@@ -28,7 +41,7 @@ class SubFeat:
 
 # TODO: Implement this
 def divideDescription(text: str) -> (str, list[SubFeat]):
-    body = ""
+    body = text
     sub_feats = []
     
     # split text into body and sub-feats
