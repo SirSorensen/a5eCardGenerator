@@ -1,5 +1,5 @@
 
-from data_forge.source_code_handlers.website_scraper import scrape_table_source_code, scrape_source_code
+from data_forge.source_code_handlers.website_scraper import scrape_table_source_code, scrape_source_code, gen_card_url, gen_table_url
 from data_forge.data_interpreters.code_interpreter import CodeInterpreter
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
 from data_forge.file_handlers.file_handler import FileHandler
@@ -8,7 +8,7 @@ from data_forge.data_structures.card import Card
 class SourceCode:
 
     def update_table_source_code(card_type : str, page_number : str) -> str:
-        print(f"\nUpdating files for {card_type} table, page {page_number}.")
+        print(f"\nUpdating files for {card_type} table, page {page_number}. (See {gen_table_url(card_type, page_number)} for source.)")
 
         # Scrape table source code if it doesn't exist yet
         card_list_source_code_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number)
@@ -39,7 +39,7 @@ class SourceCode:
 
     # Update a card from a type, a name & url ending
     def update_card_source_code(card_type : str, card_name : str, card_url_ending : str) -> str:
-        print(f"\nUpdating files for {card_type} card \'{card_name}\'.")
+        print(f"\nUpdating files for {card_type} card \'{card_name}\'. (See {gen_card_url(card_url_ending)} for source.)")
 
         # Scrape card source code
         context_name = Card.title_to_context_name(card_name)
@@ -76,15 +76,15 @@ class SourceCode:
             card_url_ending = list_of_names[i][1]
             SourceCode.update_card_source_code(card_type, card_name, card_url_ending)
     
-    def update_cards_from_table_file(card_type : str, page : int) -> TableInterpreter:
+    def update_cards_from_table_file(card_type : str, page_number : int) -> TableInterpreter:
         # Make TableInterpreter for table
-        table_abs_filepath = FileHandler.gen_card_list_source_code_directory(card_type, page)
+        table_abs_filepath = FileHandler.gen_card_list_source_code_directory(card_type, page_number)
         table_source_code = FileHandler.read_file(table_abs_filepath)
         table_interpreter = TableInterpreter(table_source_code)
 
         # Scrape cards
         list_of_titles = table_interpreter.extract_list_of_names_with_link()
-        print(f"\nUpdating {len(list_of_titles)} {card_type} card files, from table-page {page}.")
+        print(f"\nUpdating {len(list_of_titles)} {card_type} card files, from table-page {page_number}. (See {gen_table_url(card_type, page_number)} for source.)")
         SourceCode.update_card_table_source_code(card_type, list_of_titles)
 
         return table_interpreter

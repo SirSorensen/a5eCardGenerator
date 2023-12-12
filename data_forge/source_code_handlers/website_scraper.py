@@ -8,12 +8,14 @@ from data_forge.data_structures.monster import Monster
 from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
 
+standard_url_start = "https://a5e.tools/"
+
 # Scrapes the source text of a given website. 
 # Inputs: For example in https://a5e.tools/spell/aid, url_ending = 'spell/aid' and url_start = 'https://a5e.tools/'
 # Returns the contents of the scraped website.
-def scrape_source_code(url_ending : str, url_start : str = "https://a5e.tools/") -> str:
+def scrape_source_code(url_ending : str, url_start : str = standard_url_start) -> str:
     
-    sleep_time = round(random.uniform(10.0, 30.0), 4)
+    sleep_time = round(random.uniform(5.0, 20.0), 4)
     url = rf'{url_start}{url_ending}'
 
     print(f"Waiting {sleep_time} seconds to scrape \'{url}\'...")
@@ -55,3 +57,9 @@ def __get_table_url_ending(card_type : str, page_number):
             return r"monsters?combine=&page=" + str(page_number)
         case _:
             raise ValueError(f"Card data type {card_type} is not supported by TableScraper.py")
+
+def gen_card_url(card_url_ending : str):
+    return standard_url_start + card_url_ending
+
+def gen_table_url(card_type : str, page_number):
+    return standard_url_start + __get_table_url_ending(card_type, page_number)
