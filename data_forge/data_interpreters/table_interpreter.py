@@ -47,10 +47,10 @@ class TableInterpreter(CodeInterpreter):
         next_page_li = self.soup.find('li', class_="next")
         return next_page_li is not None
     
-    def get_article_code(self) -> str:
+    def get_stripped_code(self) -> str:
         table = self.soup.find('table')
         return str(table)
     
-    def prettify_article_code(self) -> str:
+    def prettify_stripped_code(self) -> str:
         table = self.soup.find('table')
         return CodeInterpreter.prettify_html_source_code(str(table))

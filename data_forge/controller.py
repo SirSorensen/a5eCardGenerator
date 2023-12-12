@@ -31,35 +31,35 @@ class Controller:
         card = self.card_collection.get(context_name)
 
         if card is None:
-            card_article_code_path = FileHandler.gen_card_article_code_directory(self.card_type, context_name)
-            card_article_code = FileHandler.read_file(card_article_code_path)
+            card_stripped_code_path = FileHandler.gen_card_stripped_code_directory(self.card_type, context_name)
+            card_stripped_code = FileHandler.read_file(card_stripped_code_path)
             match self.card_type:
                 case Spell.__name__:
                     card = Spell(
                         title=title,
-                        source_code=card_article_code,
+                        source_code=card_stripped_code,
                         summary=summary
                     )
                 case Feat.__name__:
                     card = Feat(
                         title=title,
-                        source_code=card_article_code
+                        source_code=card_stripped_code
                     )
                 case CombatManeuver.__name__:
                     card = CombatManeuver(
                         title=title,
-                        source_code=card_article_code,
+                        source_code=card_stripped_code,
                         summary=summary
                     )
                 case MagicItem.__name__:
                     card = MagicItem(
                         title=title,
-                        source_code=card_article_code
+                        source_code=card_stripped_code
                     )
                 case Monster.__name__:
                     card = Monster(
                         title=title,
-                        source_code=card_article_code
+                        source_code=card_stripped_code
                     )
                 case _:
                     raise ValueError(f"ERROR! {self.card_type} is not a valid type!")

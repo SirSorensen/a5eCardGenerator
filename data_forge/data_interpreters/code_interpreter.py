@@ -34,11 +34,11 @@ class CodeInterpreter:
 
         return pretty_contents
     
-    def get_article_code(self) -> str:
+    def get_stripped_code(self) -> str:
         article = self.soup.find('article')
         return str(article)
     
-    def prettify_article_code(self) -> str:
+    def prettify_stripped_code(self) -> str:
         article = self.soup.find('article')
         return CodeInterpreter.prettify_html_source_code(str(article))
 

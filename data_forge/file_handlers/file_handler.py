@@ -57,24 +57,24 @@ class FileHandler:
         return rf"{global_html_output_directory}{card_type}s/{code_type}/{context_name}{file_extension}"
     
     def __gen_source_code_directory(card_type : str, context_name : str, 
-                                  is_table : bool = False, is_article : bool = False,
+                                  is_table : bool = False, is_stripped : bool = False,
                                   is_str : bool = False, is_pretty : bool = False):
         code_type = None
         file_extension = ".html"
         if is_table:
             code_type = "Tables"
-            if is_article:
-                code_type += "/Articles"
-        elif is_article:
-            code_type = "Articles"
         elif is_str:
             code_type = "Strings"
             file_extension = ".txt"
         else:
             code_type = "Source_Code"
-
+        
         if code_type is None:
             raise ValueError("ERROR! code_type is None!")
+        
+
+        if is_stripped:
+            code_type += "/Stripped"
 
         if is_pretty:
             code_type += "/Pretty"
@@ -86,14 +86,14 @@ class FileHandler:
     def gen_card_source_code_directory(card_type : str, context_name : str, is_pretty : bool = False):
         return FileHandler.__gen_source_code_directory(card_type, context_name, is_pretty=is_pretty)
 
-    def gen_card_article_code_directory(card_type : str, context_name : str, is_pretty : bool = False):
-        return FileHandler.__gen_source_code_directory(card_type, context_name, is_article=True, is_pretty=is_pretty)
+    def gen_card_stripped_code_directory(card_type : str, context_name : str, is_pretty : bool = False):
+        return FileHandler.__gen_source_code_directory(card_type, context_name, is_stripped=True, is_pretty=is_pretty)
     
     def gen_card_str_directory(card_type : str, context_name : str):
         return FileHandler.__gen_source_code_directory(card_type, context_name, is_str=True)
 
-    def gen_card_list_source_code_directory(card_type : str, page_number : int, is_pretty : bool = False, is_article : bool = False):
-        return FileHandler.__gen_source_code_directory(card_type, f"page_{str(page_number)}", is_table=True, is_pretty=is_pretty, is_article=is_article)
+    def gen_card_list_source_code_directory(card_type : str, page_number : int, is_pretty : bool = False, is_stripped : bool = False):
+        return FileHandler.__gen_source_code_directory(card_type, f"page_{str(page_number)}", is_table=True, is_pretty=is_pretty, is_stripped=is_stripped)
     
     def _get_global_output_directory():
         return global_output_directory

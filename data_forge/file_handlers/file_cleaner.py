@@ -4,6 +4,8 @@ from data_forge.file_handlers.file_handler import FileHandler
 
 
 class FileCleaner(FileHandler):
+
+
     def move_old_files():
         for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
             for name in filenames:
@@ -56,6 +58,8 @@ class FileCleaner(FileHandler):
                     print(f"code_type: {code_type}")
 
 
+
+
     def rename_old_files():
         for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
             for name in filenames:
@@ -89,6 +93,8 @@ class FileCleaner(FileHandler):
                 elif new_abs_filepath != abs_filepath:
                     os.remove(abs_filepath)
                     print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
+    
+
     
     def clean_generated_files():
         for dirpath, dirnames, filenames in os.walk(FileHandler._get_global_output_directory()):
