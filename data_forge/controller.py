@@ -10,6 +10,8 @@ from data_forge.data_structures.monster import Monster
 from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
 
+from data_forge.settings import *
+
 
 class Controller:
     def __init__(self, card_type : str):
@@ -25,7 +27,7 @@ class Controller:
 
 
     def update_card(self, title : str, summary : str  = "") -> Card:
-        print(f"\nUpdating {self.card_type} card {title}...")
+        if debug: print(f"\nUpdating {self.card_type} card {title}...")
         context_name = Card.title_to_context_name(title)
 
         card = self.card_collection.get(context_name)
@@ -94,7 +96,7 @@ class Controller:
         if table_interpreter.is_next_page():
             self.update_all_cards(starting_page + 1)
         else: 
-            print(f"\nFinished updating all {self.card_type} card. {len(self.card_collection)} card(s) in card_collection.")
+            print(f"\nFinished updating all {self.card_type} card(s).\n{len(self.card_collection)} card(s) in card_collection.")
             ObjectHandler.save_object(self.card_collection, ObjectHandler.gen_pickled_card_dict_filepath())
         
 
@@ -119,6 +121,11 @@ class Controller:
         if is_next_page:
             self.update_all_tables(starting_page + 1)
         else:
-            print(f"\nFinished scraping {self.card_type} tables. {starting_page+1} page(s) scraped.")
+            if debug: print(f"\nFinished scraping {self.card_type} tables. {starting_page+1} page(s) scraped.")
     
-
+    def get_list_of_card(self, card_type : str) -> list:
+        card_values = self.card_collection.values()
+        print("Amount of card_values:" + str(len(card_values)))
+        cards_of_card_type = list(filter(lambda c: type(c).__name__ == card_type, card_values))
+        print("Amount of cards_of_card_type:" + str(len(cards_of_card_type)))
+        return cards_of_card_type

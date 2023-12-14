@@ -5,6 +5,7 @@ from data_forge.data_structures.monster import Monster
 from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
 from data_forge.file_handlers.file_cleaner import FileCleaner
+from data_forge.sheet_maker import SheetMaker
 
 card_types = [CombatManeuver.__name__, Monster.__name__, Feat.__name__, Spell.__name__, MagicItem.__name__,]
 
@@ -37,11 +38,11 @@ def test_input(controller : Controller):
 # Insert runs below
 
 
-FileCleaner.clean_generated_files()
+# FileCleaner.clean_generated_files()
 # FileCleaner.move_old_files()
 
-test_update_all_tables_all_types()
-test_update_all_cards_all_types()
+# test_update_all_tables_all_types()
+# controller = test_update_all_cards(Spell.__name__)
 
 # test_update_all_tables(Feat.__name__)
 # test_update_all_tables(CombatManeuver.__name__)
@@ -49,7 +50,21 @@ test_update_all_cards_all_types()
 # test_update_all_tables(Monster.__name__)
 # test_update_all_tables(Spell.__name__)
 
+controller = Controller(Spell.__name__)
+spell_cards = controller.get_list_of_card(Spell.__name__)
 
+for card in spell_cards:
+    print(card.title)
+
+
+sheet_maker = SheetMaker("SpellCards")
+
+sheet_maker.save_card_titles(spell_cards[0])
+
+for card in spell_cards:
+    sheet_maker.insert_card_properties(card)
+
+sheet_maker.save("SpellCards.xlsx")
 
 # controller = Controller(MagicItem.__name__)
 
