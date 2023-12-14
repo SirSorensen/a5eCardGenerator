@@ -5,6 +5,8 @@ from data_forge.data_interpreters.table_interpreter import TableInterpreter
 from data_forge.file_handlers.file_handler import FileHandler
 from data_forge.data_structures.card import Card
 
+from data_forge.settings import *
+
 class SourceCode:
 
     def update_table_source_code(card_type : str, page_number : str) -> str:

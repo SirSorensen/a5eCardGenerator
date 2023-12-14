@@ -1,5 +1,5 @@
 from data_forge.data_structures.card import Card
-
+from data_forge.settings import *
 
 
 field_classes = [

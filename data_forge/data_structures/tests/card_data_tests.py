@@ -1,6 +1,6 @@
 import unittest
 import data_forge.data_structures.card as Card
-
+from data_forge.settings import *
 
 # # This function converts a card's name to a data name, by replacing spaces and special characters with underscores or nothing
 #     def title_to_context_name(name : str):

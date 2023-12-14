@@ -1,3 +1,4 @@
+from data_forge.settings import *
 import os
 import pickle
 from data_forge.file_handlers.file_handler import FileHandler
@@ -19,7 +20,7 @@ class ObjectHandler(FileHandler):
         with open(abs_filepath, 'wb') as pickle_file:
             pickle.dump(obj, pickle_file)
         
-        print(f'{obj_name} successfully saved to "{abs_filepath}"')
+        if debug: print(f'{obj_name} successfully saved to "{abs_filepath}"')
 
         return abs_filepath
     
@@ -31,7 +32,7 @@ class ObjectHandler(FileHandler):
             with open(abs_filepath, 'rb') as file:
                 obj = pickle.load(file)
                 file.close()
-            print(f'Object successfully loaded from "{abs_filepath}"')
+            if debug: print(f'Object successfully loaded from "{abs_filepath}"')
             return obj
         else:
             print(f'Object "{abs_filepath}" does not exist')
@@ -47,7 +48,7 @@ class ObjectHandler(FileHandler):
         if not FileHandler.does_file_exist(abs_filepath):
             ObjectHandler.save_object(card, abs_filepath)
         else:
-            print(f'Pickled card "{context_name}" already exists')
+            if debug: print(f'Pickled card "{context_name}" already exists')
         
         return abs_filepath
 

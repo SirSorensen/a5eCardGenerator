@@ -1,4 +1,5 @@
 from data_forge.data_structures.card import Card
+from data_forge.settings import *
 
 field_classes = [
     "feat-prerequisite",
@@ -39,11 +40,11 @@ class SubFeat:
         self.description = description
     
 
-# TODO: Implement this
-def divideDescription(text: str) -> (str, list[SubFeat]):
-    body = text
-    sub_feats = []
-    
-    # split text into body and sub-feats
-    return body, sub_feats
+    # TODO: Implement this
+    def divideDescription(text: str):
+        body = text
+        sub_feats = []
+        
+        # split text into body and sub-feats
+        return body, sub_feats
 

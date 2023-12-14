@@ -8,6 +8,8 @@ from data_forge.data_structures.monster import Monster
 from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
 
+from data_forge.settings import *
+
 standard_url_start = "https://a5e.tools/"
 
 # Scrapes the source text of a given website. 
@@ -18,9 +20,9 @@ def scrape_source_code(url_ending : str, url_start : str = standard_url_start) -
     sleep_time = round(random.uniform(5.0, 20.0), 4)
     url = rf'{url_start}{url_ending}'
 
-    print(f"Waiting {sleep_time} seconds to scrape \'{url}\'...")
+    if debug: print(f"Waiting {sleep_time} seconds to scrape \'{url}\'...")
     time.sleep(sleep_time)
-    print(f"Scraping...")
+    if debug: print(f"Scraping...")
  
 
     response = requests.get(url)

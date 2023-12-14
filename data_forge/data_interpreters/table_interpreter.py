@@ -1,3 +1,4 @@
+from data_forge.settings import *
 from data_forge.data_interpreters.code_interpreter import CodeInterpreter
 from data_forge.data_structures.spell import Spell
 
@@ -39,7 +40,7 @@ class TableInterpreter(CodeInterpreter):
             list_of_summaries = self.__extract_list_of_class(summary_combatManuever_tag_class)
 
         if len(list_of_summaries) == 0:
-            print("ERROR: No summaries found!")
+            if debug: print("ERROR: No summaries found!")
         return list_of_summaries
 
     # This function evaluates whether or not there is a next page

@@ -1,5 +1,5 @@
 import os
-import re
+from data_forge.settings import *
 
 global_output_directory = r"Outputs/"
 global_html_output_directory = rf"{global_output_directory}HTML/"
@@ -21,7 +21,7 @@ class FileHandler:
 
     # Returns the contents of the written file
     def write_to_file(content:str, output_abs_filepath:str):
-        print(f"Writing to {output_abs_filepath}...")
+        if debug: print(f"Writing to {output_abs_filepath}...")
         
         # Create the file if it doesn't exist
         FileHandler._make_file_if_not_exists(output_abs_filepath)
@@ -38,7 +38,7 @@ class FileHandler:
         if not FileHandler.does_file_exist(abs_filepath):
             return FileHandler.write_to_file(content, abs_filepath)
         else:
-            print(f"{abs_filepath} already exists.")
+            if debug: print(f"{abs_filepath} already exists.")
             return FileHandler.read_file(abs_filepath)
 
 
