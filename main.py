@@ -6,6 +6,7 @@ from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
 from data_forge.file_handlers.file_cleaner import FileCleaner
 from data_forge.sheet_maker import SheetMaker
+from PowerPoint_Editing.PowerPointInspector import *
 
 card_types = [CombatManeuver.__name__, Monster.__name__, Feat.__name__, Spell.__name__, MagicItem.__name__,]
 
@@ -64,7 +65,7 @@ sheet_maker.save_card_titles(spell_cards[0])
 for card in spell_cards:
     sheet_maker.insert_card_properties(card)
 
-sheet_maker.save("SpellCards.xlsx")
+sheet_maker.save("Outputs/Sheets/SpellCards.xlsx")
 
 # controller = Controller(MagicItem.__name__)
 
