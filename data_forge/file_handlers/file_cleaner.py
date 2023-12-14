@@ -1,4 +1,4 @@
-
+from data_forge.settings import *
 import os
 from data_forge.file_handlers.file_handler import FileHandler
 
@@ -56,12 +56,12 @@ class FileCleaner(FileHandler):
                     
                     # If the file already exists, remove the old file
                     elif new_abs_filepath != abs_filepath:
-                        print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
+                        if debug: print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
                         os.remove(abs_filepath)
                 else:
                     print(f"ERROR! Could not determine card_type or code_type for {abs_filepath}.")
-                    print(f"card_type: {card_type}")
-                    print(f"code_type: {code_type}")
+                    if debug: print(f"card_type: {card_type}")
+                    if debug: print(f"code_type: {code_type}")
 
 
 
@@ -99,7 +99,7 @@ class FileCleaner(FileHandler):
                     os.rename(abs_filepath, new_abs_filepath)
                 elif new_abs_filepath != abs_filepath:
                     os.remove(abs_filepath)
-                    print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
+                    if debug: print(f"Removed {abs_filepath} because {new_abs_filepath} already exists.")
     
 
     # Delete all files that are not source code or tables
@@ -110,7 +110,7 @@ class FileCleaner(FileHandler):
                 if not (dirpath.endswith("Source_Code") or dirpath.endswith("Tables")):
                     abs_filepath = os.path.join(dirpath, name)
                     os.remove(abs_filepath)
-                    print(f"Removed {abs_filepath}.")
+                    if debug: print(f"Removed {abs_filepath}.")
 
 
     
