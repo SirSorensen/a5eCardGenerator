@@ -57,9 +57,10 @@ class Spell(Card):
         self.area_shape = field_dict.get('area_shape')
         # Components = Material, Seen, Vocalized
         # Material Components = "*"
-        self.component_material = (False, '')
+        self.component_material = False
         self.component_seen = False
         self.component_vocalized = False
+        self.component_material_components = ["-"]
         
         if field_dict.get('components_display') is not None:
             for component in field_dict.get('components_display'):
