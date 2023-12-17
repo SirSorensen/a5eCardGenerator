@@ -43,7 +43,7 @@ def test_input(controller : Controller):
 # FileCleaner.move_old_files()
 
 # test_update_all_tables_all_types()
-# controller = test_update_all_cards(Spell.__name__)
+controller = test_update_all_cards(Spell.__name__)
 
 # test_update_all_tables(Feat.__name__)
 # test_update_all_tables(CombatManeuver.__name__)
@@ -51,7 +51,8 @@ def test_input(controller : Controller):
 # test_update_all_tables(Monster.__name__)
 # test_update_all_tables(Spell.__name__)
 
-controller = Controller(Spell.__name__)
+
+# controller = Controller(Spell.__name__)
 spell_cards = controller.get_list_of_card(Spell.__name__)
 
 for card in spell_cards:
@@ -61,6 +62,8 @@ for card in spell_cards:
 sheet_maker = SheetMaker("SpellCards")
 
 sheet_maker.save_card_titles(spell_cards[0])
+
+sheet_maker.hide_irrelevant_column()
 
 for card in spell_cards:
     sheet_maker.insert_card_properties(card)

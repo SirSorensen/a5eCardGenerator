@@ -47,6 +47,7 @@ class ObjectHandler(FileHandler):
         abs_filepath = ObjectHandler.gen_pickled_card_filepath(card_type, context_name)
         if not FileHandler.does_file_exist(abs_filepath):
             ObjectHandler.save_object(card, abs_filepath)
+            if debug: print(f'Pickled card "{context_name}" successfully saved')
         else:
             if debug: print(f'Pickled card "{context_name}" already exists')
         
