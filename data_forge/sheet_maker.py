@@ -24,8 +24,11 @@ class SheetMaker:
         for attr_name, attr_value in vars(card).items():
             # Exclude private attributes (those starting with underscores)
             if not attr_name.startswith('_'):
-                if type(attr_value) == str or type(attr_value) == int:
-                    fields.append(str(attr_name))
+                fields.append(str(attr_name).capitalize())
+                    
+        
+
+        fields.append("Amount")
         
         # Add the row of field names to the sheet
         self.add_row(fields)
@@ -38,7 +41,25 @@ class SheetMaker:
         for attr_name, attr_value in vars(card).items():
             # Exclude private attributes (those starting with underscores)
             if not attr_name.startswith('_'):
-                if type(attr_value) == str or type(attr_value) == int:
+
+                if attr_value == None or str(attr_value) == "" or (type(attr_value) == list and len(attr_value) == 0):
+                    field_values.append("-")
+                else:
                     field_values.append(str(attr_value))
+
+        field_values.append(0)
+
+        print(f"Found {len(field_values)} fields")
+        if len(field_values) < 24:
+            print(f"Error: {card.title} has {len(field_values)} fields")
+            print(str(field_values))
+            return
         
         self.add_row(field_values)
+    
+    def hide_irrelevant_column(self):
+        for row in self.ws.iter_rows(min_row=1, max_col=20, max_row=1):
+            for cell in row:
+                if cell.value != "Title" and cell.value != "Amount":
+                    self.ws.column_dimensions[cell.column_letter].hidden = True
+        
