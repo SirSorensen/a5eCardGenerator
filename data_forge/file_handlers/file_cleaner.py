@@ -25,6 +25,8 @@ class FileCleaner(FileHandler):
                         card_type = "Spell"
                     case l if "Feats" in l:
                         card_type = "Feat"
+                    case _:
+                        print(f"ERROR! Could not determine card_type for {abs_filepath}.")
                 
                 # Determine code type (Source_Code or Lists and Pretty or not)
                 code_type = None
@@ -112,5 +114,3 @@ class FileCleaner(FileHandler):
                     os.remove(abs_filepath)
                     if debug: print(f"Removed {abs_filepath}.")
 
-
-    
