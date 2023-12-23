@@ -1,3 +1,4 @@
+from PowerPoint_Editing.power_point_modifier import PowerPointModifier
 from data_forge.controller import Controller
 from data_forge.data_structures.combat_maneuver import CombatManeuver
 from data_forge.data_structures.magic_item import MagicItem
@@ -6,10 +7,11 @@ from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
 from data_forge.file_handlers.file_cleaner import FileCleaner
 from data_forge.sheet_maker import SheetMaker
-from PowerPoint_Editing.PowerPointInspector import *
+from PowerPoint_Editing.power_point_inspector import *
 
 card_types = [CombatManeuver.__name__, Monster.__name__, Feat.__name__, Spell.__name__, MagicItem.__name__,]
 
+# Update data
 def test_update_all_tables(card_type : str) -> Controller:
     controller = Controller(card_type)
     controller.update_all_tables()
@@ -18,59 +20,73 @@ def test_update_all_tables_all_types():
     for card_type in card_types:
         test_update_all_tables(card_type)
 
-
-def test_update_all_cards(card_type : str) -> Controller:
-    controller = Controller(card_type)
+def test_update_all_cards(card_type : str, controller = None) -> Controller:
+    if controller == None:
+        controller = Controller(card_type)
+    else:
+        controller.card_type = card_type
+    
     controller.update_all_cards()
     return controller
 
-def test_update_all_cards_all_types():
+def test_update_all_cards_all_types(should_load : bool = True):
+    controller = Controller("", should_load=should_load)
     for card_type in card_types:
-        test_update_all_cards(card_type)
+        test_update_all_cards(card_type, controller=controller)
+    return controller
 
 
-def test_input(controller : Controller):
-    # print(str(controller.get_card("Acid Arrow")))
-    card_name = input("Enter card name: ")
-    controller.get_card(card_name)
+def clean_up_and_remake_data(should_clean_up : bool = True):
+    if should_clean_up:
+        FileCleaner.clean_generated_files()
+    test_update_all_tables_all_types()
+    test_update_all_cards_all_types(should_load=not should_clean_up)
+    test_insert_all_cards_in_sheet_all_types()
+
+
+
+# Test sheet_maker
+def test_insert_all_cards_in_sheet(sheet_maker : SheetMaker, card_type : str, controller = None):
+    if controller == None:
+        controller = Controller(card_type)
+    
+    sheet_maker.add_card_sheet(card_type)
+    cards = controller.get_list_of_card(card_type)
+
+    for card in cards:
+        sheet_maker.insert_card_properties(card)
+    
+    sheet_maker.gen_name_list(len(cards))
+
+def test_insert_all_cards_in_sheet_all_types():
+    sheet_maker = SheetMaker()
+    controller = Controller(Spell.__name__)
+
+    test_insert_all_cards_in_sheet(sheet_maker, CombatManeuver.__name__, controller=controller)
+    test_insert_all_cards_in_sheet(sheet_maker, Feat.__name__, controller=controller, )
+    test_insert_all_cards_in_sheet(sheet_maker, MagicItem.__name__, controller=controller)
+    test_insert_all_cards_in_sheet(sheet_maker, Monster.__name__, controller=controller)
+    test_insert_all_cards_in_sheet(sheet_maker, Spell.__name__, controller=controller)
+
+    sheet_maker.save()
+
+def test_input() -> list:    
+    controller = Controller("")
+    return controller.read_input()
+
+
+
+
+# Test power_point_modifier
+def test_insert_input_into_power_point():
+    cards = test_input()
+    power_point_modifier = PowerPointModifier()
+    for card in cards:
+        power_point_modifier.insertCard(card)
+    power_point_modifier.save()
 
 
 
 # Insert runs below
-
-
-# FileCleaner.clean_generated_files()
-# FileCleaner.move_old_files()
-
-# test_update_all_tables_all_types()
-controller = test_update_all_cards(Spell.__name__)
-
-# test_update_all_tables(Feat.__name__)
-# test_update_all_tables(CombatManeuver.__name__)
-# test_update_all_tables(MagicItem.__name__)
-# test_update_all_tables(Monster.__name__)
-# test_update_all_tables(Spell.__name__)
-
-
-# controller = Controller(Spell.__name__)
-spell_cards = controller.get_list_of_card(Spell.__name__)
-
-for card in spell_cards:
-    print(card.title)
-
-
-sheet_maker = SheetMaker("SpellCards")
-
-sheet_maker.save_card_titles(spell_cards[0])
-
-sheet_maker.hide_irrelevant_column()
-
-for card in spell_cards:
-    sheet_maker.insert_card_properties(card)
-
-sheet_maker.save("Outputs/Sheets/SpellCards.xlsx")
-
-# controller = Controller(MagicItem.__name__)
-
-# for key in controller.card_collection.keys():
-#     print(key)
+clean_up_and_remake_data()
+test_insert_input_into_power_point()
