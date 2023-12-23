@@ -133,3 +133,28 @@ class Controller:
         cards_of_card_type = list(filter(lambda c: type(c).__name__ == card_type, card_values))
         print("Amount of cards_of_card_type:" + str(len(cards_of_card_type)))
         return cards_of_card_type
+
+    def get_cards(self, input_list) -> list:
+        card_list = []
+        for amount, name in input_list:
+            for _ in range(amount):
+                card_list.append(self.get_card(name))
+        return card_list
+
+    def read_input(self) -> list:
+        sheet_maker = SheetMaker(r'Resources/Cards.xlsm', read=True)
+        inputs = sheet_maker.read_input()
+
+        if debug:
+            print("Read Input:")
+            for input in inputs:
+                print(str(input))
+
+        cards = self.get_cards(inputs)
+        
+        if debug:
+            print("Cards Found:")
+            for card in cards:
+                print(str(card.title))
+
+        return cards
