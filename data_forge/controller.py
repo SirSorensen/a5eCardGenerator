@@ -1,4 +1,5 @@
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
+from data_forge.sheet_maker import SheetMaker
 from data_forge.source_code_handlers.source_code import SourceCode
 from data_forge.file_handlers.object_handler import ObjectHandler
 from data_forge.file_handlers.file_handler import FileHandler
@@ -14,10 +15,13 @@ from data_forge.settings import *
 
 
 class Controller:
-    def __init__(self, card_type : str):
+    def __init__(self, card_type : str, should_load : bool = True):
         self.card_type = card_type
-        self.card_collection = ObjectHandler.load_object(ObjectHandler.gen_pickled_card_dict_filepath())
-        if self.card_collection is None:
+        if should_load:
+            self.card_collection = ObjectHandler.load_object(ObjectHandler.gen_pickled_card_dict_filepath())
+            if self.card_collection is None:
+                self.card_collection = {}
+        else:
             self.card_collection = {}
 
 
