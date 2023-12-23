@@ -1,65 +1,59 @@
-
-from openpyxl import Workbook
+from openpyxl.styles import Font
+from openpyxl import Workbook, load_workbook
+from openpyxl.utils.cell import get_column_letter
+from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.workbook.defined_name import DefinedName
 from data_forge.settings import *
 from data_forge.data_structures.card import Card
 
 class SheetMaker:
-    def __init__(self, sheet_name):
-        self.sheet_name = sheet_name
-        self.wb = Workbook()
+    def __init__(self, filepath : str = 'Cards.xlsm', read = False):
+        self.wb = load_workbook(filepath, keep_vba=True, rich_text=True, data_only=read)
         self.ws = self.wb.active
-        self.ws.title = self.sheet_name
+
+    def add_card_sheet(self, sheet_name):
+        self.ws = self.wb.create_sheet(sheet_name)
+        self.wb.active = self.wb.index(self.ws)
+        self.__save_card_titles()
 
     def add_row(self, row):
         self.ws.append(row)
 
-    def save(self, file_name):
-        self.wb.save(file_name)
+    def save(self):
+        self.wb.active = 0
+        self.wb.save(r"Outputs/Sheets/Cards.xlsm")
     
-    def save_card_titles(self, card : Card):
-        # Create an empty list to store field name and value pairs
-        fields = []
-
-        # Iterate through all the attributes of the class
-        for attr_name, attr_value in vars(card).items():
-            # Exclude private attributes (those starting with underscores)
-            if not attr_name.startswith('_'):
-                fields.append(str(attr_name).capitalize())
-                    
-        
-
-        fields.append("Amount")
-        
-        # Add the row of field names to the sheet
+    def __save_card_titles(self):
+        fields = ["Title", "Name"]
         self.add_row(fields)
+        self.__style_card_titles()
+
     
+    def __style_card_titles(self):
+        for row in self.ws.iter_rows(min_row=1, max_col=self.ws.max_column, max_row=1):
+            for cell in row:
+                cell.font = Font(bold=True)
+                cell.style = "Accent1"
+
     def insert_card_properties(self, card : Card):
-        # Create an empty list to store field name and value pairs
-        field_values = []
-
-        # Iterate through all the attributes of the class
-        for attr_name, attr_value in vars(card).items():
-            # Exclude private attributes (those starting with underscores)
-            if not attr_name.startswith('_'):
-
-                if attr_value == None or str(attr_value) == "" or (type(attr_value) == list and len(attr_value) == 0):
-                    field_values.append("-")
-                else:
-                    field_values.append(str(attr_value))
-
-        field_values.append(0)
-
-        print(f"Found {len(field_values)} fields")
-        if len(field_values) < 24:
-            print(f"Error: {card.title} has {len(field_values)} fields")
-            print(str(field_values))
-            return
-        
+        field_values = [card.title, card.name]
         self.add_row(field_values)
     
-    def hide_irrelevant_column(self):
-        for row in self.ws.iter_rows(min_row=1, max_col=20, max_row=1):
-            for cell in row:
-                if cell.value != "Title" and cell.value != "Amount":
-                    self.ws.column_dimensions[cell.column_letter].hidden = True
+    def read_input(self) -> list:
+        result = []
+        input_sheet = self.wb["Input"]
+        for row in input_sheet.iter_rows(min_row=2, max_col=input_sheet.max_column, max_row=input_sheet.max_row):
+            amount = row[0].value
+            name = row[3].value
+
+            if amount != None and name != None and amount > 0:
+                result.append((row[0].value, row[3].value))
         
+        return result
+
+
+    def gen_name_list(self, amount):
+        name_title = self.ws.title
+        defined_name = DefinedName(name_title, attr_text=f"'{name_title}'!$A$2:$A${amount+1}")
+        self.wb.defined_names[name_title] = defined_name   
+
