@@ -1,3 +1,4 @@
+import re
 from data_forge.data_structures.card import Card
 from data_forge.settings import *
 
@@ -18,12 +19,10 @@ class CombatManeuver(Card):
         self.summary = summary
 
         super(CombatManeuver, self).__init__(title, source_code, field_classes, field_ids)
-
-        self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):        
         # Description = "*"
-        self.description = field_dict.get('name_body')
+        self._description = str(field_dict.get('name_body'))
 
         # Points = 0, 1, 2, 3, 1-3
         self.points = field_dict.get('points_actions')
@@ -51,4 +50,9 @@ class CombatManeuver(Card):
 
         return key_name
 
+    def set_text_fields(self):
+        self.subtitle = str(self.degree_tradition_action_type)
+        self.description = self.gen_description(self._description, ".")
+        self.icon = ""
+        self.image = ""
     

@@ -29,10 +29,8 @@ class Spell(Card):
     def __init__(self, title : str, source_code : str, summary : str):
         # Summary = "*"
         self.summary = summary
-
         super(Spell, self).__init__(title, source_code, field_classes, field_ids)
 
-        self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):
         # Level = Cantrip/0, 1st, 2nd, 3rd, 4th, 5th, 6th, 7th, 8th, 9th
@@ -60,7 +58,7 @@ class Spell(Card):
         self.component_material = False
         self.component_seen = False
         self.component_vocalized = False
-        self.component_material_components = ["-"]
+        self.component_material_components = None
         
         if field_dict.get('components_display') is not None:
             for component in field_dict.get('components_display'):
@@ -94,6 +92,13 @@ class Spell(Card):
         key_name = super(Spell, self).key_namer(key_name)
 
         return key_name
+
+
+    def set_text_fields(self):
+        self.subtitle = str(self.classes)
+        self.description = self.gen_description(self.body, ":")
+        self.icon = ""
+        self.image = ""
 
 
 class MaterialComponent:

@@ -12,14 +12,12 @@ field_ids = []
 class Feat(Card):
     def __init__(self, title : str, source_code : str):
         super(Feat, self).__init__(title, source_code, field_classes, field_ids)
-
-        self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):
         # self.origin = field_dict.get('origin')
         # self.summary = field_dict.get('summary')
         self.prerequisites = field_dict.get('prerequisite')
-        self.description, self.sub_feats = SubFeat.divideDescription(field_dict.get('details'))
+        self._description, self.sub_feats = SubFeat.divideDescription(field_dict.get('details'))
         self.source = field_dict.get('source')
 
     # This function generates a key name from a field class or id
@@ -31,13 +29,21 @@ class Feat(Card):
         key_name = super(Feat, self).key_namer(key_name)
 
         return key_name
+    
+    def set_text_fields(self):
+        self.subtitle = str(self.prerequisites)
+        self.description = self.gen_description(self._description, ":")
+        self.icon = ""
+        self.image = ""
+    
+
 
 class SubFeat:
     def __init__(self,
             name: str = "", description: str = ""
             ):
         self.name = name
-        self.description = description
+        self._description = description
     
 
     # TODO: Implement this
@@ -48,3 +54,4 @@ class SubFeat:
         # split text into body and sub-feats
         return body, sub_feats
 
+    

@@ -13,8 +13,6 @@ field_ids = []
 class MagicItem(Card):
     def __init__(self, title : str, source_code : str):
         super(MagicItem, self).__init__(title, source_code, field_classes, field_ids)
-
-        self.set_fields(self.extract_fields())
     
     def set_fields(self, field_dict : dict):
         # Tags = Attunement, Sentient, Charges, Consumable, Cursed
@@ -62,3 +60,9 @@ class MagicItem(Card):
         key_name = super(MagicItem, self).key_namer(key_name)
 
         return key_name
+    
+    def set_text_fields(self):
+        self.subtitle = str(self.sub_title)
+        self.description = self.gen_description(self.body, ":")
+        self.icon = ""
+        self.image = ""

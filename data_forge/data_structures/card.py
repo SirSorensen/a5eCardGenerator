@@ -16,12 +16,19 @@ class Card:
 
         self._code_interpreter = CodeInterpreter(source_code)
 
+        self.set_fields(self.extract_fields())
+
         # self.subtitle = subtitle
         # self.description = description
         # self.image = Image(image_filepath)
         # self.icons = [Image(icon_filepath) for icon_filepath in icon_filepaths]
         # self.parts = parts
         # self.part = part
+        self.set_text_fields()
+
+    def set_fields(self):
+        raise NotImplementedError
+
     
     # This function extracts a card's data from a source text
     def extract_fields(self, field_dict : dict = {}) -> dict:
@@ -41,6 +48,24 @@ class Card:
         data_name = name.lower()
         data_name = re.sub(r"[^\w\d]", "_", data_name)
         return data_name
+    
+    # This function sets the text fields of a card
+    def set_text_fields(self):
+        raise NotImplementedError
+    
+    def gen_description(self, body, split_str):
+        description = str(body)
+        paragraph_strs = description.split("\n")
+        run_strs = []
+        for paragraph_str in paragraph_strs:
+            split_paragraph = paragraph_str.split(split_str)
+            if len(split_paragraph) > 1:
+                run_title = split_paragraph[0] + split_str
+            else:
+                run_title = ""
+            run_body = paragraph_str[len(run_title):]
+            run_strs.append((run_title, run_body))
+        return run_strs
 
     # This function generates a key name from a field class or id
     def key_namer(self, key : str):
