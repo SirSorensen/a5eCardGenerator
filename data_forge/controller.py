@@ -26,13 +26,13 @@ class Controller:
 
 
     def get_card(self, title : str) -> Card:
-        card_name = Card.title_to_context_name(title)
+        card_name = Card.to_context_name(title)
         return self.card_collection[card_name]
 
 
     def update_card(self, title : str, summary : str  = "") -> Card:
         if debug: print(f"\nUpdating {self.card_type} card {title}...")
-        context_name = Card.title_to_context_name(title)
+        context_name = Card.to_context_name(title)
 
         card = self.card_collection.get(context_name)
 

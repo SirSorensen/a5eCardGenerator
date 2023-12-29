@@ -44,7 +44,7 @@ class SourceCode:
         print(f"\nUpdating files for {card_type} card \'{card_name}\'. (See {gen_card_url(card_url_ending)} for source.)")
 
         # Scrape card source code
-        context_name = Card.title_to_context_name(card_name)
+        context_name = Card.to_context_name(card_name)
         card_source_code_path = FileHandler.gen_card_source_code_directory(card_type, context_name)
         if not FileHandler.does_file_exist(card_source_code_path):
             card_source_code = scrape_source_code(card_url_ending)

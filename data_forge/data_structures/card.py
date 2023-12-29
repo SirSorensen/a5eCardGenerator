@@ -7,7 +7,7 @@ class Card:
 
         self.title = title
         # data_name is the naming of the data structure when saved to a file.
-        self.name = Card.title_to_context_name(title)
+        self.name = Card.to_context_name(title)
 
         if debug: print(f"Making a {type(self).__name__}! {self.name}")
 
@@ -43,11 +43,11 @@ class Card:
 
         return field_dict
             
-    # This function converts a card's name to a data name, by replacing spaces and special characters with underscores or nothing
-    def title_to_context_name(name : str):
-        data_name = name.lower()
-        data_name = re.sub(r"[^\w\d]", "_", data_name)
-        return data_name
+    # This function converts an input string to a context name, by replacing spaces and special characters with underscores or nothing
+    def to_context_name(input_str : str):
+        context_name = input_str.lower()
+        context_name = re.sub(r"[^\w\d]", "_", context_name)
+        return context_name
     
     # This function sets the text fields of a card
     def set_text_fields(self):
@@ -73,7 +73,7 @@ class Card:
         for ch in ["field--", "name-", "field-"]:
             key_name = key_name.replace(ch,"")
         
-        key_name = Card.title_to_context_name(key_name)
+        key_name = Card.to_context_name(key_name)
 
         return key_name
     
