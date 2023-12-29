@@ -1,0 +1,7 @@
+Make it a subscription, but make some stuff free (for example anything needed for a level 1 character, i.e. level 1 spells, first degree combat manuevers, race feats, and so on)
+
+Printable holders for cards (bags, spell books, etc.)
+
+Users can save collections to characters or stashes
+
+Unique fillable character sheets, which are auto-filled with information from earlier mentioned character collections
