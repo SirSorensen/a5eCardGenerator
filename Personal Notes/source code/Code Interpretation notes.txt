@@ -1,0 +1,14 @@
+Body:
+Text with links (often <span class="freelinking-link"> with <a>)
+Text is sorted in paragraphs (<p>)
+
+Lists:
+Div with <div class="field--label"> as header and <div class="field--item"> as elements. (Here there can also be <span class="freelinking-link"> with <a>)
+
+
+Magic item cost always in gp
+
+item_field = ResultRest
+
+Field_div class = Tag
+item_fields class = ResultSet
