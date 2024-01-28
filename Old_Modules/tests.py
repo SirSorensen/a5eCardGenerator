@@ -24,7 +24,7 @@ def extract_spells_from_magic_item_table_test(page : int = 0, save_object_to_fil
 
 def prettify_magic_items_test(list_of_spells: list[Spell]):
     for spell in list_of_spells:
-        spell.prettify_html()
+        spell.get_pretty_code()
 
 def scrape_magic_item_table_test():
     table_scraper = TableScraper(Spell.__name__)
@@ -41,7 +41,7 @@ def extract_spells_from_spell_table_test(spell_page : int = 0, save_object_to_fi
 
 def prettify_spells_test(list_of_spells: list[Spell]):
     for spell in list_of_spells:
-        spell.prettify_html()
+        spell.get_pretty_code()
 
 def scrape_spell_table_test():
     table_scraper = TableScraper(Spell.__name__)
@@ -51,36 +51,36 @@ def scrape_spells_test():
     abstraction_spell = Spell('Abstraction', should_scrape_source_text=False)
     if abstraction_spell is not None:
         print(abstraction_spell)
-        abstraction_spell.prettify_html()
+        abstraction_spell.get_pretty_code()
         ObjectHandler.save_card_if_not_exists(abstraction_spell)
 
     tiny_hut_spell = Spell('Tiny Hut', should_scrape_source_text=False)
     if tiny_hut_spell is not None:
         print(tiny_hut_spell)
-        tiny_hut_spell.prettify_html()
+        tiny_hut_spell.get_pretty_code()
         ObjectHandler.save_card_if_not_exists(tiny_hut_spell)
 
     fireball_spell = Spell('Fireball', should_scrape_source_text=False)
     if fireball_spell is not None:
         print(fireball_spell)
-        fireball_spell.prettify_html()
+        fireball_spell.get_pretty_code()
         ObjectHandler.save_card_if_not_exists(fireball_spell)
 
 def load_saved_spells_test():
     abstraction_spell = ObjectHandler.load_object('Abstraction', 'Spell')
     if abstraction_spell is not None:
         print(abstraction_spell)
-        abstraction_spell.prettify_html()
+        abstraction_spell.get_pretty_code()
         ObjectHandler.save_card_if_not_exists(abstraction_spell)
 
     tiny_hut_spell = ObjectHandler.load_object('Tiny Hut', 'Spell')
     if tiny_hut_spell is not None:
         print(tiny_hut_spell)
-        tiny_hut_spell.prettify_html()
+        tiny_hut_spell.get_pretty_code()
         ObjectHandler.save_card_if_not_exists(tiny_hut_spell)
 
     fireball_spell = ObjectHandler.load_object('Fireball', 'Spell')
     if fireball_spell is not None:
         print(fireball_spell)
-        fireball_spell.prettify_html()
+        fireball_spell.get_pretty_code()
         ObjectHandler.save_card_if_not_exists(fireball_spell)
