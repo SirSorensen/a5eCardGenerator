@@ -1,3 +1,8 @@
+Class results of soup.find:
+
+field_div class = Tag
+item_fields class = ResultSet
+
 Body:
 Text with links (often <span class="freelinking-link"> with <a>)
 Text is sorted in paragraphs (<p>)
@@ -9,6 +14,3 @@ Div with <div class="field--label"> as header and <div class="field--item"> as e
 Magic item cost always in gp
 
 item_field = ResultRest
-
-Field_div class = Tag
-item_fields class = ResultSet

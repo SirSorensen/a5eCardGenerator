@@ -1,18 +1,22 @@
-import copy
-from pptx import Presentation
-import pptx
 from PowerPoint_Editing.power_point_inspector import PowerPointInspector
-from pptx.enum.dml import MSO_THEME_COLOR
+from data_forge.data_structures.context_contents import Paragraphs
 from data_forge.data_structures.card import Card
-from pptx.dml.color import _NoneColor
-from pptx.shapes.picture import Picture
-from pptx.shapes import shapetree
+
+import copy
+
+import pptx
+from pptx import Presentation
+from pptx.text.text import TextFrame
+from lxml import etree
+from pptx.enum.text import PP_ALIGN
+
+from data_forge.file_handlers.file_handler import FileHandler
 
 
 
 class PowerPointModifier:
     def __init__(self):
-        self.pptx = Presentation("cardCreator-test.pptx")
+        self.pptx = Presentation(FileHandler.gen_slide_output_name())
         self.fonts = PowerPointInspector.get_font_dict(self.pptx.slides[0])
         self.current_slide = 0
 
@@ -88,6 +92,8 @@ class PowerPointModifier:
     
     def insertDescription(self, card : Card):
         shape = self.pptx.slides[self.current_slide].shapes[5]
+        if not isinstance(card.description, Paragraphs):
+            raise ValueError(f"Description for {str(type(card))} is not a Paragraphs object, but a {str(type(card.description))} object")
         self.insert_body_text(shape, card.description)
     
     def insertIcon(self, card : Card):
@@ -99,7 +105,7 @@ class PowerPointModifier:
         shape.image = card.image
     
     def save(self):
-        self.pptx.save("Outputs/Slides/cardCreator-test.pptx")
+        self.pptx.save(FileHandler.gen_slide_output_directory())
     
     def __ready_text_frame(self, shape):
         if not shape.has_text_frame:
@@ -113,6 +119,16 @@ class PowerPointModifier:
         par = text_frame.paragraphs[0]
 
         return fonts, par
+    
+    def __new_paragraph(self, text_frame : TextFrame):
+        if len(text_frame.paragraphs) == 0 or text_frame.paragraphs[0].text != "":
+            par = text_frame.add_paragraph()
+            par.bullet = False
+            par._pPr.insert(0, etree.Element("{http://schemas.openxmlformats.org/drawingml/2006/main}buNone"))
+            par.level = 0
+            return par
+       
+        return text_frame.paragraphs[0]
 
     def insert_text(self, shape, paragraph_str):
         fonts, par = self.__ready_text_frame(shape)
@@ -121,22 +137,18 @@ class PowerPointModifier:
         run.text = paragraph_str
         PowerPointModifier.set_font(run, fonts[0])
     
-    def insert_body_text(self, shape, paragraph_strs : list[(str,str)]):        
-        fonts, par = self.__ready_text_frame(shape)
+    def insert_body_text(self, shape, paragraphs : Paragraphs):        
+        fonts, _ = self.__ready_text_frame(shape)
+        paragraph_list = paragraphs.to_list()
 
-        for paragraph_str in paragraph_strs:
-            print(f"description par: {str(paragraph_str)}")
-            par_title = paragraph_str[0]
-            title_run = par.add_run()
-            PowerPointModifier.set_font(title_run, fonts[0])
-            title_run.text = par_title
-            
-            par_body = paragraph_str[1]
-            body_run = par.add_run()
-            PowerPointModifier.set_font(body_run, fonts[1])
-            body_run.text = par_body
-
-            
+        for paragraph in paragraph_list:
+            par = self.__new_paragraph(shape.text_frame)
+            for text in paragraph.text_list:
+                run = par.add_run()
+                font_int = 0 if text.is_title else 1
+                PowerPointModifier.set_font(run, fonts[font_int])
+                run.text = str(text)
+         
 
     def set_font(run, font):
         run.font.name = font.name

@@ -1,53 +1,33 @@
+from data_forge.data_interpreters.card_interpreters.monster_interpreter import MonsterInterpreter
 from data_forge.data_structures.card import Card
+from data_forge.data_structures.context_contents import Paragraphs
 from data_forge.settings import *
-
-field_classes = [
-    "field--name-field-monster-size",
-    "field--name-field-monster-type",
-    "field--name-field-monster-challenge-rating",
-    "field--name-field-monster-terrain",
-    "field--name-field-monster-stat-block"
-
-]
-
-field_ids = [
-    "str-value",
-    "dex-value",
-    "con-value",
-    "int-value",
-    "wis-value",
-    "cha-value"
-]
 
 class Monster(Card):
     def __init__(self, title : str, source_code : str):
-        super(Monster, self).__init__(title, source_code, field_classes, field_ids)
+        super(Monster, self).__init__(title, source_code)
     
-    def set_fields(self, field_dict : dict):
-        self.size = field_dict.get("size")
-        self.type = field_dict.get("type")
-        self.challenge_rating = field_dict.get("challenge_rating")
-        self.terrain = field_dict.get("terrain")
-        self.stat_block = field_dict.get("stat_block")
-        self.str = field_dict.get("str")
-        self.dex = field_dict.get("dex")
-        self.con = field_dict.get("con")
-        self.int = field_dict.get("int")
-        self.wis = field_dict.get("wis")
-        self.cha = field_dict.get("cha")
+    def set_fields(self, source_code : str):
+        code_interpreter = MonsterInterpreter(source_code)
+        self.size = code_interpreter.get_size()
+        self.type = code_interpreter.get_type()
+        self.challenge_rating = code_interpreter.get_challenge_rating()
+        self.terrain = code_interpreter.get_terrain()
+        self.strength_val = code_interpreter.get_strength_val()
+        self.dexterity_val = code_interpreter.get_dexterity_val()
+        self.constitution_val = code_interpreter.get_constitution_val()
+        self.intelligence_val = code_interpreter.get_intelligence_val()
+        self.wisdom_val = code_interpreter.get_wisdom_val()
+        self.charisma_val = code_interpreter.get_charisma_val()
+        self.body = code_interpreter.get_stat_block()
+        self.monster_description = code_interpreter.get_description()
+        self.behavior = code_interpreter.get_behavior()
+        self.encounters = code_interpreter.get_encounters()
+        self.type_description = code_interpreter.get_type_description()
+        self.source = code_interpreter.get_source()
 
-    # This function generates a key name from a field class or id
-    def key_namer(self, key : str):
-        key_name = key.lower()
-        for ch in ["monster-", "-value"]:
-            key_name = key_name.replace(ch,"")
-        
-        key_name = super(Monster, self).key_namer(key_name)
-
-        return key_name
-    
     def set_text_fields(self):
-        self.subtitle = str(self.type)
-        self.description = self.gen_description(self.stat_block, ".")
+        self.subtitle = f"{str(self.size)} {str(self.type)}"
+        self.description : Paragraphs = self.body
         self.icon = ""
         self.image = ""

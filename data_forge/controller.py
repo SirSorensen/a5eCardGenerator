@@ -83,16 +83,17 @@ class Controller:
         return card
 
     def update_all_cards(self, starting_page : int = 0):
-        table_interpreter = SourceCode.update_cards_from_table_file(self.card_type, starting_page)
+        table_interpreter : TableInterpreter = SourceCode.update_cards_from_table_file(self.card_type, starting_page)
 
         list_of_titles = table_interpreter.extract_list_of_names_with_link()
-        if self.card_type == Spell.__name__ or self.card_type == CombatManeuver.__name__:
-            list_of_summaries = table_interpreter.extract_list_of_summaries()
+        
+        list_of_summaries = table_interpreter.extract_list_of_summaries(self.card_type)
+        has_summaries = len(list_of_summaries) > 0
         
         for i in range(len(list_of_titles)):
             card_title = list_of_titles[i][0]
 
-            if self.card_type == Spell.__name__ or self.card_type == CombatManeuver.__name__:
+            if has_summaries:
                 self.update_card(card_title, list_of_summaries[i])
             else:
                 self.update_card(card_title)

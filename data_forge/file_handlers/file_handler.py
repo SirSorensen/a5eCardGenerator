@@ -5,6 +5,8 @@ global_output_directory = r"Outputs/"
 global_html_output_directory = rf"{global_output_directory}HTML/"
 global_source_code_output_directory = rf"{global_output_directory}Source_Code/"
 global_list_output_directory = rf"{global_source_code_output_directory}Lists/"
+global_slides_output_directory = rf"{global_output_directory}Slides/"
+global_images_output_directory = rf"{global_output_directory}Images/"
 
 class FileHandler:
 
@@ -97,6 +99,26 @@ class FileHandler:
     
     def _get_global_output_directory():
         return global_output_directory
+    
+    def gen_slide_output_directory():
+        return f"{global_slides_output_directory}{FileHandler.gen_slide_output_name()}"
+    
+    def gen_slide_output_name(file_extension : str = ".pptx"):
+        return f"cardCreator-test{file_extension}"
+    
+    def gen_slide_img_output_path(sub_folder : str = ""):
+        if sub_folder:
+            sub_folder += "/"
+        return f"{global_images_output_directory}{sub_folder}"
+    
+    def gen_slide_img_output_directory(sub_folder : str = ""):
+        return f"{FileHandler.gen_slide_img_output_path(sub_folder)}{FileHandler.gen_slide_output_name('')}"
+    
+    def gen_project_abs_path():
+        abs_project_path = os.path.abspath("main.py")
+        abs_project_path = abs_project_path.replace("main.py", "")
+        return abs_project_path
+
     
 
     

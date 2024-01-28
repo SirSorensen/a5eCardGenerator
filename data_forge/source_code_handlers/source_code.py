@@ -1,6 +1,6 @@
 
 from data_forge.source_code_handlers.website_scraper import scrape_table_source_code, scrape_source_code, gen_card_url, gen_table_url
-from data_forge.data_interpreters.code_interpreter import CodeInterpreter
+from data_forge.data_interpreters.context_interpreter import ContextInterpreter
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
 from data_forge.file_handlers.file_handler import FileHandler
 from data_forge.data_structures.card import Card
@@ -25,7 +25,7 @@ class SourceCode:
 
         # Prettify table source code
         table_pretty_code_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number, is_pretty=True)
-        table_pretty_code = SourceCode.__process_code(table_pretty_code_path, table_interpreter.prettify_html)
+        table_pretty_code = SourceCode.__process_code(table_pretty_code_path, table_interpreter.get_pretty_code)
 
         # Generate/find table stripped code
         table_stripped_code_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number, is_stripped=True)
@@ -33,7 +33,7 @@ class SourceCode:
 
         # Prettify table stripped code
         table_stripped_pretty_path = FileHandler.gen_card_list_source_code_directory(card_type, page_number, is_stripped=True, is_pretty=True)
-        table_stripped_code = SourceCode.__process_code(table_stripped_pretty_path, table_interpreter.prettify_stripped_code)
+        table_stripped_code = SourceCode.__process_code(table_stripped_pretty_path, table_interpreter.get_pretty_stripped_code)
 
         # Return table source code 
         return table_source_code
@@ -53,19 +53,19 @@ class SourceCode:
         card_source_code = FileHandler.write_to_file_if_not_exists(card_source_code, card_source_code_path)
 
         # Set up CodeInterpreter
-        code_interpreter = CodeInterpreter(card_source_code)
+        context_interpreter = ContextInterpreter(card_source_code)
 
         # Prettify card source code
         card_pretty_code_path = FileHandler.gen_card_source_code_directory(card_type, context_name, is_pretty=True)
-        card_pretty_code = SourceCode.__process_code(card_pretty_code_path, code_interpreter.prettify_html)
+        card_pretty_code = SourceCode.__process_code(card_pretty_code_path, context_interpreter.get_pretty_code)
         
         # Generate/find card stripped code
         card_stripped_code_path = FileHandler.gen_card_stripped_code_directory(card_type, context_name)
-        card_stripped_code = SourceCode.__process_code(card_stripped_code_path, code_interpreter.get_stripped_code)
+        card_stripped_code = SourceCode.__process_code(card_stripped_code_path, context_interpreter.get_stripped_code)
 
         # Prettify card stripped code
         card_pretty_stripped_path = FileHandler.gen_card_stripped_code_directory(card_type, context_name, is_pretty=True)
-        card_pretty_stripped = SourceCode.__process_code(card_pretty_stripped_path, code_interpreter.prettify_stripped_code)
+        card_pretty_stripped = SourceCode.__process_code(card_pretty_stripped_path, context_interpreter.get_pretty_stripped_code)
 
         # Return card stripped code
         return card_stripped_code

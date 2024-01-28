@@ -16,7 +16,7 @@ class SpellTests(unittest.TestCase):
 
     def prettify_spells_test(list_of_spells: list[Spell]):
         for spell in list_of_spells:
-            spell.prettify_html()
+            spell.get_pretty_code()
 
     def scrape_spell_table_test():
         table_scraper = Controller(Spell.__name__)

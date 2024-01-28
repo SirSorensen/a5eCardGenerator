@@ -6,7 +6,6 @@ root = FileHandler._get_global_output_directory()
 
 class FileCleaner(FileHandler):
 
-
     def move_old_files():
         for dirpath, dirnames, filenames in os.walk(root):
             for name in filenames:
@@ -114,3 +113,20 @@ class FileCleaner(FileHandler):
                     os.remove(abs_filepath)
                     if debug: print(f"Removed {abs_filepath}.")
 
+    # Completely stolen from https://stackoverflow.com/questions/47093561/remove-empty-folders-python
+    def delete_empty_folders():
+        deleted = set()
+        
+        for current_dir, subdirs, files in os.walk(root, topdown=False):
+
+            still_has_subdirs = False
+            for subdir in subdirs:
+                if os.path.join(current_dir, subdir) not in deleted:
+                    still_has_subdirs = True
+                    break
+        
+            if not any(files) and not still_has_subdirs:
+                os.rmdir(current_dir)
+                deleted.add(current_dir)
+
+        return deleted
