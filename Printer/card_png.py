@@ -13,6 +13,11 @@ def pptx_to_png():
     pptx_path = pptx_path.replace("/", "\\")
     presentation = powerpoint.Presentations.Open(pptx_path)
 
+    output_folder = abs_project_path + FileHandler.gen_slide_img_output_directory("Split")
+    output_folder = output_folder.replace("/", "\\")
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
     output_folder = abs_project_path + FileHandler.gen_slide_img_output_directory("Joined")
     output_folder = output_folder.replace("/", "\\")
     if not os.path.exists(output_folder):
@@ -179,6 +184,28 @@ def crop_cards(source_dir):
                 cropped = im.crop((left, top, right, bottom))
                 cropped.save(filepath)
     
+def split_cards(source_dir):
+    totalFilesNumber = count_files(source_dir)
+    currentFileNumber = 0
+
+    for dirpath, dirnames, filenames in os.walk(source_dir):
+        for filename in filenames:
+            if filename.endswith('.png') or filename.endswith('.JPG'):
+                currentFileNumber += 1
+                print(f"Splitting {filename}, {currentFileNumber}/{totalFilesNumber}.")
+                
+                filepath = os.path.join(dirpath, filename)
+                im = Image.open(filepath)
+                width, height = im.size
+
+                left_split = im.crop((0, 0, width/2, height))
+
+                right_split = im.crop(((width/2) + 1, 0, width, height))
+
+                left_split_filepath = FileHandler.gen_project_abs_path() + FileHandler.gen_slide_img_output_directory("Split") + '\\' + filename.replace(".JPG", "_left.JPG")
+                left_split.save(left_split_filepath)
+                right_split_filepath = FileHandler.gen_project_abs_path() + FileHandler.gen_slide_img_output_directory("Split") + '\\' + filename.replace(".JPG", "_right.JPG")
+                right_split.save(right_split_filepath)
 
 def check_color(color : (int, int, int)):
     color_list = [x for x in color]
@@ -204,3 +231,4 @@ def make_cards():
     pptx_to_png()
     crop_cards('Outputs\Images\Joined\cardCreator-test')
     paint_corners('Outputs\Images\Joined\cardCreator-test')
+    split_cards('Outputs\Images\Joined\cardCreator-test')
