@@ -1,5 +1,6 @@
 from PIL import Image
 import os
+import math
 import comtypes.client
 from data_forge.file_handlers.file_handler import FileHandler
 
@@ -50,23 +51,38 @@ def paint_corners(source_dir):
                 y = height/2
                 corner_color_value = None
                 for x in range (0,width):
-                    if corner_color_value is None:
-                        corner_color_value = im.getpixel( (x,y) )
+                    current_color = im.getpixel( (x,y) )
 
-                    if im.getpixel( (x,y) ) != corner_color_value:
-                        card_side_border = x
-                        break
+                    if corner_color_value is None:
+                        print(f"    Determined card side color value to be {current_color}")
+                        corner_color_value = current_color
+
+                    if current_color != corner_color_value:
+                        #print(f"    Comparing current_color: {current_color} with corner_color_value: {corner_color_value}")
+                        if math.fsum(current_color) - math.fsum(corner_color_value) < 50:
+                            corner_color_value = current_color
+                        else:
+                            print(f"    Found top-edge at ({x},{y}) with color {current_color}")
+                            card_side_border = x
+                            break
 
                 # Determine the width of the card side-border
                 x = width/4
                 corner_color_value = None
                 for y in range (0,height):
+                    current_color = im.getpixel( (x,y) )
                     if corner_color_value is None:
-                        corner_color_value = im.getpixel( (x,y) )
+                        print(f"    Determined card top color value to be {current_color}")
+                        corner_color_value = current_color
 
-                    if im.getpixel( (x,y) ) != corner_color_value:
-                        card_top_border = y
-                        break
+                    if current_color != corner_color_value:
+                        #print(f"    Comparing current_color: {current_color} with corner_color_value: {corner_color_value}")
+                        if math.fsum(current_color) - math.fsum(corner_color_value) < 50:
+                            corner_color_value = current_color
+                        else:
+                            print(f"    Found side-edge at ({x},{y}) with color {current_color}")
+                            card_top_border = y
+                            break
                 
                 corner_color_value = (0,0,0)
 
