@@ -58,7 +58,6 @@ def paint_corners(source_dir):
                         corner_color_value = current_color
 
                     if current_color != corner_color_value:
-                        #print(f"    Comparing current_color: {current_color} with corner_color_value: {corner_color_value}")
                         if math.fsum(current_color) - math.fsum(corner_color_value) < 50:
                             corner_color_value = current_color
                         else:
@@ -76,7 +75,6 @@ def paint_corners(source_dir):
                         corner_color_value = current_color
 
                     if current_color != corner_color_value:
-                        #print(f"    Comparing current_color: {current_color} with corner_color_value: {corner_color_value}")
                         if math.fsum(current_color) - math.fsum(corner_color_value) < 50:
                             corner_color_value = current_color
                         else:
