@@ -96,25 +96,39 @@ class ContextInterpreter(CodeInterpreter):
         for content in element.contents:
             if isinstance(content, NavigableString):
                 # Direct text content
-                acc.add_text(content.rstrip())
+                text = ContextInterpreter._get_clean_str(content)
+                if text != '':
+                    acc.add_text(text)
             
             elif isinstance(content, Tag) and content.name == 'a':
                 # Link with text and href
-                text = content.get_text(strip=True)
-                href = content.get('href')
-                acc.add_link(text, href)
+                text = ContextInterpreter._get_clean_str(content)
+                if text != '':
+                    href = content.get('href')
+                    acc.add_link(text, href)
 
             elif isinstance(content, Tag) and content.name == 'strong':
                 # Title text
-                text = content.get_text(strip=True)
-                acc.add_title_text(text)
+                text = ContextInterpreter._get_clean_str(content)
+                if text != '':
+                    acc.add_title_text(text)
 
             elif isinstance(content, Tag):
                 # Recursively extract contents
                 acc = ContextInterpreter.__extract_paragraph(content, acc)
         
         return acc
-            
+    
+    # Make sure that no empty new lines or redundant whitespaces are contained in the string.
+    def _get_clean_str(content : Tag|NavigableString) -> str:
+        if isinstance(content, Tag):
+            text = content.get_text(strip=True)
+        elif isinstance(content, NavigableString):
+            text = content.rstrip()
+
+        text = text.strip().replace("\n", "")
+        text = re.sub(r'\s+(\.|,)', r'\1', text)
+        return text
             
 
         
