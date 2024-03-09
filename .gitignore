@@ -1,3 +1,11 @@
+# dotnet bin and obj
+ttrpg-card-generator/bin/**
+ttrpg-card-generator/obj/**
+
+
+
+# ---- Auto Generated ---- #
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
