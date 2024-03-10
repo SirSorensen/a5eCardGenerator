@@ -2,7 +2,6 @@ import json
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
 from data_forge.sheet_maker import SheetMaker
 from data_forge.source_code_handlers.source_code import SourceCode
-from data_forge.file_handlers.object_handler import ObjectHandler
 from data_forge.file_handlers.file_handler import FileHandler
 
 from data_forge.data_structures.card import Card
@@ -16,14 +15,9 @@ from data_forge.settings import *
 
 
 class Controller:
-    def __init__(self, card_type : str, should_load : bool = True):
+    def __init__(self, card_type : str):
         self.card_type = card_type
-        if should_load:
-            self.card_collection = ObjectHandler.load_object(ObjectHandler.gen_pickled_card_dict_filepath())
-            if self.card_collection is None:
-                self.card_collection = {}
-        else:
-            self.card_collection = {}
+        self.card_collection = {}
 
 
     def get_card(self, title : str) -> Card:
@@ -83,9 +77,6 @@ class Controller:
             card_str_path = FileHandler.gen_card_str_directory(self.card_type, context_name)
             FileHandler.write_to_file_if_not_exists(str(card), card_str_path)
 
-            # Save card to pickled object
-            ObjectHandler.save_card_if_not_exists(card)
-
         return card
 
     def update_all_cards(self, starting_page : int = 0):
@@ -109,7 +100,6 @@ class Controller:
             self.update_all_cards(starting_page + 1)
         else: 
             print(f"\nFinished updating all {self.card_type} card(s).\n{len(self.card_collection)} card(s) in card_collection.")
-            ObjectHandler.save_object(self.card_collection, ObjectHandler.gen_pickled_card_dict_filepath())
         
 
 
@@ -168,7 +158,7 @@ class Controller:
         return cards
 
     def dump_cards(self):
-        card_json = "\"cards\" : ["
+        card_json = "["
         for card in self.card_collection.values():
             card_json += json.dumps(card, default=lambda o: o.__dict__)
             card_json += ",\n"
