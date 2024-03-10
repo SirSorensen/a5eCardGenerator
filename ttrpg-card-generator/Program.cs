@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using DataForge.SourceCode;
+
+SourceCode sourceCode = new SourceCode();
+
+sourceCode.updateTableSourceCode("Spell", 0);

@@ -8,25 +8,26 @@ namespace DataForge.Files
         private static string scrapedDataOutputDirectory = $"{outputDirectory}ScrapedData/";
 
         // Returns the contents of a file as a string
-        public string readFile(string absolutePath)
+        public static string readFile(string absolutePath)
         {
             return System.IO.File.ReadAllText(absolutePath);
         }
 
 
         // Replaces the contents of a file with the given string and returns the new contents
-        public string writeToFile(string absolutePath, string newContents)
+        public static string writeToFile(string absolutePath, string newContents)
         {
+            System.IO.Directory.CreateDirectory(absolutePath.Substring(0, absolutePath.LastIndexOf('/')));
             System.IO.File.WriteAllText(absolutePath, newContents);
             return newContents;
         }
 
-        public bool fileExists(string absolutePath)
+        public static bool fileExists(string absolutePath)
         {
             return System.IO.File.Exists(absolutePath);
         }
 
-        public string genDataDirectory(string cardType, FileType fileType, string contextName)
+        public static string genDataDirectory(string cardType, FileType fileType, string contextName, bool isPretty = false, bool isStripped = false)
         {   
             string fileExtension = ".html";
             string codeType = "";
@@ -44,13 +45,18 @@ namespace DataForge.Files
                     codeType = "SourceCode";
                     break;
             }
-            
 
+            if (isStripped) codeType += "/Stripped";
+            if (isPretty) codeType += "/Pretty";
+            
             return $"{scrapedDataOutputDirectory}{cardType}s/{codeType}/{contextName}{fileExtension}";
         }
 
 
-
+        public static string genCardListSourceCodeDirectory(string cardType, int pageNumber, bool isPretty = false, bool isStripped = false)
+        {
+            return genDataDirectory(cardType, FileType.Table, $"page_{pageNumber}", isPretty, isStripped);
+        }
 
     }
 
