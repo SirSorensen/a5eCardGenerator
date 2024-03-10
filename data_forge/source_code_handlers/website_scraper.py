@@ -17,7 +17,7 @@ standard_url_start = "https://a5e.tools/"
 # Returns the contents of the scraped website.
 def scrape_source_code(url_ending : str, url_start : str = standard_url_start) -> str:
     
-    sleep_time = round(random.uniform(5.0, 20.0), 4)
+    sleep_time = round(random.uniform(5.0, 6.0), 4)
     url = rf'{url_start}{url_ending}'
 
     if debug: print(f"Waiting {sleep_time} seconds to scrape \'{url}\'...")

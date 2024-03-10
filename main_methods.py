@@ -1,6 +1,5 @@
 # TODO: Move everything here to appropriate files to better the structure of the project
 
-from PowerPoint_Editing.power_point_modifier import PowerPointModifier
 from data_forge.controller import Controller
 from data_forge.data_structures.combat_maneuver import CombatManeuver
 from data_forge.data_structures.magic_item import MagicItem
@@ -9,8 +8,6 @@ from data_forge.data_structures.spell import Spell
 from data_forge.data_structures.feat import Feat
 from data_forge.file_handlers.file_cleaner import FileCleaner
 from data_forge.sheet_maker import SheetMaker
-from PowerPoint_Editing.power_point_inspector import *
-
 
 card_types = [CombatManeuver.__name__, Monster.__name__, Feat.__name__, Spell.__name__, MagicItem.__name__,]
 
@@ -32,8 +29,8 @@ def test_update_all_cards(card_type : str, controller = None) -> Controller:
     controller.update_all_cards()
     return controller
 
-def test_update_all_cards_all_types(should_load : bool = True) -> Controller:
-    controller = Controller("", should_load=should_load)
+def test_update_all_cards_all_types() -> Controller:
+    controller = Controller("")
     for card_type in card_types:
         test_update_all_cards(card_type, controller=controller)
     return controller
