@@ -1,12 +1,15 @@
+import json
 import re
 from data_forge.settings import *
 # This is meant as a superclass for CombatManuever, Feat, and Spell data structures.
 class Card:
-    def __init__(self, title : str, source_code : str):
+    def __init__(self, id : str, title : str, source_code : str):
 
         self.title = title
         # data_name is the naming of the data structure when saved to a file.
         self.name = Card.to_context_name(title)
+        self.id = id
+        self.type = type(self).__name__
 
         if debug: print(f"Making a {type(self).__name__}! {self.name}")
         
@@ -39,3 +42,4 @@ class Card:
 
         # Concatenate the field strings with newlines
         return '\n\n'.join(field_strings)
+    

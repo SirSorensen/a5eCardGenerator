@@ -7,6 +7,7 @@ global_source_code_output_directory = rf"{global_output_directory}Source_Code/"
 global_list_output_directory = rf"{global_source_code_output_directory}Lists/"
 global_slides_output_directory = rf"{global_output_directory}Slides/"
 global_images_output_directory = rf"{global_output_directory}Images/"
+global_json_output_directory = rf"{global_output_directory}JSON/"
 
 class FileHandler:
 
@@ -110,6 +111,9 @@ class FileHandler:
         if sub_folder:
             sub_folder += "/"
         return f"{global_images_output_directory}{sub_folder}"
+    
+    def gen_json_output_directory():
+        return global_json_output_directory + "cardData.json"
     
     def gen_slide_img_output_directory(sub_folder : str = ""):
         return f"{FileHandler.gen_slide_img_output_path(sub_folder)}{FileHandler.gen_slide_output_name('')}"

@@ -1,3 +1,4 @@
+import json
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
 from data_forge.sheet_maker import SheetMaker
 from data_forge.source_code_handlers.source_code import SourceCode
@@ -30,7 +31,7 @@ class Controller:
         return self.card_collection[card_name]
 
 
-    def update_card(self, title : str, summary : str  = "") -> Card:
+    def update_card(self, id : str, title : str, summary : str  = "") -> Card:
         if debug: print(f"\nUpdating {self.card_type} card {title}...")
         context_name = Card.to_context_name(title)
 
@@ -42,28 +43,33 @@ class Controller:
             match self.card_type:
                 case Spell.__name__:
                     card = Spell(
+                        id=id,
                         title=title,
                         source_code=card_stripped_code,
                         summary=summary
                     )
                 case Feat.__name__:
                     card = Feat(
+                        id=id,
                         title=title,
                         source_code=card_stripped_code
                     )
                 case CombatManeuver.__name__:
                     card = CombatManeuver(
+                        id=id,
                         title=title,
                         source_code=card_stripped_code,
                         summary=summary
                     )
                 case MagicItem.__name__:
                     card = MagicItem(
+                        id=id,
                         title=title,
                         source_code=card_stripped_code
                     )
                 case Monster.__name__:
                     card = Monster(
+                        id=id,
                         title=title,
                         source_code=card_stripped_code
                     )
@@ -92,11 +98,12 @@ class Controller:
         
         for i in range(len(list_of_titles)):
             card_title = list_of_titles[i][0]
+            card_id = list_of_titles[i][1]
 
             if has_summaries:
-                self.update_card(card_title, list_of_summaries[i])
+                self.update_card(card_id, card_title, list_of_summaries[i])
             else:
-                self.update_card(card_title)
+                self.update_card(card_id, card_title)
         
         if table_interpreter.is_next_page():
             self.update_all_cards(starting_page + 1)
@@ -159,3 +166,15 @@ class Controller:
                 print(str(card.title))
 
         return cards
+
+    def dump_cards(self):
+        card_json = "\"cards\" : ["
+        for card in self.card_collection.values():
+            card_json += json.dumps(card, default=lambda o: o.__dict__)
+            card_json += ",\n"
+
+        card_json = card_json[:-2] + "\n]"
+
+        FileHandler.write_to_file(card_json, FileHandler.gen_json_output_directory())
+
+        print(f"Dumped {len(self.card_collection)} cards to {FileHandler.gen_json_output_directory()}")

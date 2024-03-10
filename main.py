@@ -3,12 +3,14 @@ import sys
 from main_methods import *
 from Printer.card_png import make_cards
 
-# clean_up_and_remake_data()
-test_insert_input_into_power_point()
+controller = test_update_all_cards_all_types(should_load=False)
+controller.dump_cards()
+
+# test_insert_input_into_power_point()
 
 
 # Make slides into printable version
-make_cards()
+#make_cards()
 
 # source_code_path = r'Outputs\\HTML\\CombatManeuvers\Source_Code\\agile_feint.html'
 # source_code = FileHandler.read_file(source_code_path)

@@ -7,10 +7,10 @@ from data_forge.settings import *
 
 
 class CombatManeuver(Card):
-    def __init__(self, title : str, source_code : str, summary : str):
+    def __init__(self, id : str, title : str, source_code : str, summary : str):
         # Summary = "*"
         self.summary = summary
-        super(CombatManeuver, self).__init__(title, source_code)
+        super(CombatManeuver, self).__init__(id, title, source_code)
     
     def set_fields(self, source_code : str):
         code_interpreter = CombatManeuverInterpreter(source_code)
