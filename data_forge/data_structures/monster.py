@@ -4,8 +4,8 @@ from data_forge.data_structures.context_contents import Paragraphs
 from data_forge.settings import *
 
 class Monster(Card):
-    def __init__(self, title : str, source_code : str):
-        super(Monster, self).__init__(title, source_code)
+    def __init__(self, id : str, title : str, source_code : str):
+        super(Monster, self).__init__(id, title, source_code)
     
     def set_fields(self, source_code : str):
         code_interpreter = MonsterInterpreter(source_code)

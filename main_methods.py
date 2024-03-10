@@ -32,7 +32,7 @@ def test_update_all_cards(card_type : str, controller = None) -> Controller:
     controller.update_all_cards()
     return controller
 
-def test_update_all_cards_all_types(should_load : bool = True):
+def test_update_all_cards_all_types(should_load : bool = True) -> Controller:
     controller = Controller("", should_load=should_load)
     for card_type in card_types:
         test_update_all_cards(card_type, controller=controller)
@@ -43,8 +43,10 @@ def clean_up_and_remake_data(should_clean_up : bool = True):
     if should_clean_up:
         FileCleaner.clean_generated_files()
     test_update_all_tables_all_types()
-    test_update_all_cards_all_types(should_load=not should_clean_up)
-    test_insert_all_cards_in_sheet_all_types()
+    controller = test_update_all_cards_all_types(should_load=not should_clean_up)
+    #test_insert_all_cards_in_sheet_all_types()
+    controller.dump_cards()
+
 
 
 

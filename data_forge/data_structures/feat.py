@@ -5,8 +5,8 @@ from data_forge.settings import *
 
 
 class Feat(Card):
-    def __init__(self, title : str, source_code : str):
-        super(Feat, self).__init__(title, source_code)
+    def __init__(self, id : str, title : str, source_code : str):
+        super(Feat, self).__init__(id, title, source_code)
     
     def set_fields(self, source_code : str):
         code_interpreter = FeatInterpreter(source_code)
