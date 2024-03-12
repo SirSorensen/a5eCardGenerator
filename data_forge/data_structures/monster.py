@@ -10,7 +10,7 @@ class Monster(Card):
     def set_fields(self, source_code : str):
         code_interpreter = MonsterInterpreter(source_code)
         self.size = code_interpreter.get_size()
-        self.type = code_interpreter.get_type()
+        self.monster_type = code_interpreter.get_type()
         self.challenge_rating = code_interpreter.get_challenge_rating()
         self.terrain = code_interpreter.get_terrain()
         self.strength_val = code_interpreter.get_strength_val()
