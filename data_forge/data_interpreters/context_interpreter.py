@@ -2,7 +2,6 @@
 import re
 from bs4 import BeautifulSoup, Comment, NavigableString, PageElement, ResultSet, Tag
 from data_forge.data_interpreters.code_interpreter import CodeInterpreter
-from data_forge.data_structures.context_contents import Paragraph, Paragraphs
 
 class ContextInterpreter(CodeInterpreter):
     def __init__(self, source_code : str):
@@ -80,38 +79,35 @@ class ContextInterpreter(CodeInterpreter):
         if not context_paragraphs:
             return None
 
-        result = Paragraphs()
+        result = ""
         for context_paragraph in context_paragraphs:
-            paragraph = ContextInterpreter.__extract_paragraph(context_paragraph)
-            result.add_paragraph(paragraph)
+            result += " " + ContextInterpreter.__extract_paragraph(context_paragraph)
         
-        return result.__str__
+        return result
     
 
     # This function extracts the contents of a tag object and returns it as a Paragraph object
-    def __extract_paragraph(element : PageElement, acc : Paragraph = None) -> Paragraph:
-        if acc is None:
-            acc = Paragraph()
+    def __extract_paragraph(element : PageElement, acc : str = "") -> str:
 
         for content in element.contents:
             if isinstance(content, NavigableString):
                 # Direct text content
                 text = ContextInterpreter._get_clean_str(content)
                 if text != '':
-                    acc.add_text(text)
+                    acc += text
             
             elif isinstance(content, Tag) and content.name == 'a':
                 # Link with text and href
                 text = ContextInterpreter._get_clean_str(content)
                 if text != '':
                     href = content.get('href')
-                    acc.add_link(text, href)
+                    acc += text
 
             elif isinstance(content, Tag) and content.name == 'strong':
                 # Title text
                 text = ContextInterpreter._get_clean_str(content)
                 if text != '':
-                    acc.add_title_text(text)
+                    acc += text
 
             elif isinstance(content, Tag):
                 # Recursively extract contents

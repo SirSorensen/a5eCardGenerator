@@ -1,6 +1,5 @@
 from data_forge.data_interpreters.card_interpreters.monster_interpreter import MonsterInterpreter
 from data_forge.data_structures.card import Card
-from data_forge.data_structures.context_contents import Paragraphs
 from data_forge.settings import *
 
 class Monster(Card):

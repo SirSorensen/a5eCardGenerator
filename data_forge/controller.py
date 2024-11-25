@@ -1,6 +1,5 @@
 import json
 from data_forge.data_interpreters.table_interpreter import TableInterpreter
-from data_forge.sheet_maker import SheetMaker
 from data_forge.source_code_handlers.source_code import SourceCode
 from data_forge.file_handlers.file_handler import FileHandler
 
@@ -138,24 +137,6 @@ class Controller:
             for _ in range(amount):
                 card_list.append(self.get_card(name))
         return card_list
-
-    def read_input(self) -> list:
-        sheet_maker = SheetMaker(r'Resources/Cards.xlsm', read=True)
-        inputs = sheet_maker.read_input()
-
-        if debug:
-            print("Read Input:")
-            for input in inputs:
-                print(str(input))
-
-        cards = self.get_cards(inputs)
-        
-        if debug:
-            print("Cards Found:")
-            for card in cards:
-                print(str(card.title))
-
-        return cards
 
     def dump_cards(self):
         card_json = "["

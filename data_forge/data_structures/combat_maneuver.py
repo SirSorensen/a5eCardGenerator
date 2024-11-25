@@ -1,7 +1,6 @@
 import re
 from data_forge.data_interpreters.card_interpreters.combat_manuever_interpreter import CombatManeuverInterpreter
 from data_forge.data_structures.card import Card
-from data_forge.data_structures.context_contents import Paragraphs
 from data_forge.settings import *
 
 
