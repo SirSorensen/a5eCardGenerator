@@ -79,11 +79,11 @@ class ContextInterpreter(CodeInterpreter):
         if not context_paragraphs:
             return None
 
-        result = ""
+        results = []
         for context_paragraph in context_paragraphs:
-            result += " " + ContextInterpreter.__extract_paragraph(context_paragraph)
+            results.append(ContextInterpreter.__extract_paragraph(context_paragraph))
         
-        return result
+        return ' '.join(results)
     
 
     # This function extracts the contents of a tag object and returns it as a Paragraph object
