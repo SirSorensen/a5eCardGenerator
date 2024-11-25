@@ -66,7 +66,7 @@ class ContextInterpreter(CodeInterpreter):
     def _contains_element_with_atr(self, atr_name : str, atr_val : str) -> bool:
         return self._stripped_soup.find('a', attrs={atr_name : atr_val}) is not None
 
-    def _extract_body(self, class_attribute : str) -> Paragraphs:
+    def _extract_body(self, class_attribute : str) -> str:
         # Extract the element containing the context
         context_element = self.soup.find('div', class_=class_attribute)
         if context_element is None:
@@ -85,7 +85,7 @@ class ContextInterpreter(CodeInterpreter):
             paragraph = ContextInterpreter.__extract_paragraph(context_paragraph)
             result.add_paragraph(paragraph)
         
-        return result
+        return result.__str__
     
 
     # This function extracts the contents of a tag object and returns it as a Paragraph object

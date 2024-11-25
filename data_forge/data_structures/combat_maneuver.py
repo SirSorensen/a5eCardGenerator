@@ -26,9 +26,8 @@ class CombatManeuver(Card):
         self.subtitle = str(self.degree)
         self.subtitle += f", {str(self.tradition)}" if self.tradition else ""
 
-        self.description : Paragraphs = self.body
         self.icon = ""
         self.image = ""
 
-        if not (self.title and self.subtitle and self.description):
-            raise ValueError(f"Missing required fields for {self.name}:\n{self}\nTitle: {self.title}\nSubtitle: {self.subtitle}\nDescription: {self.description}")
+        if not (self.title and self.subtitle):
+            raise ValueError(f"Missing required fields for {self.name}:\n{self}\nTitle: {self.title}\nSubtitle: {self.subtitle}\n")

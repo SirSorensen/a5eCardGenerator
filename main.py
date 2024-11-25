@@ -2,5 +2,6 @@ import os
 import sys
 from main_methods import *
 
-controller = test_update_all_cards_all_types()
+
+controller = clean_up_and_remake_data()
 controller.dump_cards()

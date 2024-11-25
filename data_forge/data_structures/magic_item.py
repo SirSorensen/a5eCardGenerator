@@ -19,6 +19,5 @@ class MagicItem(Card):
 
     def set_text_fields(self):
         self.subtitle = f"{str(self.category)}, {str(self.rarity)}"
-        self.description : Paragraphs = self.body
         self.icon = ""
         self.image = ""

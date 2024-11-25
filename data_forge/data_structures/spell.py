@@ -36,7 +36,6 @@ class Spell(Card):
 
     def set_text_fields(self):
         self.subtitle = f"Level {str(self.level)} {str(self.classical_school)} spell"
-        self.description : Paragraphs = self.body
         self.icon = ""
         self.image = ""
 

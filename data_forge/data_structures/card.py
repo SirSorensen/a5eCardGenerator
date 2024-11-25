@@ -8,7 +8,6 @@ class Card:
         self.title = title
         # data_name is the naming of the data structure when saved to a file.
         self.name = Card.to_context_name(title)
-        self.id = id
         self.type = type(self).__name__
 
         if debug: print(f"Making a {type(self).__name__}! {self.name}")

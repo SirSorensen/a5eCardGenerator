@@ -28,6 +28,5 @@ class Monster(Card):
 
     def set_text_fields(self):
         self.subtitle = f"{str(self.size)} {str(self.type)}"
-        self.description : Paragraphs = self.body
         self.icon = ""
         self.image = ""

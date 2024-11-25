@@ -36,13 +36,14 @@ def test_update_all_cards_all_types() -> Controller:
     return controller
 
 
-def clean_up_and_remake_data(should_clean_up : bool = True):
+def clean_up_and_remake_data(should_clean_up : bool = True) -> Controller:
     if should_clean_up:
         FileCleaner.clean_generated_files()
     test_update_all_tables_all_types()
     controller = test_update_all_cards_all_types(should_load=not should_clean_up)
     #test_insert_all_cards_in_sheet_all_types()
     controller.dump_cards()
+    return controller
 
 
 

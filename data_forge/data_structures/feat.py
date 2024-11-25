@@ -18,7 +18,6 @@ class Feat(Card):
 
     def set_text_fields(self):
         self.subtitle = str(self.prerequisite)
-        self.description : Paragraphs = self.body
         self.icon = ""
         self.image = ""
 
